@@ -1,0 +1,10 @@
+/* carte de projet: coins arondi, bordure gris pale, ombre grise, padding interne, marges externes */
+.carte-projet {
+  border-radius: 10px; /* coins arrondis */
+  border: 1px solid #d3d3d3; /* bordure gris pâle */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ombre grise */
+  padding: 20px; /* padding interne */
+  margin: 15px; /* marges externes */
+  background-color: #ffffff; /* fond blanc */
+  transition: transform 0.2s; /* transition pour effet hover */
+}
