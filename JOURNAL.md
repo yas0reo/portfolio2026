@@ -21,11 +21,24 @@ Quelle impression je veux que cette personne retienne après avoir visité mon s
     Créative, curieuse, professionnelle, polyvalente et motivée.
 
 **_COURS 2.1_**
-utilisation ai avec figma..
+
+Utilisation ai avec figma..
 
 **_COURS 2.2_**
-pas de cours, avancement dans figma pour template du portfolio et finition du moodboard
+
+Pas de cours, avancement dans figma pour template du portfolio et finition du moodboard
 
 **_COURS 3.1_**
-modifications du portfolio et ajout texte dans "desctiptions" + quelques photos
-utilisation de chat-gpt pour m'aider a mettre en texte ma vision de mon portfolio (moodboard)
+
+Modifications du portfolio et ajout texte dans "desctiptions" + quelques photos<br/>
+Utilisation de chat-gpt pour m'aider a mettre en texte ma vision de mon portfolio (moodboard)
+
+**_COURS 3.2_**
+
+Demanmder a figmaMake de s'inspirer de mon wireframe pour en faire un autre genre de "website" portfolio mais c'est boff.. <br/>
+Liens vers mo figmaMake :
+https://www.figma.com/make/lzM7kTa552dWOuL6oZjtP2/Portfolio-Ideas?t=Mu8QqS2pRc6W7gcD-1
+
+**_COURS 4.1_**
+
+**_COURS 4.2_**
