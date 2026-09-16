@@ -36,9 +36,33 @@ Utilisation de chat-gpt pour m'aider a mettre en texte ma vision de mon portfoli
 **_COURS 3.2_**
 
 Demanmder a figmaMake de s'inspirer de mon wireframe pour en faire un autre genre de "website" portfolio mais c'est boff.. <br/>
+PROMPT: inspire toi de mon wireframe et crée moi une page principale pour mon portfolio
+
+ANSWER: (PHOTO)
+
+PROMPT: raffine le design du portfolio en utilisant mon moodboard et mon wireframe comme principales références visuelles. Conserve aussi la structure actuelle, mais confére au design une dimension plus créative, éditoriale, personnelle et cohérente.
+
+ANSWER:
+
+PROMPT: change le theme de couleur mais garde le coté bleu/bleumarin
+ANSWER: Avant --> Après<br/>
+Fond crème chaud #FBF1C9 --> Blanc cassé froid #F0F2EE (teinte sauge)<br/>
+Bordeaux #712632 --> Vert sauge #6B9E8A<br/>
+Noir chaud #080705 --> Noir ardoise froid #1A1E1C<br/>
+x --> Gris sauge clair #DDE4DC (sticky notes, hover)<br/>
+Navy #125E8A Conservé ✓<br/>
+Bleu poudre #A1C5E9 Conservé ✓
+
+PROMPT: regarde chacunes des sections et experimente avec different layouts
+
+ANSWER:
+
 Liens vers mo figmaMake :
 https://www.figma.com/make/lzM7kTa552dWOuL6oZjtP2/Portfolio-Ideas?t=Mu8QqS2pRc6W7gcD-1
 
 **_COURS 4.1_**
-
+réglage de copilot dans vscode <br>
+arboressence complété
+readME.md fait
+planification.md !!
 **_COURS 4.2_**
