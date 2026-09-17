@@ -23,10 +23,10 @@ J’ai aussi prévu une navigation simple avec les sections Portfolio, À propos
 ### Imgs ref.
 
 moodboard:
-![Getting Started](/assets/images/moodboard%20portfolio.png)
+![moodboard](/assets/images/moodboard%20portfolio.png)
 
 Wireframe d'accueil:
-![Getting Started](/assets/images/prototype%20pages/desktop%20-%20acceuil%20prototype.jpg)
+![WireframeAccueil](/assets/images/pagesPrototype/desktop%20-%20acceuil%20prototype.jpg)
 
 Wireframe des pages des projets:
-![Getting Started](/assets/images/prototype%20pages/desktop%20-%20page%20projet%20prototype.jpg)
+![WireframeProjets](/assets/images/pagesPrototype/desktop%20-%20page%20projet%20prototype.jpg)
