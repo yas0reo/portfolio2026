@@ -1,1 +1,49 @@
-/* notes /* This file defines the layout styles for the application, including grid and flexbox configurations, spacing, and alignment. It ensures that the content is displayed in a structured and visually appealing manner across different screen sizes. */
+.header {
+  max-width: 1440px;
+  margin: auto;
+  padding: 22px 4%;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.navigation__logo {
+  font: 32px "Just Another Hand", cursive;
+  text-decoration: none;
+}
+
+.navigation__liste {
+  list-style: none;
+  display: flex;
+  gap: clamp(16px, 3vw, 44px);
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
+
+.navigation__liste a {
+  text-decoration: none;
+}
+
+.navigation__liste a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 420px) {
+  .navigation {
+    align-items: flex-start;
+  }
+  .navigation__logo {
+    max-width: 85px;
+    line-height: 1;
+  }
+  .navigation__liste {
+    gap: 14px;
+    font-size: 12px;
+    padding-top: 4px;
+  }
+}

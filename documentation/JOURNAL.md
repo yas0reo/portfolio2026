@@ -72,3 +72,6 @@ readME.md fait<br>
 planification.md !!<br>
 
 ## **_COURS 4.2_**
+
+commencer le protfolio html/css + animations
+essaie de pomodoro (des _sprints_ de travail minuté et entourée de VRAIS pauses..)

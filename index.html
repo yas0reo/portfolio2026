@@ -1,16 +1,480 @@
-<!-- notes -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portdolio Yasmine</title>
+    <title>Portfolio | Yasmine</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+
+    <!-- Navigation -->
+    <link rel="stylesheet" href="./css/composantes/navigation.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Welcome to My Portfolio</h1>
-      <p>This is a simple portfolio page for Yasmine.</p>
-    </div>
+    <a class="skip-link" href="#apropos">Aller au contenu</a>
+    <header class="header">
+      <nav class="navigation">
+        <a href="#accueil" class="navigation__logo"> Yasmine Onekeo </a>
+
+        <ul class="navigation__liste">
+          <li>
+            <a href="#apropos">À propos</a>
+          </li>
+
+          <li>
+            <a href="#projets">Projets</a>
+          </li>
+
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- HERO / ACCUEIL -->
+
+      <section id="accueil" class="hero">
+        <div class="hero__illustration">
+          <img
+            src="./assets/images/accueil/hero.png"
+            alt="Illustration représentant plusieurs personnages et la phrase It's a miracle we ever met"
+          />
+        </div>
+      </section>
+
+      <!-- À PROPOS -->
+
+      <section id="apropos" class="apropos">
+        <div class="apropos__image">
+          <img
+            src="./assets/images/accueil/portrait.png"
+            alt="Portrait de Yasmine Onekeo"
+          />
+        </div>
+
+        <div class="apropos__contenu">
+          <header class="apropos__header">
+            <h2>À propos de moi</h2>
+            <h1>Yasmine Onekeo</h1>
+          </header>
+
+          <div class="apropos__texte">
+            <p>
+              Courte présentation de moi, de mon parcours, de mes intérêts et de
+              ma pratique en création numérique.
+            </p>
+
+            <div class="apropos__details">
+              <div>
+                <h3>Description</h3>
+
+                <p>
+                  Étudiante en intégration multimédia, intéressée par la vidéo,
+                  la réalité virtuelle, le design et les expériences
+                  interactives.
+                </p>
+              </div>
+
+              <div>
+                <h3>Contact</h3>
+
+                <p>
+                  <a href="mailto:yass.onekeo@gmail.com">
+                    yass.onekeo@gmail.com
+                  </a>
+                </p>
+
+                <p>
+                  <a href="https://www.instagram.com/ugc.yzmn/" target="_blank" rel="noopener noreferrer">
+                    Instagram
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTÉRÊTS & THÈMES -->
+
+      <section class="interets">
+        <h2>Intérêts & thèmes</h2>
+
+        <div class="interets__marquee">
+          <div class="interets__ligne">
+            <div class="interets__groupe">
+              <strong class="interets__mot interets__mot--rouge">JEUX</strong>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <strong class="interets__mot interets__mot--rouge">JEUX</strong>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+            </div>
+            <div class="interets__groupe" aria-hidden="true">
+              <strong class="interets__mot interets__mot--rouge">JEUX</strong>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <strong class="interets__mot interets__mot--rouge">JEUX</strong>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+            </div>
+          </div>
+          <div class="interets__ligne">
+            <div class="interets__groupe">
+              <strong class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</strong>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <strong class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</strong>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+            </div>
+            <div class="interets__groupe" aria-hidden="true">
+              <strong class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</strong>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <strong class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</strong>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+            </div>
+          </div>
+          <div class="interets__ligne">
+            <div class="interets__groupe">
+              <strong class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</strong>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <strong class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</strong>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+            </div>
+            <div class="interets__groupe" aria-hidden="true">
+              <strong class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</strong>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <strong class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</strong>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert">PHOTO VIDÉO</span>
+            </div>
+          </div>
+          <div class="interets__ligne">
+            <div class="interets__groupe">
+              <strong class="interets__mot interets__mot--bleu">3D</strong>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <strong class="interets__mot interets__mot--bleu">3D</strong>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+            </div>
+            <div class="interets__groupe" aria-hidden="true">
+              <strong class="interets__mot interets__mot--bleu">3D</strong>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <strong class="interets__mot interets__mot--bleu">3D</strong>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+            </div>
+          </div>
+          <div class="interets__ligne">
+            <div class="interets__groupe">
+              <strong class="interets__mot interets__mot--rouge" >VOYAGES</strong>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <strong class="interets__mot interets__mot--rouge" >VOYAGES</strong>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+            </div>
+            <div class="interets__groupe" aria-hidden="true">
+              <strong class="interets__mot interets__mot--rouge" >VOYAGES</strong>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <strong class="interets__mot interets__mot--rouge" >VOYAGES</strong>
+              <span class="interets__mot interets__mot--mauve">MUSIQUE</span>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+            </div>
+          </div>
+          <div class="interets__ligne">
+            <div class="interets__groupe">
+              <strong class="interets__mot interets__mot--mauve" >MUSIQUE</strong>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <strong class="interets__mot interets__mot--mauve" >MUSIQUE</strong>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+            </div>
+            <div class="interets__groupe" aria-hidden="true">
+              <strong class="interets__mot interets__mot--mauve" >MUSIQUE</strong>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+              <strong class="interets__mot interets__mot--mauve" >MUSIQUE</strong>
+              <span class="interets__mot interets__mot--rouge">JEUX</span>
+              <span class="interets__mot interets__mot--vert" >PHOTO & VIDÉO</span>
+              <span class="interets__mot interets__mot--mauve" >RÉALITÉ VIRTUELLE</span>
+              <span class="interets__mot interets__mot--bleu">3D</span>
+              <span class="interets__mot interets__mot--rouge">VOYAGES</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS / EXPERTISE -->
+
+      <section class="skills">
+        <h2>Skills & expertise</h2>
+
+        <div class="skills__contenu">
+
+          <div class="skills__illustration">
+            <img src="./assets/images/accueil/illustration.png" alt="" />
+          </div>
+          <ul class="skills__logiciels">
+            <li class="logiciel" tabindex="0" aria-label="Figma">
+              <img
+                class="logiciel__icone"
+                src="./assets/icones/figma.png"
+                alt=""
+                width="65"
+                height="65"
+                loading="lazy"
+              />
+              <span class="logiciel__nom" aria-hidden="true">Figma</span>
+            </li>
+            <li class="logiciel" tabindex="0" aria-label="Visual Studio Code">
+              <img
+                class="logiciel__icone"
+                src="./assets/icones/vscode.png"
+                alt=""
+                width="65"
+                height="65"
+                loading="lazy"
+              />
+              <span class="logiciel__nom" aria-hidden="true" >Visual Studio Code</span>
+            </li>
+            <li class="logiciel" tabindex="0" aria-label="Unity">
+              <img
+                class="logiciel__icone"
+                src="./assets/icones/unity.png"
+                alt=""
+                width="65"
+                height="65"
+                loading="lazy"
+              />
+              <span class="logiciel__nom" aria-hidden="true">Unity</span>
+            </li>
+            <li class="logiciel" tabindex="0" aria-label="Adobe Photoshop">
+              <img
+                class="logiciel__icone"
+                src="./assets/icones/photoshop.png"
+                alt=""
+                width="65"
+                height="65"
+                loading="lazy"
+              />
+              <span class="logiciel__nom" aria-hidden="true" >Adobe Photoshop</span>
+            </li>
+            <li class="logiciel" tabindex="0" aria-label="Adobe After Effects">
+              <img
+                class="logiciel__icone"
+                src="./assets/icones/after-effects.png"
+                alt=""
+                width="65"
+                height="65"
+                loading="lazy"
+              />
+              <span class="logiciel__nom" aria-hidden="true" >Adobe After Effects</span>
+            </li>
+            <li class="logiciel" tabindex="0" aria-label="DaVinci Resolve">
+              <img
+                class="logiciel__icone"
+                src="./assets/icones/davinci-resolve.png"
+                alt=""
+                width="65"
+                height="65"
+                loading="lazy"
+              />
+              <span class="logiciel__nom" aria-hidden="true" >DaVinci Resolve</span>
+            </li>
+            <li class="logiciel" tabindex="0" aria-label="Adobe Lightroom">
+              <img
+                class="logiciel__icone"
+                src="./assets/icones/lightroom.png"
+                alt=""
+                width="65"
+                height="65"
+                loading="lazy"
+              />
+              <span class="logiciel__nom" aria-hidden="true" >Adobe Lightroom</span>
+            </li>
+            <li class="logiciel" tabindex="0" aria-label="Adobe Premiere Pro">
+              <img
+                class="logiciel__icone"
+                src="./assets/icones/premiere-pro.png"
+                alt=""
+                width="65"
+                height="65"
+                loading="lazy"
+              />
+              <span class="logiciel__nom" aria-hidden="true" >Adobe Premiere Pro</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PROJETS -->
+
+      <section id="projets" class="projets">
+        <header class="projets__header">
+          <h2>Quelques projets</h2>
+          <p>Bien aimés</p>
+        </header>
+
+        <div class="projets__composition">
+          <svg
+            class="projets__fil"
+            viewBox="0 0 1000 780"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M170 70 C370 180 520 240 510 120 C400 20 350 220 820 90 C970 60 550 300 190 280 C80 250 870 150 530 370 C440 420 400 240 810 315 M180 465 C520 350 530 450 360 440 C120 420 90 550 240 470 C400 400 660 495 830 515 C720 420 440 480 300 650 C160 735 80 590 210 655 C510 745 760 765 830 700"
+              fill="none"
+              stroke="#555"
+              stroke-width="1.6"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
+          <div class="projets__liste">
+            <a href="./projet.html?projet=mati-r" class="projets__lien">Mati-R</a>
+            <a href="./projet.html?projet=paysage" class="projets__lien">Paysage</a>
+            <a href="./projet.html?projet=montage-rouge" class="projets__lien">Montage rouge</a>
+            <a href="./projet.html?projet=space-in-betweenn" class="projets__lien">Space In Betweenn</a>
+            <a href="./projet.html?projet=corps" class="projets__lien">Corps</a>
+            <a href="./projet.html?projet=web3tp2" class="projets__lien">Web3TP2</a>
+            <a href="./projet.html?projet=photos" class="projets__lien">Photos</a>
+            <a href="./projet.html?projet=autre" class="projets__lien">Autre</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+
+      <section id="contact" class="contact">
+        <figure class="contact__images">
+          <img
+            class="contact__portrait"
+            loading="lazy"
+            src="./assets/images/accueil/contact.png"
+            alt="Yasmine Onekeo"
+          />
+
+          <img
+            class="contact__voiture"
+            loading="lazy"
+            src="./assets/images/accueil/voiture.png"
+            alt="Extrait d'un projet photographique"
+          />
+          <figcaption>Weekend de la F1 — Octane 26</figcaption>
+        </figure>
+
+        <div class="contact__contenu">
+          <h2>Me contacter</h2>
+
+          <address>
+            <p>
+              <a href="mailto:yass.onekeo@gmail.com"> yass.onekeo@gmail.com </a>
+            </p>
+
+            <p>
+              <a
+                href="https://www.instagram.com/ugc.yzmn/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+            </p>
+          </address>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+      <p>© 2026 Yasmine Onekeo · Création multimédia</p>
+      <a href="#accueil">Retour en haut ↑</a>
+    </footer>
+
   </body>
 </html>

@@ -1,1 +1,645 @@
-/* notes /* This file defines the layout styles for the application, including grid and flexbox configurations, spacing, and alignment. It ensures that the content is displayed in a structured and visually appealing manner across different screen sizes. */
+/* Accueil : photographies, aplats gris et typographie manuscrite. */
+main {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.hero {
+  margin: 0 3.5% 120px;
+}
+
+.hero img {
+  width: 100%;
+}
+
+/* À propos */
+.apropos {
+  display: grid;
+  grid-template-columns: 38% 62%;
+  margin: 0 0 110px 3.5%;
+  align-items: start;
+}
+
+.apropos__image img {
+  width: 100%;
+  height: 660px;
+  object-fit: cover;
+}
+
+.apropos__contenu {
+  margin-top: 55px;
+  margin-left: -80px;
+  position: relative;
+}
+
+.apropos__header {
+  background: var(--gris-collage);
+  padding: 24px 28px 12px;
+}
+
+.apropos__header h2 {
+  font-family: Liberation, sans-serif;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: clamp(24px, 3.7vw, 49px);
+  font-weight: 700;
+  margin: 0 0 22px;
+}
+
+.apropos__header h1 {
+  font: 48px/1 "Just Another Hand", cursive;
+  margin: 0;
+}
+
+.apropos__texte {
+  padding: 24px 6% 0 110px;
+  text-align: center;
+}
+
+.apropos__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 26px;
+}
+
+.apropos h3 {
+  font: 30px "Just Another Hand", cursive;
+  margin-bottom: 12px;
+}
+
+.apropos__details a {
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+
+/* Intérêts et défilement */
+.interets {
+  overflow: hidden;
+  margin-bottom: 140px;
+}
+
+.interets h2 {
+  text-align: right;
+  margin: 0 4% 20px;
+}
+/* Deux groupes identiques assurent une boucle sans coupure. */
+.interets__marquee {
+  overflow: hidden;
+  padding-block: 16px;
+}
+
+.interets__ligne {
+  display: flex;
+  width: max-content;
+  animation: interets-defilement 65s linear infinite;
+}
+
+.interets__ligne:nth-child(even) {
+  animation-direction: reverse;
+}
+
+.interets__groupe {
+  display: flex;
+  flex-shrink: 0;
+  align-items: baseline;
+  white-space: nowrap;
+  color: var(--gris-themes);
+  font-size: clamp(21px, 2.8vw, 39px);
+  line-height: 1.35;
+}
+
+.interets__mot {
+  display: inline-block;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.interets__mot::after {
+  content: "·";
+  display: inline-block;
+  margin-inline: 0.25em;
+  color: var(--gris-themes);
+  text-shadow: none;
+  font-family: Liberation, sans-serif;
+  font-size: 0.8em;
+}
+
+.interets__mot--rouge {
+  --glow: #e63946;
+}
+
+.interets__mot--vert {
+  --glow: #26a65b;
+}
+
+.interets__mot--mauve {
+  --glow: #a34de0;
+}
+
+.interets__mot--bleu {
+  --glow: #3085ef;
+}
+
+.interets__marquee strong {
+  color: #222;
+  font: 1.3em/1 "Just Another Hand", cursive;
+  font-weight: 400;
+}
+
+.interets__mot:hover {
+  color: var(--glow);
+  text-shadow: 0 0 6px var(--glow), 0 0 18px var(--glow);
+}
+
+@keyframes interets-defilement {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interets__ligne {
+    animation: none;
+  }
+  .interets__marquee {
+    overflow-x: auto;
+  }
+  .interets__groupe[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+/* Logiciels et survol */
+.skills {
+  margin: 0 4% 135px;
+}
+
+.skills h2 {
+  text-align: center;
+  padding-left: 28%;
+}
+
+.skills__contenu {
+  height: 470px;
+  position: relative;
+}
+
+.skills__illustration {
+  position: absolute;
+  width: 32%;
+  left: 28%;
+  top: 12px;
+}
+
+.skills__illustration img {
+  width: 100%;
+}
+
+.skills__logiciels {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.logiciel {
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.logiciel__icone {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  transition: transform 0.22s ease;
+}
+
+.logiciel__nom {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  width: max-content;
+  max-width: 125px;
+  text-align: center;
+  line-height: 1.3;
+  color: var(--couleur-texte);
+  opacity: 0;
+  transform: translate(-50%, 4px);
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.logiciel:is(:hover, :focus) {
+  z-index: 1;
+}
+
+.logiciel:is(:hover, :focus) .logiciel__icone {
+  transform: scale(1.15);
+}
+
+.logiciel:is(:hover, :focus) .logiciel__nom {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.logiciel:focus-visible {
+  outline: 2px solid var(--couleur-texte);
+  outline-offset: 9px;
+  border-radius: 10px;
+}
+/* Garder les étiquettes aux extrémités dans la page. */
+.logiciel:nth-child(2) .logiciel__nom,
+.logiciel:nth-child(3) .logiciel__nom {
+  left: 0;
+  transform: translateY(4px);
+}
+
+.logiciel:nth-child(4) .logiciel__nom,
+.logiciel:nth-child(8) .logiciel__nom {
+  left: auto;
+  right: 0;
+  transform: translateY(4px);
+}
+
+.logiciel:nth-child(2):is(:hover, :focus) .logiciel__nom,
+.logiciel:nth-child(3):is(:hover, :focus) .logiciel__nom,
+.logiciel:nth-child(4):is(:hover, :focus) .logiciel__nom,
+.logiciel:nth-child(8):is(:hover, :focus) .logiciel__nom {
+  transform: translateY(0);
+}
+
+.logiciel:nth-child(1) {
+  left: 20%;
+  top: 0;
+}
+
+.logiciel:nth-child(2) {
+  left: 3%;
+  top: 135px;
+}
+
+.logiciel:nth-child(3) {
+  left: 0;
+  top: 325px;
+}
+
+.logiciel:nth-child(4) {
+  right: 0;
+  top: -50px;
+}
+
+.logiciel:nth-child(5) {
+  right: 26%;
+  top: 85px;
+}
+
+.logiciel:nth-child(6) {
+  right: 8%;
+  top: 195px;
+}
+
+.logiciel:nth-child(7) {
+  right: 27%;
+  top: 335px;
+}
+
+.logiciel:nth-child(8) {
+  right: 0;
+  top: 385px;
+}
+
+/* Projets */
+.projets {
+  margin-bottom: 130px;
+}
+
+.projets__header {
+  margin-left: 18%;
+  background: var(--gris-projets);
+  height: 250px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.projets__header h2 {
+  margin: 0;
+  padding-left: 12%;
+}
+
+.projets__header p {
+  position: absolute;
+  left: -22%;
+  bottom: -75px;
+  background: var(--gris-clair);
+  padding: 55px 7%;
+  width: 48%;
+  text-align: center;
+  font: 48px/1 "Just Another Hand", cursive;
+  margin: 0;
+}
+
+.projets__composition {
+  position: relative;
+  margin: 140px 4% 0;
+  height: 780px;
+}
+
+.projets__composition::before {
+  content: "";
+  position: absolute;
+  background: var(--gris-collage);
+  left: 34%;
+  top: 0;
+  width: 32%;
+  height: 100%;
+}
+
+.projets__fil {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.projets__liste {
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  column-gap: 35%;
+  align-items: center;
+}
+
+.projets__lien {
+  font: clamp(30px, 3.3vw, 48px) / 1 "Just Another Hand", cursive;
+  text-decoration: none;
+  width: fit-content;
+  padding: 12px;
+  background: var(--couleur-fond);
+  transition: transform 0.2s;
+}
+
+.projets__lien:nth-child(even) {
+  justify-self: end;
+}
+
+.projets__lien:hover {
+  transform: rotate(-4deg);
+}
+
+/* Contact */
+.contact {
+  position: relative;
+  margin: 0 0 140px 3.5%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  padding-bottom: 90px;
+  align-items: end;
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 0;
+  bottom: 0;
+  height: 55%;
+  background: var(--gris-collage);
+}
+
+.contact__images {
+  position: relative;
+  padding-left: 20%;
+  margin: 0;
+}
+
+.contact__portrait {
+  width: 100%;
+}
+
+.contact__voiture {
+  position: absolute;
+  width: 33%;
+  left: 0;
+  bottom: -30px;
+}
+
+.contact figcaption {
+  font: 25px "Just Another Hand", cursive;
+  margin: 10px 0 0 18%;
+}
+
+.contact__contenu {
+  position: relative;
+  padding: 0 20px 35px;
+}
+
+.contact h2 {
+  font-size: 38px;
+  margin-bottom: 22px;
+}
+
+.contact address {
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+/* Pied de page */
+.footer {
+  background: var(--gris-clair);
+  padding: 50px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  font-size: 12px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  font: 26px "Just Another Hand", cursive;
+}
+/* Adaptation mobile */
+@media (max-width: 760px) {
+  .hero {
+    margin: 45px 0 85px;
+  }
+  .hero img {
+    min-height: 270px;
+    object-fit: cover;
+  }
+  .apropos {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 95px;
+    position: relative;
+    padding-top: 95px;
+  }
+  .apropos__image {
+    width: 78%;
+  }
+  .apropos__image img {
+    height: auto;
+  }
+  .apropos__contenu {
+    margin: 0;
+  }
+  .apropos__header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 78%;
+    padding: 18px;
+  }
+  .apropos__header h2 {
+    font-size: clamp(24px, 5.5vw, 38px);
+    margin-bottom: 28px;
+  }
+  .apropos__header h1 {
+    font-size: 38px;
+  }
+  .apropos__texte {
+    padding: 25px 6% 0;
+  }
+  .apropos__details {
+    gap: 20px;
+    text-align: left;
+  }
+  .interets {
+    margin-bottom: 100px;
+  }
+  .interets h2 {
+    font-size: 36px;
+  }
+  .skills {
+    margin-bottom: 95px;
+  }
+  .skills h2 {
+    padding: 0;
+    text-align: right;
+  }
+  .skills__contenu {
+    height: 480px;
+  }
+  .skills__illustration {
+    left: 0;
+    top: 145px;
+    width: 48%;
+  }
+  .logiciel__icone {
+    width: 47px;
+    height: 47px;
+  }
+  .logiciel {
+    font-size: 10px;
+  }
+  .logiciel:nth-child(1) {
+    left: 17%;
+    top: 80px;
+  }
+  .logiciel:nth-child(2) {
+    left: 25%;
+    top: 400px;
+  }
+  .logiciel:nth-child(3) {
+    left: 58%;
+    top: 330px;
+  }
+  .logiciel:nth-child(4) {
+    right: 1%;
+    top: 80px;
+  }
+  .logiciel:nth-child(5) {
+    right: auto;
+    left: 5%;
+    top: 0;
+  }
+  .logiciel:nth-child(6) {
+    right: 2%;
+    top: 260px;
+  }
+  .logiciel:nth-child(7) {
+    right: 32%;
+    top: 20px;
+  }
+  .logiciel:nth-child(8) {
+    right: 28%;
+    top: 170px;
+  }
+  .projets {
+    margin-bottom: 90px;
+  }
+  .projets__header {
+    height: 150px;
+    margin-left: 17%;
+  }
+  .projets__header h2 {
+    font-size: 36px;
+    padding: 0;
+  }
+  .projets__header p {
+    font-size: 30px;
+    bottom: -35px;
+    padding: 28px 8px;
+    width: 55%;
+  }
+  .projets__composition {
+    margin-top: 90px;
+    height: 570px;
+  }
+  .projets__liste {
+    column-gap: 12%;
+  }
+  .projets__lien {
+    font-size: 30px;
+    padding: 6px;
+    max-width: 145px;
+  }
+  .projets__composition::before {
+    left: 38%;
+    width: 24%;
+  }
+  .contact {
+    margin: 0 0 85px;
+    display: block;
+    padding: 0 0 25px;
+  }
+  .contact::before {
+    left: 15%;
+    height: 51%;
+  }
+  .contact__images {
+    padding: 0;
+    width: 72%;
+    margin-left: 19%;
+  }
+  .contact__voiture {
+    left: -26%;
+    width: 40%;
+    bottom: 5px;
+  }
+  .contact figcaption {
+    margin-left: 20%;
+    font-size: 22px;
+  }
+  .contact__contenu {
+    margin: 30px 0 0 20%;
+    padding: 0 15px;
+  }
+  .contact h2 {
+    margin-bottom: 14px;
+  }
+  .contact address {
+    font-size: 14px;
+  }
+  .footer {
+    padding: 35px 6%;
+    flex-wrap: wrap;
+  }
+}
