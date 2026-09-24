@@ -33,6 +33,42 @@
   text-decoration: underline;
 }
 
+/* Navigation latérale sur ordinateur. */
+@media (min-width: 761px) and (min-height: 481px) {
+  body {
+    padding-left: 80px;
+  }
+
+  .header {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 5;
+    width: 80px;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    background: var(--couleur-fond);
+    border-right: 1px solid var(--gris-clair);
+  }
+
+  .navigation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(100dvh - 64px);
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+  .navigation__logo,
+  .navigation__liste a {
+    white-space: nowrap;
+  }
+
+  .navigation__liste {
+    gap: clamp(18px, 4vh, 44px);
+  }
+}
+
 @media (max-width: 420px) {
   .navigation {
     align-items: flex-start;

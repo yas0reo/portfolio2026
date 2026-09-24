@@ -75,3 +75,12 @@ planification.md !!<br>
 
 commencer le protfolio html/css + animations
 essaie de pomodoro (des _sprints_ de travail minuté et entourée de VRAIS pauses..)
+
+PROMPT: ![Getting Started](/assets/images/IApromptsANSWER/web.png)
+
+ANSWER:
+![Getting Started](/assets/images/IApromptsANSWER/web2.png)
+
+PROMPT: dans la section "quelques projets biens aimés" fait en sorte que le rectangle gris soit une div genre place order pour ensuite pouvoir y accueillir une img du projet selectionné (pour donner un preview au visiteur) lorsqu'on hoover sur le nom du projet
+
+ANSWER: ![Getting Started](/assets/images/IApromptsANSWER/web3.png)

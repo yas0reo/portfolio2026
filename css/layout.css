@@ -38,11 +38,11 @@ main {
 }
 
 .apropos__header h2 {
-  font-family: Liberation, sans-serif;
+  font-family: "Just Another Hand", cursive;
   text-transform: uppercase;
   text-align: right;
   font-size: clamp(24px, 3.7vw, 49px);
-  font-weight: 700;
+  font-weight: 400;
   margin: 0 0 22px;
 }
 
@@ -122,22 +122,6 @@ main {
   text-shadow: none;
   font-family: Liberation, sans-serif;
   font-size: 0.8em;
-}
-
-.interets__mot--rouge {
-  --glow: #e63946;
-}
-
-.interets__mot--vert {
-  --glow: #26a65b;
-}
-
-.interets__mot--mauve {
-  --glow: #a34de0;
-}
-
-.interets__mot--bleu {
-  --glow: #3085ef;
 }
 
 .interets__marquee strong {
@@ -318,7 +302,7 @@ main {
 .projets__header {
   margin-left: 18%;
   background: var(--gris-projets);
-  height: 250px;
+  height: 225px;
   position: relative;
   display: grid;
   place-items: center;
@@ -334,10 +318,10 @@ main {
   left: -22%;
   bottom: -75px;
   background: var(--gris-clair);
-  padding: 55px 7%;
+  padding: 35px 7%;
   width: 48%;
   text-align: center;
-  font: 48px/1 "Just Another Hand", cursive;
+  font: 38px/1 "Just Another Hand", cursive;
   margin: 0;
 }
 
@@ -347,14 +331,41 @@ main {
   height: 780px;
 }
 
-.projets__composition::before {
-  content: "";
+.projets__apercu {
   position: absolute;
   background: var(--gris-collage);
   left: 34%;
   top: 0;
   width: 32%;
   height: 100%;
+  overflow: hidden;
+}
+
+.projets__apercu-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.projets__apercu-image.is-visible {
+  opacity: 1;
+}
+
+.projets__apercu-texte {
+  position: absolute;
+  inset: 50% 12px auto;
+  margin: 0;
+  color: var(--couleur-fond);
+  font: 32px / 1 "Just Another Hand", cursive;
+  text-align: center;
+  transform: translateY(-50%);
+  transition: opacity 0.25s ease;
+}
+
+.projets__apercu-texte.is-hidden {
+  opacity: 0;
 }
 
 .projets__fil {
@@ -369,7 +380,7 @@ main {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   column-gap: 35%;
   align-items: center;
 }
@@ -380,14 +391,41 @@ main {
   width: fit-content;
   padding: 12px;
   background: var(--couleur-fond);
-  transition: transform 0.2s;
+  transition: transform 0.2s, color 0.2s, text-shadow 0.2s;
 }
 
 .projets__lien:nth-child(even) {
   justify-self: end;
 }
 
-.projets__lien:hover {
+.interets__mot--vert,
+.projets__lien--vert {
+  --glow: #26a65b;
+}
+.interets__mot--mauve,
+.projets__lien--mauve {
+  --glow: #a34de0;
+}
+.interets__mot--rouge,
+.projets__lien--rouge {
+  --glow: #e63946;
+}
+.interets__mot--bleu,
+.projets__lien--bleu {
+  --glow: #3085ef;
+}
+.interets__mot--jaune,
+.projets__lien--jaune {
+  --glow: #d6aa00;
+}
+.interets__mot--rose,
+.projets__lien--rose {
+  --glow: #e754a6;
+}
+
+.projets__lien:is(:hover, :focus-visible) {
+  color: var(--glow);
+  text-shadow: 0 0 2px var(--glow), 0 0 1px var(--glow);
   transform: rotate(-4deg);
 }
 
@@ -601,7 +639,7 @@ main {
     padding: 6px;
     max-width: 145px;
   }
-  .projets__composition::before {
+  .projets__apercu {
     left: 38%;
     width: 24%;
   }

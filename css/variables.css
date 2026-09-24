@@ -1,0 +1,9 @@
+/* Palette commune à toutes les sections. */
+:root {
+  --couleur-texte: #191919;
+  --couleur-fond: #fff;
+  --gris-collage: #a3a1a1;
+  --gris-projets: #c7c5c5;
+  --gris-clair: #dadada;
+  --gris-themes: #aaa;
+}
