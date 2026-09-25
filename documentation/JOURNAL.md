@@ -73,8 +73,12 @@ planification.md !!<br>
 
 ## **_COURS 4.2_**
 
-commencer le protfolio html/css + animations
-essaie de pomodoro (des _sprints_ de travail minuté et entourée de VRAIS pauses..)
+commencer le protfolio html/css
+essaie de pomodoro (des sprints de travail minuté et entourée de VRAIS pauses..)
+
+## **_COURS 5.1_**
+
+continuer le portfolio html/css
 
 PROMPT: ![Getting Started](/assets/images/IApromptsANSWER/web.png)
 
@@ -84,3 +88,5 @@ ANSWER:
 PROMPT: dans la section "quelques projets biens aimés" fait en sorte que le rectangle gris soit une div genre place order pour ensuite pouvoir y accueillir une img du projet selectionné (pour donner un preview au visiteur) lorsqu'on hoover sur le nom du projet
 
 ANSWER: ![Getting Started](/assets/images/IApromptsANSWER/web3.png)
+
+## **_COURS 5.2_**
