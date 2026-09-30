@@ -20,9 +20,18 @@
       <p id="projet-message" role="status">Chargement du projet…</p>
       <h1>Nom du projet</h1>
 
-      <div class="projet-hero-media">
-        <img src="images/projet/hero.jpg" alt="Image principale du projet" />
-      </div>
+      <!-- Le lien est rempli par JavaScript si le projet a une vidéo. -->
+      <a
+        class="projet-hero__video"
+        id="projet-video"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Voir la vidéo du projet"
+        hidden
+      >
+        <span aria-hidden="true">▶</span>
+      </a>
     </header>
 
     <main>
@@ -36,6 +45,14 @@
               src="images/projet/presentation-1.jpg"
               alt="Présentation du projet"
             />
+
+            <div class="presentation-image__texte">
+              <h3>Description</h3>
+              <p>
+                Description du projet. Présente ici le concept, l'objectif et le
+                contexte dans lequel le projet a été réalisé.
+              </p>
+            </div>
           </div>
 
           <div class="presentation-description">
@@ -44,12 +61,7 @@
               alt="Deuxième aperçu du projet"
             />
 
-            <h3>Description titre</h3>
-
-            <p>
-              Description du projet. Présente ici le concept, l'objectif et le
-              contexte dans lequel le projet a été réalisé.
-            </p>
+            <h3>Rôle et Lociciels</h3>
 
             <p>
               Tu peux également expliquer ton rôle dans le projet, les
@@ -98,15 +110,13 @@
          -->
       <section class="projet-details">
         <div class="details-description">
-          <h2>Description titre</h2>
+          <h2>Processus</h2>
 
           <p>
             Description du processus de création du projet. Cette section peut
             servir à expliquer les recherches, les expérimentations et les
             décisions prises pendant la réalisation.
           </p>
-
-          <h3>Description titre</h3>
         </div>
 
         <div class="details-galerie">
@@ -135,7 +145,7 @@
              AUTRES / DIFFÉRENTS PROJETS
          -->
       <section class="autres-projets">
-        <h2>Différents projets</h2>
+        <h2>Galerie Photo</h2>
 
         <div class="autres-projets-contenu">
           <div class="autres-projets-description">

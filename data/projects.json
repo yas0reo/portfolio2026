@@ -4,6 +4,7 @@
     "title": "Matir-x",
     "couleur": "vert",
     "lien": "./projet.html?projet=mati-r",
+    "palette": ["#002B5C", "#008E2A", "#C96C00", "#760014", "#050505"],
     "apercu": "./assets/images/projets/matir-x/IMG_0281.jpg",
     "hero": "./assets/images/projets/matir-x/IMG_0281.jpg",
     "galerie": [
@@ -17,13 +18,15 @@
     "id": "paysage",
     "title": "Paysage",
     "couleur": "mauve",
-    "lien": "./projet.html?projet=paysage"
+    "lien": "./projet.html?projet=paysage",
+    "palette": ["#452A72", "#7A4AA5", "#A34DE0", "#D8AFE9", "#FFFFFF"]
   },
   {
     "id": "montage-rouge",
     "title": "Echoes",
     "couleur": "rouge",
     "lien": "./projet.html?projet=montage-rouge",
+    "palette": ["#870000", "#C90007", "#C94718", "#D86A00", "#FFFFFF"],
     "apercu": "./assets/images/projets/echoes/IMG_0199.PNG",
     "description": "Echoes est un projet visuel qui explore les traces, la mémoire et la répétition à travers une série d'images.",
     "hero": "./assets/images/projets/echoes/IMG_0199.PNG",
@@ -37,8 +40,9 @@
   {
     "id": "space-in-betweenn",
     "title": "Entre les Portaux",
-    "couleur": "jaune",
+    "couleur": "bleu",
     "lien": "./projet.html?projet=space-in-betweenn",
+    "palette": ["#198E98", "#323586", "#7D365E", "#B92B2B", "#AA7831"],
     "apercu": "./assets/images/projets/EntreLesPortaux/IMG_0455.jpg",
     "hero": "./assets/images/projets/EntreLesPortaux/IMG_0455.jpg",
     "galerie": [
@@ -51,8 +55,9 @@
   {
     "id": "corps",
     "title": "Mauvais Chemain",
-    "couleur": "bleu",
+    "couleur": "jaune",
     "lien": "./projet.html?projet=corps",
+    "palette": ["#DFB7A7", "#D3A16F", "#7C2849", "#24242D", "#BDBDCC"],
     "apercu": "./assets/images/projets/mauvaisChemain/IMG_0226.jpg",
     "hero": "./assets/images/projets/mauvaisChemain/IMG_0226.jpg",
     "galerie": [
@@ -61,11 +66,5 @@
       "./assets/images/projets/mauvaisChemain/IMG_0233.jpg",
       "./assets/images/projets/mauvaisChemain/IMG_0234.jpg"
     ]
-  },
-  {
-    "id": "photos",
-    "title": "Photos",
-    "couleur": "rose",
-    "lien": "./projet.html?projet=photos"
   }
 ]

@@ -564,17 +564,44 @@ main {
   text-align: center;
 }
 
+/* Dernière place de la composition : un projet arrivera plus tard. */
+.projets__avenir {
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  margin: 0;
+  padding: 12px;
+  font: clamp(30px, 3.3vw, 48px) / 1 "Just Another Hand", cursive;
+  text-align: center;
+}
+
+.projets__avenir span {
+  display: block;
+  margin-top: 6px;
+  font: 12px / 1.2 Liberation, sans-serif;
+  text-transform: uppercase;
+}
+
 .projets__lien {
   font: clamp(30px, 3.3vw, 48px) / 1 "Just Another Hand", cursive;
   text-decoration: none;
   width: fit-content;
   padding: 12px;
-  background: var(--couleur-fond);
   transition: transform 0.2s, color 0.2s, text-shadow 0.2s;
 }
 
 .projets__lien:nth-child(even) {
   justify-self: end;
+}
+
+/* Les trois derniers noms restent lisibles au-dessus du tracé SVG. */
+.projets__lien:nth-child(n + 4) {
+  position: relative;
+  z-index: 2;
+}
+
+.projets__avenir {
+  z-index: 2;
 }
 
 .interets__mot--vert,
@@ -840,6 +867,11 @@ main {
     font-size: 30px;
     padding: 6px;
     max-width: 145px;
+  }
+  .projets__avenir {
+    right: 0;
+    bottom: 8%;
+    font-size: 30px;
   }
   .projets__apercu {
     left: 38%;

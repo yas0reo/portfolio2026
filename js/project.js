@@ -1,7 +1,8 @@
 // Les éléments de la page détail à remplir avec les données du projet.
 const message = document.querySelector("#projet-message");
+const hero = document.querySelector(".projet-hero");
 const titrePage = document.querySelector(".projet-hero h1");
-const imageHero = document.querySelector(".projet-hero-media img");
+const lienVideo = document.querySelector("#projet-video");
 const titrePresentation = document.querySelector(".projet-presentation > h2");
 const titreDescription = document.querySelector(".presentation-description h3");
 const paragraphesDescription = document.querySelectorAll(
@@ -14,6 +15,7 @@ const imageCarrousel = document.querySelector(".carrousel-image img");
 const miniatures = document.querySelector(".carrousel-miniatures");
 const precedent = document.querySelector(".carrousel-precedent");
 const suivant = document.querySelector(".carrousel-suivant");
+const couleursPalette = document.querySelectorAll(".palette-couleurs .couleur");
 
 function definirImage(image, source, texteAlternatif) {
   if (!image) return;
@@ -26,6 +28,41 @@ function definirImage(image, source, texteAlternatif) {
 
   image.src = source;
   image.alt = texteAlternatif;
+}
+
+// L'image principale devient le fond de la première section.
+function definirFondHero(source) {
+  if (!hero) return;
+
+  hero.style.backgroundImage = source ? `url("${source}")` : "none";
+}
+
+// Le bouton Play est visible seulement quand un lien YouTube existe.
+function definirLienVideo(video, titre) {
+  if (!lienVideo) return;
+
+  if (!video) {
+    lienVideo.hidden = true;
+    return;
+  }
+
+  lienVideo.href = video;
+  lienVideo.setAttribute("aria-label", `Voir la vidéo du projet ${titre}`);
+  lienVideo.hidden = false;
+}
+
+// Affiche le code hexadécimal sous chaque cercle de la palette.
+function afficherPalette(palette) {
+  couleursPalette.forEach((couleur, index) => {
+    const hex = palette[index];
+    const cercle = couleur.querySelector(".couleur-apercu");
+    const nom = couleur.querySelector("p");
+
+    if (!hex || !cercle || !nom) return;
+
+    cercle.style.backgroundColor = hex;
+    nom.textContent = hex;
+  });
 }
 
 function afficherGalerie(images, titre) {
@@ -67,7 +104,7 @@ function afficherCarrousel(images, titre) {
   }
 
   miniatures.replaceChildren(
-    ...images.map((source, index) => {
+    ...images.slice(0, 3).map((source, index) => {
       const bouton = document.createElement("button");
       const image = document.createElement("img");
 
@@ -92,6 +129,7 @@ function afficherProjet(projet) {
     projet.description || "Les détails de ce projet seront ajoutés bientôt.";
 
   document.title = `${projet.title} | Portfolio`;
+  document.body.dataset.couleur = projet.couleur;
   titrePage.textContent = projet.title;
   titrePresentation.textContent = projet.title;
   titreDescription.textContent = projet.title;
@@ -99,7 +137,9 @@ function afficherProjet(projet) {
     paragraphe.textContent = index === 0 ? description : "";
   });
 
-  definirImage(imageHero, projet.hero || projet.apercu, projet.title);
+  definirFondHero(projet.hero || projet.apercu);
+  definirLienVideo(projet.video, projet.title);
+  afficherPalette(projet.palette || []);
   definirImage(imagePresentation, images[0], `${projet.title} — aperçu`);
   definirImage(imageDescription, images[1], `${projet.title} — détail`);
   afficherGalerie(images, projet.title);

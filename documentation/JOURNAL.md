@@ -98,7 +98,9 @@ retour sur javascript,
 PROMPT: dans skills et expertise, rajoute une petite animation pour les icones de logiciels lorsqu'on scroll et garde l'animation en train de bouger
 
 ANSWER: ![Getting Started](/assets/images/IApromptsANSWER/cours5.png)
+
 PROMPT: fait en sorte que mes images (illustrations) et mon texte d'introdiction slide in un apres l'autre.
+
 ANSWER: ![Getting Started](/assets/images/IApromptsANSWER/cours52.png)
 
 ## **_COURS 6.1_**

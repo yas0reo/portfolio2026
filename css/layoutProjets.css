@@ -41,6 +41,12 @@ button {
   --blanc: #ffffff;
   --noir: #111111;
 
+  --palette-1: #d6d6d6;
+  --palette-2: #d6d6d6;
+  --palette-3: #d6d6d6;
+  --palette-4: #d6d6d6;
+  --palette-5: #d6d6d6;
+
   --largeur-contenu: 1200px;
 }
 
@@ -51,7 +57,11 @@ button {
 .projet-hero {
   min-height: 600px;
   background-color: var(--gris-fonce);
+  background-position: center;
+  background-size: cover;
 
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,18 +69,99 @@ button {
   padding: 65px 20px 100px;
 }
 
+.projet-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: rgb(50 50 50 / 55%);
+}
+
+/* La couleur vient de la propriété "couleur" dans projects.json. */
+body[data-couleur="vert"] {
+  background-color: #c6d9b7;
+  --gris-clair: #367f42;
+  --gris-moyen: #2e456c;
+  --gris-fonce: #73141e;
+  --palette-1: #002b5c;
+  --palette-2: #008e2a;
+  --palette-3: #c96c00;
+  --palette-4: #760014;
+  --palette-5: #050505;
+}
+
+body[data-couleur="mauve"] {
+  background-color: #a34de0;
+  --gris-clair: #d8afe9;
+  --gris-moyen: #ae6bd2;
+  --gris-fonce: #63308c;
+}
+
+body[data-couleur="rouge"] {
+  background-color: #d6a295;
+  --gris-clair: #964646;
+  --gris-moyen: #aa543e;
+  --gris-fonce: #5a0a0a;
+  --palette-1: #870000;
+  --palette-2: #c90007;
+  --palette-3: #c94718;
+  --palette-4: #d86a00;
+  --palette-5: #ffffff;
+}
+
+body[data-couleur="bleu"] {
+  background-color: #ceeef0;
+  --gris-clair: #aa9170;
+  --gris-moyen: #895c8d;
+  --gris-fonce: #198e98;
+  --palette-1: #198e98;
+  --palette-2: #323586;
+  --palette-3: #7d365e;
+  --palette-4: #b92b2b;
+  --palette-5: #aa7831;
+}
+
+body[data-couleur="jaune"] {
+  background-color: #f9dcbe;
+  --gris-clair: #9d99a3;
+  --gris-moyen: #b99383;
+  --gris-fonce: #7c2849;
+  --palette-1: #dfb7a7;
+  --palette-2: #d3a16f;
+  --palette-3: #7c2849;
+  --palette-4: #24242d;
+  --palette-5: #bdbdcc;
+}
+
 .projet-hero h1 {
-  font-size: 2.3rem;
+  color: var(--blanc);
+  font-size: clamp(3.5rem, 9vw, 8rem);
   font-weight: 500;
+  line-height: 0.9;
   text-transform: uppercase;
+  text-align: center;
   margin-bottom: 40px;
 }
 
-.projet-hero-media {
-  width: min(420px, 80%);
-  height: 330px;
-  background-color: var(--gris-clair);
-  overflow: hidden;
+.projet-hero__video {
+  display: grid;
+  place-items: center;
+  width: 74px;
+  height: 58px;
+  margin: auto 0;
+  border: 2px solid var(--blanc);
+  border-radius: 4px;
+  color: var(--blanc);
+  background: rgb(0 0 0 / 45%);
+  font-size: 28px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.projet-hero__video:hover,
+.projet-hero__video:focus-visible {
+  background-color: rgb(0 0 0 / 70%);
+  transform: scale(1.08);
 }
 
 /* =====================================================
@@ -116,7 +207,7 @@ button {
   position: absolute;
 
   left: 6%;
-  right: -6%;
+  right: calc((100vw - 100%) / -2);
   bottom: -40px;
 
   height: 250px;
@@ -132,10 +223,31 @@ button {
   position: relative;
   z-index: 1;
 
-  height: 350px;
+  min-height: 350px;
 
-  background-color: var(--gris-fonce);
-  overflow: hidden;
+  background-color: var(--gris-clair);
+  padding: 0 30px 30px;
+}
+
+.presentation-image > img {
+  display: block;
+  width: calc(100% + 60px);
+  height: 350px;
+  margin-bottom: 24px;
+  margin-left: -30px;
+  object-fit: cover;
+}
+
+.presentation-image h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.presentation-image p {
+  max-width: 470px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
 }
 
 /* Bloc droite */
@@ -144,36 +256,23 @@ button {
   position: relative;
   z-index: 1;
 
-  height: 350px;
+  min-height: 350px;
 
-  background-color: var(--gris-fonce);
+  background-color: var(--gris-clair);
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  padding: 0 30px 30px;
 
-  padding: 30px;
-
-  text-align: right;
-  overflow: hidden;
+  text-align: left;
 }
 
-/*
-   Ton HTML contient une image dans ce bloc.
-   Elle sert d'arrière-plan visuel.
-*/
-
 .presentation-description > img {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
+  display: block;
+  width: calc(100% + 60px);
+  height: 350px;
+  margin-left: -30px;
+  margin-bottom: 24px;
 
   object-fit: cover;
-
-  z-index: -1;
 }
 
 .presentation-description h3 {
@@ -233,27 +332,24 @@ button {
   font-size: 0.85rem;
 }
 
-/* Couleurs temporaires
-   Tu pourras remplacer ces valeurs pour chaque projet */
-
 .couleur-1 {
-  background-color: #d6d6d6;
+  background-color: var(--palette-1);
 }
 
 .couleur-2 {
-  background-color: #d6d6d6;
+  background-color: var(--palette-2);
 }
 
 .couleur-3 {
-  background-color: #d6d6d6;
+  background-color: var(--palette-3);
 }
 
 .couleur-4 {
-  background-color: #d6d6d6;
+  background-color: var(--palette-4);
 }
 
 .couleur-5 {
-  background-color: #d6d6d6;
+  background-color: var(--palette-5);
 }
 
 /* =====================================================
@@ -261,8 +357,8 @@ button {
 ===================================================== */
 
 .projet-details {
-  width: min(100%, 1300px);
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 
   padding: 0 0 110px;
 }
@@ -309,7 +405,7 @@ button {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 
-  padding-top: 300px;
+  padding-top: 100px;
 }
 
 .details-galerie figure {
@@ -321,8 +417,6 @@ button {
 
   overflow: hidden;
 }
-
-/* Grande image en haut à droite */
 
 .details-galerie .image-principale {
   position: absolute;
@@ -353,8 +447,8 @@ button {
 /* Contenu principal */
 
 .autres-projets-contenu {
-  width: min(100%, 1300px);
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 
   display: grid;
   grid-template-columns: 55% 45%;
@@ -371,7 +465,7 @@ button {
 
   padding: 45px 70px;
 
-  text-align: center;
+  text-align: right;
 
   display: flex;
   flex-direction: column;
@@ -382,13 +476,15 @@ button {
   text-transform: uppercase;
   font-size: 1rem;
   margin-bottom: 20px;
+  text-align: right;
 }
 
 .autres-projets-description p {
   max-width: 520px;
-  margin: 0 auto;
+  margin: 0 0 0 auto;
 
   font-size: 0.95rem;
+  text-align: right;
 }
 
 /* =====================================================
@@ -444,7 +540,7 @@ button {
 
   padding: 22px 55px;
 
-  background-color: var(--gris-moyen);
+  background-color: var(--gris-fonce);
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
