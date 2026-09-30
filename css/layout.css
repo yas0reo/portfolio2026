@@ -8,8 +8,92 @@ main {
   margin: 0 3.5% 120px;
 }
 
-.hero img {
-  width: 100%;
+.hero__illustration {
+  position: relative;
+  min-height: clamp(460px, 57vw, 760px);
+}
+
+.hero__personnage {
+  position: absolute;
+  width: clamp(150px, 28vw, 400px);
+  height: auto;
+  object-fit: contain;
+}
+
+/* Les dessins entrent depuis le côté où ils sont placés. */
+.hero--anime .hero__personnage {
+  opacity: 0;
+  transition: opacity 5s ease, transform 5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero--anime .hero__personnage--haut-gauche,
+.hero--anime .hero__personnage--bas-gauche {
+  transform: translateX(-120px);
+}
+
+.hero--anime .hero__personnage--haut-droite,
+.hero--anime .hero__personnage--bas-droite {
+  transform: translateX(120px);
+}
+
+.hero--anime.is-visible .hero__personnage {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero--anime .hero__personnage--haut-gauche {
+  transition-delay: 0.6s;
+}
+.hero--anime .hero__personnage--haut-droite {
+  transition-delay: 1s;
+}
+.hero--anime .hero__personnage--bas-gauche {
+  transition-delay: 1.4s;
+}
+.hero--anime .hero__personnage--bas-droite {
+  transition-delay: 1.8s;
+}
+
+.hero__personnage--haut-gauche {
+  top: 18%;
+  left: 18%;
+  width: clamp(130px, 20vw, 285px);
+}
+
+.hero__personnage--haut-droite {
+  top: 2%;
+  right: 2%;
+}
+
+.hero__personnage--bas-gauche {
+  bottom: 2%;
+  left: 1%;
+}
+
+.hero__personnage--bas-droite {
+  right: 1%;
+  bottom: 2%;
+}
+
+.hero__texte {
+  position: absolute;
+  top: 43%;
+  right: 4%;
+  width: min(58%, 760px);
+  margin: 0;
+  font: clamp(52px, 7vw, 110px) / 0.95 "Just Another Hand", cursive;
+  text-align: center;
+}
+
+.hero--anime .hero__texte {
+  opacity: 0;
+  transform: translateX(120px);
+  transition: opacity 5s ease, transform 5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero--anime.is-visible .hero__texte {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* À propos */
@@ -193,15 +277,102 @@ main {
   font-size: 12px;
 }
 
+/* L'animation est activée seulement si JavaScript est disponible. */
+.skills--anime .logiciel {
+  opacity: 0;
+  transform: translateY(24px) rotate(-3deg) scale(0.92);
+  transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.skills--anime.is-visible .logiciel {
+  opacity: 1;
+  transform: translateY(0) rotate(0) scale(1);
+}
+
+.skills--anime .logiciel:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.skills--anime .logiciel:nth-child(2) {
+  transition-delay: 0.12s;
+}
+.skills--anime .logiciel:nth-child(3) {
+  transition-delay: 0.19s;
+}
+.skills--anime .logiciel:nth-child(4) {
+  transition-delay: 0.26s;
+}
+.skills--anime .logiciel:nth-child(5) {
+  transition-delay: 0.33s;
+}
+.skills--anime .logiciel:nth-child(6) {
+  transition-delay: 0.4s;
+}
+.skills--anime .logiciel:nth-child(7) {
+  transition-delay: 0.47s;
+}
+.skills--anime .logiciel:nth-child(8) {
+  transition-delay: 0.54s;
+}
+
 .logiciel__icone {
   width: 65px;
   height: 65px;
   object-fit: contain;
-  transition: transform 0.22s ease;
+  transition: scale 0.22s ease;
+}
+
+/* Après son arrivée, chaque icône continue à flotter doucement. */
+.skills--anime.is-visible .logiciel__icone {
+  animation: icone-flottante 2.2s ease-in-out infinite alternate;
+}
+
+.skills--anime.is-visible .logiciel:nth-child(2) .logiciel__icone {
+  animation-delay: -0.35s;
+}
+.skills--anime.is-visible .logiciel:nth-child(3) .logiciel__icone {
+  animation-delay: -0.7s;
+}
+.skills--anime.is-visible .logiciel:nth-child(4) .logiciel__icone {
+  animation-delay: -1.05s;
+}
+.skills--anime.is-visible .logiciel:nth-child(5) .logiciel__icone {
+  animation-delay: -1.4s;
+}
+.skills--anime.is-visible .logiciel:nth-child(6) .logiciel__icone {
+  animation-delay: -1.75s;
+}
+.skills--anime.is-visible .logiciel:nth-child(7) .logiciel__icone {
+  animation-delay: -2.1s;
+}
+.skills--anime.is-visible .logiciel:nth-child(8) .logiciel__icone {
+  animation-delay: -2.45s;
+}
+
+@keyframes icone-flottante {
+  from {
+    transform: translateY(-14px) rotate(-12deg);
+  }
+  to {
+    transform: translateY(15px) rotate(12deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero--anime .hero__personnage,
+  .hero--anime .hero__texte,
+  .skills--anime .logiciel {
+    opacity: 1;
+    transform: none;
+  }
+
+  .skills--anime.is-visible .logiciel__icone {
+    animation: none;
+  }
 }
 
 .logiciel__nom {
   position: absolute;
+  z-index: 2;
   top: calc(100% + 12px);
   left: 50%;
   width: max-content;
@@ -216,11 +387,12 @@ main {
 }
 
 .logiciel:is(:hover, :focus) {
-  z-index: 1;
+  z-index: 5;
 }
 
 .logiciel:is(:hover, :focus) .logiciel__icone {
-  transform: scale(1.15);
+  scale: 1.15;
+  animation-play-state: paused;
 }
 
 .logiciel:is(:hover, :focus) .logiciel__nom {
@@ -385,6 +557,13 @@ main {
   align-items: center;
 }
 
+.projets__message {
+  grid-column: 1 / -1;
+  margin: 0;
+  font: 36px / 1 "Just Another Hand", cursive;
+  text-align: center;
+}
+
 .projets__lien {
   font: clamp(30px, 3.3vw, 48px) / 1 "Just Another Hand", cursive;
   text-decoration: none;
@@ -508,9 +687,32 @@ main {
   .hero {
     margin: 45px 0 85px;
   }
-  .hero img {
-    min-height: 270px;
-    object-fit: cover;
+  .hero__illustration {
+    min-height: 470px;
+  }
+  .hero__personnage {
+    width: 45%;
+  }
+  .hero__personnage--haut-gauche {
+    top: 16%;
+    left: 11%;
+    width: 35%;
+  }
+  .hero__personnage--haut-droite {
+    top: 2%;
+    right: 1%;
+  }
+  .hero__personnage--bas-gauche {
+    left: 0;
+  }
+  .hero__personnage--bas-droite {
+    right: 0;
+  }
+  .hero__texte {
+    top: 40%;
+    right: 2%;
+    width: 64%;
+    font-size: clamp(42px, 11vw, 62px);
   }
   .apropos {
     display: flex;

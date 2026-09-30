@@ -1,0 +1,71 @@
+[
+  {
+    "id": "mati-r",
+    "title": "Matir-x",
+    "couleur": "vert",
+    "lien": "./projet.html?projet=mati-r",
+    "apercu": "./assets/images/projets/matir-x/IMG_0281.jpg",
+    "hero": "./assets/images/projets/matir-x/IMG_0281.jpg",
+    "galerie": [
+      "./assets/images/projets/matir-x/IMG_0282.jpg",
+      "./assets/images/projets/matir-x/IMG_0286.jpg",
+      "./assets/images/projets/matir-x/IMG_0287.jpg",
+      "./assets/images/projets/matir-x/IMG_0288.jpg"
+    ]
+  },
+  {
+    "id": "paysage",
+    "title": "Paysage",
+    "couleur": "mauve",
+    "lien": "./projet.html?projet=paysage"
+  },
+  {
+    "id": "montage-rouge",
+    "title": "Echoes",
+    "couleur": "rouge",
+    "lien": "./projet.html?projet=montage-rouge",
+    "apercu": "./assets/images/projets/echoes/IMG_0199.PNG",
+    "description": "Echoes est un projet visuel qui explore les traces, la mémoire et la répétition à travers une série d'images.",
+    "hero": "./assets/images/projets/echoes/IMG_0199.PNG",
+    "galerie": [
+      "./assets/images/projets/echoes/IMG_0201.PNG",
+      "./assets/images/projets/echoes/IMG_0203.PNG",
+      "./assets/images/projets/echoes/IMG_0204.PNG",
+      "./assets/images/projets/echoes/IMG_0206.PNG"
+    ]
+  },
+  {
+    "id": "space-in-betweenn",
+    "title": "Entre les Portaux",
+    "couleur": "jaune",
+    "lien": "./projet.html?projet=space-in-betweenn",
+    "apercu": "./assets/images/projets/EntreLesPortaux/IMG_0455.jpg",
+    "hero": "./assets/images/projets/EntreLesPortaux/IMG_0455.jpg",
+    "galerie": [
+      "./assets/images/projets/EntreLesPortaux/IMG_0456.jpg",
+      "./assets/images/projets/EntreLesPortaux/IMG_0457.jpg",
+      "./assets/images/projets/EntreLesPortaux/IMG_0458.jpg",
+      "./assets/images/projets/EntreLesPortaux/IMG_0459.jpg"
+    ]
+  },
+  {
+    "id": "corps",
+    "title": "Mauvais Chemain",
+    "couleur": "bleu",
+    "lien": "./projet.html?projet=corps",
+    "apercu": "./assets/images/projets/mauvaisChemain/IMG_0226.jpg",
+    "hero": "./assets/images/projets/mauvaisChemain/IMG_0226.jpg",
+    "galerie": [
+      "./assets/images/projets/mauvaisChemain/IMG_0227.jpg",
+      "./assets/images/projets/mauvaisChemain/IMG_0228.jpg",
+      "./assets/images/projets/mauvaisChemain/IMG_0233.jpg",
+      "./assets/images/projets/mauvaisChemain/IMG_0234.jpg"
+    ]
+  },
+  {
+    "id": "photos",
+    "title": "Photos",
+    "couleur": "rose",
+    "lien": "./projet.html?projet=photos"
+  }
+]

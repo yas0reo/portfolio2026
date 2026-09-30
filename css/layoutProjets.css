@@ -1,0 +1,518 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #111111;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+button {
+  font: inherit;
+}
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+  --gris-fonce: #a3a1a1;
+  --gris-moyen: #c7c7c7;
+  --gris-clair: #dedede;
+  --blanc: #ffffff;
+  --noir: #111111;
+
+  --largeur-contenu: 1200px;
+}
+
+/* =====================================================
+   HERO DU PROJET
+===================================================== */
+
+.projet-hero {
+  min-height: 600px;
+  background-color: var(--gris-fonce);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 65px 20px 100px;
+}
+
+.projet-hero h1 {
+  font-size: 2.3rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.projet-hero-media {
+  width: min(420px, 80%);
+  height: 330px;
+  background-color: var(--gris-clair);
+  overflow: hidden;
+}
+
+/* =====================================================
+   TITRES DE SECTION
+===================================================== */
+
+.projet-presentation > h2,
+.projet-palette > h2,
+.autres-projets > h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* =====================================================
+   PRÉSENTATION DU PROJET
+===================================================== */
+
+.projet-presentation {
+  padding: 65px 0 90px;
+}
+
+.projet-presentation > h2 {
+  margin-bottom: 30px;
+}
+
+.presentation-contenu {
+  position: relative;
+
+  width: min(92%, var(--largeur-contenu));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Bloc gris qui passe derrière les deux images */
+
+.presentation-contenu::after {
+  content: "";
+  position: absolute;
+
+  left: 6%;
+  right: -6%;
+  bottom: -40px;
+
+  height: 250px;
+
+  background-color: var(--gris-clair);
+
+  z-index: 0;
+}
+
+/* Image gauche */
+
+.presentation-image {
+  position: relative;
+  z-index: 1;
+
+  height: 350px;
+
+  background-color: var(--gris-fonce);
+  overflow: hidden;
+}
+
+/* Bloc droite */
+
+.presentation-description {
+  position: relative;
+  z-index: 1;
+
+  height: 350px;
+
+  background-color: var(--gris-fonce);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  padding: 30px;
+
+  text-align: right;
+  overflow: hidden;
+}
+
+/*
+   Ton HTML contient une image dans ce bloc.
+   Elle sert d'arrière-plan visuel.
+*/
+
+.presentation-description > img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: -1;
+}
+
+.presentation-description h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.presentation-description p {
+  max-width: 470px;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+/* =====================================================
+   PALETTE DE COULEURS
+===================================================== */
+
+.projet-palette {
+  padding: 90px 20px 100px;
+}
+
+.projet-palette h2 {
+  margin-bottom: 50px;
+}
+
+.palette-couleurs {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 30px;
+}
+
+.couleur {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.couleur-apercu {
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  background-color: var(--gris-clair);
+}
+
+.couleur p {
+  margin-top: 22px;
+  font-size: 0.85rem;
+}
+
+/* Couleurs temporaires
+   Tu pourras remplacer ces valeurs pour chaque projet */
+
+.couleur-1 {
+  background-color: #d6d6d6;
+}
+
+.couleur-2 {
+  background-color: #d6d6d6;
+}
+
+.couleur-3 {
+  background-color: #d6d6d6;
+}
+
+.couleur-4 {
+  background-color: #d6d6d6;
+}
+
+.couleur-5 {
+  background-color: #d6d6d6;
+}
+
+/* =====================================================
+   DÉTAILS / PROCESSUS
+===================================================== */
+
+.projet-details {
+  width: min(100%, 1300px);
+  margin: 0 auto;
+
+  padding: 0 0 110px;
+}
+
+/* Description */
+
+.details-description {
+  width: 87%;
+  min-height: 250px;
+
+  padding: 45px 70px;
+
+  background-color: var(--gris-moyen);
+}
+
+.details-description h2,
+.details-description h3 {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.details-description h2 {
+  margin-bottom: 15px;
+}
+
+.details-description h3 {
+  margin-top: 15px;
+}
+
+.details-description p {
+  max-width: 530px;
+  font-size: 0.95rem;
+}
+
+/* Galerie */
+
+.details-galerie {
+  position: relative;
+
+  width: 90%;
+  margin: -15px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+
+  padding-top: 300px;
+}
+
+.details-galerie figure {
+  height: 250px;
+
+  margin: 0;
+
+  background-color: var(--gris-fonce);
+
+  overflow: hidden;
+}
+
+/* Grande image en haut à droite */
+
+.details-galerie .image-principale {
+  position: absolute;
+
+  top: -220px;
+  right: 0;
+
+  width: 38%;
+  height: 300px;
+
+  z-index: 2;
+}
+
+/* =====================================================
+   AUTRES / DIFFÉRENTS PROJETS
+===================================================== */
+
+.autres-projets {
+  padding: 0 0 170px;
+}
+
+.autres-projets > h2 {
+  margin-bottom: 45px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Contenu principal */
+
+.autres-projets-contenu {
+  width: min(100%, 1300px);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 55% 45%;
+
+  align-items: center;
+}
+
+/* Description gauche */
+
+.autres-projets-description {
+  min-height: 280px;
+
+  background-color: var(--gris-fonce);
+
+  padding: 45px 70px;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.autres-projets-description h3 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.autres-projets-description p {
+  max-width: 520px;
+  margin: 0 auto;
+
+  font-size: 0.95rem;
+}
+
+/* =====================================================
+   CARROUSEL
+===================================================== */
+
+.carrousel-projets {
+  display: grid;
+
+  grid-template-columns: 60px 1fr 60px;
+
+  align-items: center;
+}
+
+.carrousel-image {
+  height: 390px;
+
+  background-color: var(--gris-clair);
+
+  overflow: hidden;
+}
+
+/* Flèches */
+
+.carrousel-projets button {
+  border: none;
+  background: transparent;
+
+  font-size: 3.2rem;
+  color: var(--gris-moyen);
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.carrousel-projets button:hover {
+  transform: scale(1.15);
+  color: var(--noir);
+}
+
+/* =====================================================
+   MINIATURES DU CARROUSEL
+===================================================== */
+
+.carrousel-miniatures {
+  position: relative;
+
+  width: 70%;
+  max-width: 900px;
+
+  margin: -65px 0 0 5%;
+
+  padding: 22px 55px;
+
+  background-color: var(--gris-moyen);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 70px;
+
+  z-index: 5;
+}
+
+.carrousel-miniatures button {
+  border: none;
+  padding: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.carrousel-miniatures img {
+  height: 160px;
+
+  background-color: var(--gris-clair);
+
+  object-fit: cover;
+
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.carrousel-miniatures button:hover img {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+  background-color: var(--gris-clair);
+
+  border-top: 1px dashed #aaa;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 20px max(7%, 25px);
+
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: var(--noir);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 18px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

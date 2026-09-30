@@ -76,9 +76,11 @@ planification.md !!<br>
 commencer le protfolio html/css
 essaie de pomodoro (des sprints de travail minuté et entourée de VRAIS pauses..)
 
+- commencer et avancer le plus posssible dans le code
+
 ## **_COURS 5.1_**
 
-continuer le portfolio html/css
+pomodoro: continuer en avancer le portfolio html/css
 
 PROMPT: ![Getting Started](/assets/images/IApromptsANSWER/web.png)
 
@@ -90,3 +92,19 @@ PROMPT: dans la section "quelques projets biens aimés" fait en sorte que le rec
 ANSWER: ![Getting Started](/assets/images/IApromptsANSWER/web3.png)
 
 ## **_COURS 5.2_**
+
+retour sur javascript,
+
+PROMPT: dans skills et expertise, rajoute une petite animation pour les icones de logiciels lorsqu'on scroll et garde l'animation en train de bouger
+
+ANSWER: ![Getting Started](/assets/images/IApromptsANSWER/cours5.png)
+PROMPT: fait en sorte que mes images (illustrations) et mon texte d'introdiction slide in un apres l'autre.
+ANSWER: ![Getting Started](/assets/images/IApromptsANSWER/cours52.png)
+
+## **_COURS 6.1_**
+
+pomodoro: sortir tout les images de mes videos pour page projet et faire le côté JSON loadProjects() etc.
+
+PROMPT: crée moi ma source de donnée de base JSON avec un loadProjects() qui fonctionne, un console.log(projects[0].title) qui affiche un titre, ou mespages pourrons etre fait en javascript.
+
+ANSWER: ![Getting Started](/assets/images/IApromptsANSWER/cours6.png)
