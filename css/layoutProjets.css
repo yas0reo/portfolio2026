@@ -1,6 +1,4 @@
-/* =====================================================
-   RESET
-===================================================== */
+/* RESET */
 
 * {
   margin: 0;
@@ -30,9 +28,7 @@ button {
   font: inherit;
 }
 
-/* =====================================================
-   VARIABLES
-===================================================== */
+/* VARIABLES */
 
 :root {
   --gris-fonce: #a3a1a1;
@@ -50,9 +46,7 @@ button {
   --largeur-contenu: 1200px;
 }
 
-/* =====================================================
-   HERO DU PROJET
-===================================================== */
+/*  HERO DU PROJET */
 
 .projet-hero {
   min-height: 600px;
@@ -91,10 +85,15 @@ body[data-couleur="vert"] {
 }
 
 body[data-couleur="mauve"] {
-  background-color: #a34de0;
-  --gris-clair: #d8afe9;
-  --gris-moyen: #ae6bd2;
-  --gris-fonce: #63308c;
+  background-color: #f5e3ff;
+  --gris-clair: #796296;
+  --gris-moyen: #9873a3;
+  --gris-fonce: #7774b0;
+  --palette-1: #595b74;
+  --palette-2: #3c3a61;
+  --palette-3: #450667;
+  --palette-4: #61356e;
+  --palette-5: #7f2b87;
 }
 
 body[data-couleur="rouge"] {
@@ -177,9 +176,7 @@ body[data-couleur="jaune"] {
   font-weight: 600;
 }
 
-/* =====================================================
-   PRÉSENTATION DU PROJET
-===================================================== */
+/* PRÉSENTATION DU PROJET */
 
 .projet-presentation {
   padding: 65px 0 90px;
@@ -287,9 +284,21 @@ body[data-couleur="jaune"] {
   margin-bottom: 8px;
 }
 
-/* =====================================================
-   PALETTE DE COULEURS
-===================================================== */
+.presentation-description p + p {
+  margin-top: 20px;
+}
+
+.presentation-description strong,
+.presentation-description span {
+  display: block;
+}
+
+.presentation-description strong {
+  margin-bottom: 6px;
+}
+
+/* 
+   PALETTE DE COULEURS */
 
 .projet-palette {
   padding: 90px 20px 100px;
@@ -352,9 +361,7 @@ body[data-couleur="jaune"] {
   background-color: var(--palette-5);
 }
 
-/* =====================================================
-   DÉTAILS / PROCESSUS
-===================================================== */
+/*  DÉTAILS / PROCESSUS */
 
 .projet-details {
   width: 100%;
@@ -430,9 +437,8 @@ body[data-couleur="jaune"] {
   z-index: 2;
 }
 
-/* =====================================================
-   AUTRES / DIFFÉRENTS PROJETS
-===================================================== */
+/*
+   AUTRES / DIFFÉRENTS PROJETS */
 
 .autres-projets {
   padding: 0 0 170px;
@@ -487,9 +493,9 @@ body[data-couleur="jaune"] {
   text-align: right;
 }
 
-/* =====================================================
+/* 
    CARROUSEL
-===================================================== */
+ */
 
 .carrousel-projets {
   display: grid;
@@ -526,9 +532,9 @@ body[data-couleur="jaune"] {
   color: var(--noir);
 }
 
-/* =====================================================
+/* 
    MINIATURES DU CARROUSEL
-===================================================== */
+ */
 
 .carrousel-miniatures {
   position: relative;
@@ -574,9 +580,28 @@ body[data-couleur="jaune"] {
   opacity: 0.8;
 }
 
-/* =====================================================
+/* Crédits affichés sous la galerie photo. */
+.credits {
+  width: min(90%, 900px);
+  margin: 55px auto 0;
+  padding: 32px 7%;
+  background-color: var(--gris-clair);
+  text-align: center;
+}
+
+.credits h2 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.credits p {
+  margin: 0;
+}
+
+/* 
    FOOTER
-===================================================== */
+ */
 
 .footer {
   background-color: var(--gris-clair);
@@ -605,6 +630,90 @@ body[data-couleur="jaune"] {
 }
 
 @media (max-width: 768px) {
+  .projet-hero {
+    min-height: 480px;
+    padding: 45px 20px 60px;
+  }
+
+  .presentation-contenu {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .presentation-contenu::after {
+    left: 0;
+    right: 0;
+  }
+
+  .palette-couleurs {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .couleur {
+    flex: 0 0 90px;
+  }
+
+  .couleur-apercu {
+    width: 85px;
+    height: 85px;
+  }
+
+  .details-description {
+    width: 92%;
+    padding: 30px;
+  }
+
+  .details-galerie {
+    width: 92%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding-top: 190px;
+  }
+
+  .details-galerie figure {
+    height: 170px;
+  }
+
+  .details-galerie .image-principale {
+    top: -150px;
+    width: 66%;
+    height: 220px;
+  }
+
+  .autres-projets-contenu {
+    grid-template-columns: 1fr;
+  }
+
+  .autres-projets-description {
+    min-height: auto;
+    padding: 35px 8%;
+  }
+
+  .carrousel-projets {
+    grid-template-columns: 45px 1fr 45px;
+  }
+
+  .carrousel-image {
+    height: 280px;
+  }
+
+  .carrousel-miniatures {
+    width: 90%;
+    margin: 24px auto 0;
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .carrousel-miniatures img {
+    height: 85px;
+  }
+
+  .credits {
+    margin-top: 35px;
+  }
+
   .footer {
     padding: 18px 20px;
     flex-direction: column;

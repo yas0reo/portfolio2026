@@ -22,22 +22,21 @@ Le fichier contiendra notamment :
 
 ### 2. Animations
 
-#### Choix : CSS + Anime.js
+#### Choix : CSS
 
-CSS sera utilisé pour les animations simples :
+CSS est utilisé pour les animations du portfolio :
 
 - hover
 - changements d'opacité
 - transitions
 - transformations légères
-
-Anime.js sera utilisé pour les animations plus créatives.
+- entrée progressive des illustrations et des icônes
 
 ### 3. Structure de Nav.
 
-#### Choix : One-pager + fenêtres modales
+#### Choix : Accueil + pages projet multipages
 
-Le portfolio sera principalement constitué d'une seule page comprenant :
+Le portfolio comprend une page d'accueil avec :
 
 1. Hero
 2. À propos de moi
@@ -49,8 +48,9 @@ Le portfolio sera principalement constitué d'une seule page comprenant :
 
 Le menu permettra de naviguer directement vers les différentes sections.
 
-Lorsqu'un utilisateur sélectionne un projet, une fenêtre modale permettra
-d'afficher davantage d'informations sans quitter la page principale.
+Lorsqu'un utilisateur sélectionne un projet, il ouvre `projet.html` avec
+l'identifiant du projet dans l'adresse. La page détail charge les mêmes
+données JSON pour afficher le contenu, les images, la palette et le carrousel.
 
 ### 4. Hébergement
 

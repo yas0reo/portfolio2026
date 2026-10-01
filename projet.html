@@ -6,8 +6,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
 
-    <title>Nom du projet | Portfolio</title>
+    <title>Projet | Yasmine Onekeo</title>
 
     <link rel="stylesheet" href="css/layoutProjets.css" />
     <script src="./js/data.js" defer></script>
@@ -37,14 +38,11 @@
     <main>
       <!-- PRÉSENTATION DU PROJET -->
       <section class="projet-presentation">
-        <h2>Description titre</h2>
+        <h2>Présentation du projet</h2>
 
         <div class="presentation-contenu">
           <div class="presentation-image">
-            <img
-              src="images/projet/presentation-1.jpg"
-              alt="Présentation du projet"
-            />
+            <img alt="Présentation du projet" />
 
             <div class="presentation-image__texte">
               <h3>Description</h3>
@@ -56,17 +54,10 @@
           </div>
 
           <div class="presentation-description">
-            <img
-              src="images/projet/presentation-2.jpg"
-              alt="Deuxième aperçu du projet"
-            />
+            <img alt="Deuxième aperçu du projet" />
 
-            <h3>Rôle et Lociciels</h3>
-
-            <p>
-              Tu peux également expliquer ton rôle dans le projet, les
-              techniques utilisées et les principaux défis.
-            </p>
+            <p><strong>Rôle</strong><span id="projet-role"></span></p>
+            <p><strong>Logiciels</strong><span id="projet-logiciels"></span></p>
           </div>
         </div>
       </section>
@@ -80,27 +71,27 @@
         <div class="palette-couleurs">
           <div class="couleur">
             <div class="couleur-apercu couleur-1"></div>
-            <p>#000000</p>
+            <p></p>
           </div>
 
           <div class="couleur">
             <div class="couleur-apercu couleur-2"></div>
-            <p>#000000</p>
+            <p></p>
           </div>
 
           <div class="couleur">
             <div class="couleur-apercu couleur-3"></div>
-            <p>#000000</p>
+            <p></p>
           </div>
 
           <div class="couleur">
             <div class="couleur-apercu couleur-4"></div>
-            <p>#000000</p>
+            <p></p>
           </div>
 
           <div class="couleur">
             <div class="couleur-apercu couleur-5"></div>
-            <p>#000000</p>
+            <p></p>
           </div>
         </div>
       </section>
@@ -121,22 +112,19 @@
 
         <div class="details-galerie">
           <figure class="image-principale">
-            <img
-              src="images/projet/detail-principal.jpg"
-              alt="Détail principal du projet"
-            />
+            <img alt="Détail principal du projet" />
           </figure>
 
           <figure>
-            <img src="images/projet/detail-1.jpg" alt="Détail du projet" />
+            <img alt="Détail du projet" />
           </figure>
 
           <figure>
-            <img src="images/projet/detail-2.jpg" alt="Détail du projet" />
+            <img alt="Détail du projet" />
           </figure>
 
           <figure>
-            <img src="images/projet/detail-3.jpg" alt="Détail du projet" />
+            <img alt="Détail du projet" />
           </figure>
         </div>
       </section>
@@ -149,7 +137,7 @@
 
         <div class="autres-projets-contenu">
           <div class="autres-projets-description">
-            <h3>Description titre</h3>
+            <h3>Catégorie</h3>
 
             <p>
               Description d'un autre aspect du projet ou présentation d'une
@@ -168,10 +156,7 @@
             </button>
 
             <div class="carrousel-image">
-              <img
-                src="images/projet/carrousel-principal.jpg"
-                alt="Aperçu du projet"
-              />
+              <img alt="Aperçu du projet" />
             </div>
 
             <button
@@ -187,16 +172,22 @@
         <!-- MINIATURES -->
         <div class="carrousel-miniatures">
           <button type="button">
-            <img src="images/projet/miniature-1.jpg" alt="Voir l'image 1" />
+            <img alt="Voir l'image 1" />
           </button>
 
           <button type="button">
-            <img src="images/projet/miniature-2.jpg" alt="Voir l'image 2" />
+            <img alt="Voir l'image 2" />
           </button>
 
           <button type="button">
-            <img src="images/projet/miniature-3.jpg" alt="Voir l'image 3" />
+            <img alt="Voir l'image 3" />
           </button>
+        </div>
+
+        <!-- Les informations sont remplies depuis projects.json. -->
+        <div class="credits">
+          <h2>Crédits et remerciements</h2>
+          <p id="projet-credits"></p>
         </div>
       </section>
     </main>

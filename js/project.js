@@ -4,10 +4,19 @@ const hero = document.querySelector(".projet-hero");
 const titrePage = document.querySelector(".projet-hero h1");
 const lienVideo = document.querySelector("#projet-video");
 const titrePresentation = document.querySelector(".projet-presentation > h2");
-const titreDescription = document.querySelector(".presentation-description h3");
-const paragraphesDescription = document.querySelectorAll(
-  ".presentation-description p",
+const titreImagePresentation = document.querySelector(
+  ".presentation-image__texte h3",
 );
+const texteImagePresentation = document.querySelector(
+  ".presentation-image__texte p",
+);
+const texteRole = document.querySelector("#projet-role");
+const texteLogiciels = document.querySelector("#projet-logiciels");
+const titreProcessus = document.querySelector(".details-description h2");
+const texteProcessus = document.querySelector(".details-description p");
+const titreGalerie = document.querySelector(".autres-projets-description h3");
+const texteGalerie = document.querySelector(".autres-projets-description p");
+const texteCredits = document.querySelector("#projet-credits");
 const imagePresentation = document.querySelector(".presentation-image img");
 const imageDescription = document.querySelector(".presentation-description > img");
 const galerie = document.querySelector(".details-galerie");
@@ -63,6 +72,17 @@ function afficherPalette(palette) {
     cercle.style.backgroundColor = hex;
     nom.textContent = hex;
   });
+}
+
+function afficherCredits(projet) {
+  if (!texteCredits) return;
+
+  if (projet.equipe === "Projet individuel") {
+    texteCredits.textContent = `Projet individuel réalisé dans le cadre du cours ${projet.cours}.`;
+    return;
+  }
+
+  texteCredits.textContent = `Projet réalisé dans le cadre du cours ${projet.cours}. Merci à ${projet.equipe}.`;
 }
 
 function afficherGalerie(images, titre) {
@@ -125,25 +145,38 @@ function afficherCarrousel(images, titre) {
 
 function afficherProjet(projet) {
   const images = projet.galerie || [];
-  const description =
-    projet.description || "Les détails de ce projet seront ajoutés bientôt.";
+  const imagesPresentation = projet.presentation || [];
+  const imagesCarrousel = projet.carrousel || [];
 
   document.title = `${projet.title} | Portfolio`;
   document.body.dataset.couleur = projet.couleur;
   titrePage.textContent = projet.title;
-  titrePresentation.textContent = projet.title;
-  titreDescription.textContent = projet.title;
-  paragraphesDescription.forEach((paragraphe, index) => {
-    paragraphe.textContent = index === 0 ? description : "";
-  });
+  titrePresentation.textContent = projet.descriptionCourte || projet.title;
+  titreImagePresentation.textContent = "Description";
+  texteImagePresentation.textContent = projet.description;
+  texteRole.textContent = projet.role;
+  texteLogiciels.textContent = projet.logiciels;
+  titreProcessus.textContent = "Processus";
+  texteProcessus.textContent = projet.demande;
+  titreGalerie.textContent = projet.categorie;
+  texteGalerie.textContent = projet.realisation;
+  afficherCredits(projet);
 
   definirFondHero(projet.hero || projet.apercu);
   definirLienVideo(projet.video, projet.title);
   afficherPalette(projet.palette || []);
-  definirImage(imagePresentation, images[0], `${projet.title} — aperçu`);
-  definirImage(imageDescription, images[1], `${projet.title} — détail`);
+  definirImage(
+    imagePresentation,
+    imagesPresentation[0],
+    `${projet.title} — aperçu`,
+  );
+  definirImage(
+    imageDescription,
+    imagesPresentation[1],
+    `${projet.title} — détail`,
+  );
   afficherGalerie(images, projet.title);
-  afficherCarrousel(images, projet.title);
+  afficherCarrousel(imagesCarrousel, projet.title);
   message.textContent = "";
 }
 
