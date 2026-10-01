@@ -721,3 +721,175 @@ body[data-couleur="jaune"] {
     gap: 10px;
   }
 }
+
+@media (max-width: 480px) {
+  .projet-hero {
+    min-height: 430px;
+    padding: 35px 16px 45px;
+  }
+
+  .projet-hero h1 {
+    font-size: clamp(3rem, 16vw, 4.5rem);
+  }
+
+  .projet-presentation,
+  .projet-palette {
+    padding-block: 50px;
+  }
+
+  .presentation-contenu {
+    width: 92%;
+  }
+
+  .presentation-image,
+  .presentation-description {
+    padding-inline: 20px;
+  }
+
+  .presentation-image > img,
+  .presentation-description > img {
+    width: calc(100% + 40px);
+    height: 260px;
+    margin-left: -20px;
+  }
+
+  .couleur {
+    flex-basis: 72px;
+  }
+
+  .couleur-apercu {
+    width: 65px;
+    height: 65px;
+  }
+
+  .couleur p {
+    font-size: 0.65rem;
+  }
+
+  .details-description {
+    padding: 25px;
+  }
+
+  .details-galerie {
+    padding-top: 165px;
+  }
+
+  .details-galerie figure {
+    height: 140px;
+  }
+
+  .details-galerie .image-principale {
+    top: -135px;
+    height: 190px;
+    width: 75%;
+  }
+
+  .carrousel-projets {
+    grid-template-columns: 35px 1fr 35px;
+  }
+
+  .carrousel-image {
+    height: 220px;
+  }
+
+  .carrousel-projets button {
+    font-size: 2.4rem;
+  }
+
+  .carrousel-miniatures img {
+    height: 65px;
+  }
+
+  .credits {
+    width: 92%;
+    padding: 25px 7%;
+  }
+}
+
+/* Même layout, agrandi pour les écrans 2560px et plus. */
+@media (min-width: 1800px) {
+  :root {
+    --largeur-contenu: 1800px;
+  }
+
+  .projet-hero {
+    min-height: 900px;
+    padding-block: 90px 140px;
+  }
+
+  .projet-hero h1 {
+    font-size: clamp(7rem, 9vw, 12rem);
+  }
+
+  .projet-hero__video {
+    width: 100px;
+    height: 78px;
+    font-size: 38px;
+  }
+
+  .presentation-image > img,
+  .presentation-description > img {
+    height: 480px;
+  }
+
+  .presentation-image,
+  .presentation-description {
+    min-height: 480px;
+  }
+
+  .presentation-contenu {
+    gap: 60px;
+  }
+
+  .couleur-apercu {
+    width: 190px;
+    height: 190px;
+  }
+
+  .details-description {
+    min-height: 320px;
+    padding: 60px 9%;
+  }
+
+  .details-galerie {
+    max-width: 1750px;
+    padding-top: 380px;
+    gap: 26px;
+  }
+
+  .details-galerie figure {
+    height: 340px;
+  }
+
+  .details-galerie .image-principale {
+    top: -260px;
+    height: 380px;
+  }
+
+  .autres-projets-description {
+    min-height: 360px;
+    padding: 65px 10%;
+  }
+
+  .carrousel-projets {
+    grid-template-columns: 80px 1fr 80px;
+  }
+
+  .carrousel-image {
+    height: 520px;
+  }
+
+  .carrousel-miniatures {
+    max-width: 1200px;
+    padding: 30px 70px;
+  }
+
+  .carrousel-miniatures img {
+    height: 210px;
+  }
+
+  .credits {
+    max-width: 1200px;
+    padding: 45px 9%;
+  }
+}

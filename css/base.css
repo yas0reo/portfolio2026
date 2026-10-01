@@ -35,6 +35,7 @@ body {
   background: var(--couleur-fond);
   font-family: Liberation, Arial, sans-serif;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 img {

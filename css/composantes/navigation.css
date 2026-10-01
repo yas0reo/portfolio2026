@@ -71,15 +71,32 @@
 
 @media (max-width: 420px) {
   .navigation {
-    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
   }
   .navigation__logo {
-    max-width: 85px;
-    line-height: 1;
+    max-width: none;
+    font-size: 28px;
   }
   .navigation__liste {
-    gap: 14px;
+    flex: 0 0 100%;
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
     font-size: 12px;
-    padding-top: 4px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .header {
+    max-width: 2000px;
+  }
+
+  .navigation__logo {
+    font-size: 40px;
+  }
+
+  .navigation__liste {
+    font-size: 16px;
   }
 }

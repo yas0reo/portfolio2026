@@ -915,3 +915,83 @@ main {
     flex-wrap: wrap;
   }
 }
+
+@media (max-width: 480px) {
+  .hero__illustration {
+    min-height: 420px;
+  }
+
+  .apropos__details {
+    grid-template-columns: 1fr;
+  }
+
+  .skills__contenu {
+    height: 440px;
+  }
+
+  .projets__composition {
+    height: 510px;
+  }
+
+  .projets__lien,
+  .projets__avenir {
+    font-size: 26px;
+  }
+}
+
+/* Même composition, avec des proportions adaptées aux très grands écrans. */
+@media (min-width: 1800px) {
+  main {
+    max-width: 2000px;
+  }
+
+  .hero {
+    margin-bottom: 160px;
+  }
+
+  .hero__illustration {
+    min-height: 980px;
+  }
+
+  .hero__personnage {
+    width: min(30vw, 560px);
+  }
+
+  .hero__personnage--haut-gauche {
+    width: min(22vw, 400px);
+  }
+
+  .hero__texte {
+    width: min(60%, 1050px);
+    font-size: clamp(82px, 7vw, 150px);
+  }
+
+  .apropos {
+    margin-bottom: 160px;
+  }
+
+  .apropos__image img {
+    height: 820px;
+  }
+
+  .skills__contenu {
+    height: 610px;
+  }
+
+  .logiciel__icone {
+    width: 82px;
+    height: 82px;
+  }
+
+  .projets__header {
+    height: 280px;
+  }
+
+  .projets__composition {
+    height: 1000px;
+  }
+
+  .contact {
+    margin-bottom: 180px;
+  }
+}

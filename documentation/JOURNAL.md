@@ -110,3 +110,7 @@ pomodoro: sortir tout les images de mes videos pour page projet et faire le côt
 PROMPT: crée moi ma source de donnée de base JSON avec un loadProjects() qui fonctionne, un console.log(projects[0].title) qui affiche un titre, ou mespages pourrons etre fait en javascript.
 
 ANSWER: ![Getting Started](/assets/images/IApromptsANSWER/cours6.png)
+
+PROMPT: make it responside with any type of screens (vh) without changing the layout at all (big screen to laptop to ipad to iphone)
+
+ANSWER: ![Getting Started](/assets/images/IApromptsANSWER/cours62.png)
