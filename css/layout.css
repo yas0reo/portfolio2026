@@ -640,7 +640,8 @@ main {
   position: relative;
   margin: 0 0 140px 3.5%;
   display: grid;
-  grid-template-columns: 60% 40%;
+  /* Le texte commence près du portrait, sans le recouvrir. */
+  grid-template-columns: 54% 46%;
   padding-bottom: 90px;
   align-items: end;
 }
@@ -662,24 +663,22 @@ main {
 }
 
 .contact__portrait {
-  width: 100%;
+  width: 76%;
+  transform: translateX(25px);
 }
 
 .contact__voiture {
   position: absolute;
-  width: 33%;
+  width: 29%;
   left: 0;
   bottom: -30px;
 }
 
-.contact figcaption {
-  font: 25px "Just Another Hand", cursive;
-  margin: 10px 0 0 18%;
-}
-
 .contact__contenu {
   position: relative;
-  padding: 0 20px 35px;
+  padding: 0 20px 35px 0;
+  /* Rapproche le titre et les liens du portrait. */
+  transform: translateX(-80px);
 }
 
 .contact h2 {
@@ -896,13 +895,10 @@ main {
     width: 40%;
     bottom: 5px;
   }
-  .contact figcaption {
-    margin-left: 20%;
-    font-size: 22px;
-  }
   .contact__contenu {
     margin: 30px 0 0 20%;
     padding: 0 15px;
+    transform: none;
   }
   .contact h2 {
     margin-bottom: 14px;
