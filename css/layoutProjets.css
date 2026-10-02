@@ -646,6 +646,8 @@ body[data-couleur="jaune"] {
   }
 
   .palette-couleurs {
+    /* Trois couleurs en haut, puis deux couleurs centrées dessous. */
+    width: min(310px, 100%);
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
@@ -669,7 +671,8 @@ body[data-couleur="jaune"] {
     width: 92%;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    padding-top: 190px;
+    margin: 24px auto 0;
+    padding-top: 0;
   }
 
   .details-galerie figure {
@@ -677,9 +680,18 @@ body[data-couleur="jaune"] {
   }
 
   .details-galerie .image-principale {
-    top: -150px;
-    width: 66%;
+    position: static;
+    grid-column: 1 / -1;
+    width: 100%;
     height: 220px;
+  }
+
+  /* La troisième image se place seule, au centre sous l'image principale. */
+  .details-galerie figure:nth-child(3) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 70%;
+    justify-self: center;
   }
 
   .autres-projets-contenu {
@@ -771,7 +783,7 @@ body[data-couleur="jaune"] {
   }
 
   .details-galerie {
-    padding-top: 165px;
+    padding-top: 0;
   }
 
   .details-galerie figure {
@@ -779,9 +791,7 @@ body[data-couleur="jaune"] {
   }
 
   .details-galerie .image-principale {
-    top: -135px;
     height: 190px;
-    width: 75%;
   }
 
   .carrousel-projets {

@@ -48,17 +48,17 @@
     "demande": "Concevoir un concept visuel lié à une proposition audio et l’opérer en temps réel dans TouchDesigner. L’expérience devait comporter une introduction, au moins cinq scènes, des effets abstraits, du hand tracking, un élément 3D animé et une conclusion.",
     "description": "Une immersion visuelle et sonore où des animations 3D évoluent au rythme de la musique et de ses sonorités abstraites.",
     "realisation": "Un univers mauve qui se transforme en temps réel selon le son et les interactions du public.",
-    "apercu": "./assets/images/projets/paysage/sparkle.PNG",
+    "apercu": "./assets/images/projets/paysage/sparkle.png",
     "hero": "./assets/images/projets/paysage/3Dtout.jpg",
     "presentation": [
-      "./assets/images/projets/paysage/sparkle.PNG",
-      "./assets/images/projets/paysage/audio.PNG"
+      "./assets/images/projets/paysage/sparkle.png",
+      "./assets/images/projets/paysage/audio.png"
     ],
     "galerie": [
       "./assets/images/projets/paysage/piano.png",
-      "./assets/images/projets/paysage/lignes.PNG",
-      "./assets/images/projets/paysage/tim.PNG",
-      "./assets/images/projets/paysage/carre.PNG"
+      "./assets/images/projets/paysage/lignes.png",
+      "./assets/images/projets/paysage/tim.png",
+      "./assets/images/projets/paysage/carre.png"
     ],
     "carrousel": [
       "./assets/images/projets/paysage/3Dpiano.jpg",
@@ -149,22 +149,22 @@
     "demande": "Créer une vidéo d’une minute trente sur le corps humain avec au moins 20 plans, principalement en très gros plan, une séquence en mosaïque et un micromontage sonore original.",
     "description": "L’évolution d’une relation amoureuse commence dans le bonheur, puis se détériore à travers les conflits et la détresse émotionnelle. Après la rupture, la protagoniste traverse son chagrin et finit par se libérer de cette relation.",
     "realisation": "Une création sensorielle qui utilise les gros plans, l’accumulation d’images et le son pour raconter une relation qui se défait.",
-    "apercu": "./assets/images/projets/mauvaisChemain/IMG_0226.jpg",
-    "hero": "./assets/images/projets/mauvaisChemain/IMG_0226.jpg",
+    "apercu": "./assets/images/projets/mauvaisChemain/fingers2.jpg",
+    "hero": "./assets/images/projets/mauvaisChemain/eyemanu.jpg",
     "presentation": [
-      "./assets/images/projets/mauvaisChemain/IMG_0227.jpg",
-      "./assets/images/projets/mauvaisChemain/IMG_0228.jpg"
+      "./assets/images/projets/mauvaisChemain/eyeYas.jpg",
+      "./assets/images/projets/mauvaisChemain/hand.jpg"
     ],
     "galerie": [
-      "./assets/images/projets/mauvaisChemain/IMG_0233.jpg",
-      "./assets/images/projets/mauvaisChemain/IMG_0234.jpg",
-      "./assets/images/projets/mauvaisChemain/IMG_0236.jpg",
-      "./assets/images/projets/mauvaisChemain/IMG_0237.jpg"
+      "./assets/images/projets/mauvaisChemain/sideManu.jpg",
+      "./assets/images/projets/mauvaisChemain/handLine.jpg",
+      "./assets/images/projets/mauvaisChemain/sideKissing.jpg",
+      "./assets/images/projets/mauvaisChemain/sideKiss.jpg"
     ],
     "carrousel": [
-      "./assets/images/projets/mauvaisChemain/IMG_0238.jpg",
-      "./assets/images/projets/mauvaisChemain/IMG_0248.jpg",
-      "./assets/images/projets/mauvaisChemain/IMG_0249.jpg"
+      "./assets/images/projets/mauvaisChemain/bCry.jpg",
+      "./assets/images/projets/mauvaisChemain/bLarme.jpg",
+      "./assets/images/projets/mauvaisChemain/bLips.jpg"
     ]
   }
 ]

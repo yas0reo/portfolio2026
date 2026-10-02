@@ -744,23 +744,23 @@ main {
     display: flex;
     flex-direction: column;
     margin: 0 0 95px;
-    position: relative;
-    padding-top: 95px;
+    padding-top: 0;
   }
   .apropos__image {
-    width: 78%;
+    order: 2;
+    width: 58%;
+    margin: 28px auto 0;
   }
   .apropos__image img {
     height: auto;
   }
   .apropos__contenu {
+    order: 1;
     margin: 0;
   }
   .apropos__header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 78%;
+    position: static;
+    width: 100%;
     padding: 18px;
   }
   .apropos__header h2 {
