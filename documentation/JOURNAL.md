@@ -127,6 +127,6 @@ PROMPT: (en rapport au T-31 et T-33) pourquoi mes images ne marche pas lorsque j
 
 ANSWER: ![Getting Started](/assets/images/IApromptsANSWER/cours7.png)
 
-PROMPT: make it responside with any type of screens (vh) without changing the layout at all (big screen to laptop to ipad to iphone)
+PROMPT: donc, sur mon laptop et sur pc (gros écrant) tout mes animation marchent mais lorsque je suis sur mobile, aucune animation ne marche. Explique moi pourquoi cela ne marche pas
 
 ANSWER: ![Getting Started](/assets/images/IApromptsANSWER/cours62.png)

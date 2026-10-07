@@ -294,28 +294,6 @@ main {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .accueil-section--anime {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .interets__ligne {
-    animation: none;
-  }
-  .interets__marquee {
-    overflow-x: auto;
-  }
-  .interets__groupe[aria-hidden="true"] {
-    display: none;
-  }
-
-  .projets__lien {
-    animation: none;
-  }
-}
-
 /* Logiciels et survol */
 .skills {
   margin: 0 4% 135px;
@@ -435,19 +413,6 @@ main {
   }
   to {
     transform: translateY(14px) rotate(12deg);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero--anime .hero__personnage,
-  .hero--anime .hero__texte,
-  .skills--anime .logiciel {
-    opacity: 1;
-    transform: none;
-  }
-
-  .skills--anime.is-visible .logiciel__icone {
-    animation: none;
   }
 }
 

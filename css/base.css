@@ -95,15 +95,3 @@ address {
 .skip-link:focus {
   top: 12px;
 }
-
-/* Respecte le réglage d'accessibilité « Réduire les animations ». */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-  }
-}

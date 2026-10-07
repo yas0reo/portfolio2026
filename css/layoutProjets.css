@@ -226,27 +226,6 @@ button {
   }
 }
 
-/* Respecte le réglage d'accessibilité qui réduit les mouvements. */
-@media (prefers-reduced-motion: reduce) {
-  .projet-hero h1,
-  .projet-hero__video:not([hidden]) {
-    animation: none;
-  }
-
-  .section-projet--anime,
-  .section-projet--anime .details-galerie figure,
-  .section-projet--anime .carrousel-miniatures button,
-  .section-projet--anime .presentation-image,
-  .section-projet--anime .presentation-description,
-  .section-projet--anime .details-description,
-  .section-projet--anime .autres-projets-description,
-  .section-projet--anime .couleur {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
 /* La couleur vient de la propriété "couleur" dans projects.json. */
 body[data-couleur="vert"] {
   background-color: #c6d9b7;

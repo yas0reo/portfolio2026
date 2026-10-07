@@ -11,12 +11,8 @@ const texteApercu = document.querySelector(".projets__apercu-texte");
 function lancerAnimation(section, classe, seuil) {
   if (!section) return;
 
-  // Certaines personnes demandent moins de mouvements dans les réglages du téléphone.
-  const preferePeuDeMouvement = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
-
-  if (preferePeuDeMouvement || !window.IntersectionObserver) {
+  // Si le navigateur ne connaît pas IntersectionObserver, le contenu reste visible.
+  if (!window.IntersectionObserver) {
     section.classList.add("is-visible");
     return;
   }

@@ -157,12 +157,8 @@ function preparerAnimationsPage() {
   const sections = document.querySelectorAll(
     ".projet-presentation, .projet-palette, .projet-details, .autres-projets, .credits",
   );
-  const preferePeuDeMouvement = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches;
-
-  // Si les animations sont réduites ou non prises en charge, le contenu apparaît tout de suite.
-  if (preferePeuDeMouvement || !window.IntersectionObserver) {
+  // Si cette fonction n'est pas prise en charge, le contenu apparaît tout de suite.
+  if (!window.IntersectionObserver) {
     sections.forEach((section) => section.classList.add("est-visible"));
     return;
   }
