@@ -6,19 +6,21 @@
     <meta name="robots" content="noindex, nofollow" />
     <title>Yasmine Onekeo | Portfolio</title>
 
-    <!-- CSS principal -->
+    <!-- Les feuilles CSS sont lues dans cet ordre : couleurs, règles communes, mise en page. -->
     <link rel="stylesheet" href="./css/variables.css" />
     <link rel="stylesheet" href="./css/base.css" />
     <link rel="stylesheet" href="./css/layout.css" />
 
-    <!-- Navigation -->
+    <!-- Le style de la navigation est séparé parce qu'il est réutilisable. -->
     <link rel="stylesheet" href="./css/composantes/navigation.css" />
+    <!-- defer attend la lecture du HTML et respecte l'ordre des trois fichiers. -->
     <script src="./js/data.js" defer></script>
     <script src="./js/components/project-card.js" defer></script>
     <script src="./js/main.js" defer></script>
   </head>
 
   <body>
+    <!-- Visible seulement au clavier : évite de parcourir toute la navigation. -->
     <a class="skip-link" href="#apropos">Aller au contenu</a>
 
     <!-- Navigation principale -->
@@ -160,7 +162,7 @@
               <span class="interets__mot interets__mot--rose">MUSIQUE</span>
             </div>
 
-            <!-- Copie nécessaire au défilement continu -->
+          <!-- Copie du premier groupe : elle rend le défilement continu, sans saut. -->
             <div class="interets__groupe" aria-hidden="true">
               <strong class="interets__mot interets__mot--rouge">JEUX</strong>
               <span class="interets__mot interets__mot--vert"

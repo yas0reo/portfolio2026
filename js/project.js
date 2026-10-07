@@ -1,4 +1,9 @@
-// Les éléments de la page détail à remplir avec les données du projet.
+/*
+  JavaScript de projet.html.
+  Cette page est réutilisée pour tous les projets. Elle lit l'identifiant dans
+  l'adresse (par exemple ?projet=paysage), puis remplit le HTML avec le bon
+  objet trouvé dans projects.json.
+*/
 const message = document.querySelector("#projet-message");
 const hero = document.querySelector(".projet-hero");
 const titrePage = document.querySelector(".projet-hero h1");
@@ -27,6 +32,7 @@ const suivant = document.querySelector(".carrousel-suivant");
 const couleursPalette = document.querySelectorAll(".palette-couleurs .couleur");
 
 function definirImage(image, source, texteAlternatif) {
+  // Une fonction commune évite de répéter ce code pour chaque image.
   if (!image) return;
 
   if (!source) {
@@ -75,6 +81,7 @@ function afficherPalette(palette) {
 }
 
 function afficherCredits(projet) {
+  // Le texte change légèrement lorsqu'il s'agit d'un projet individuel.
   if (!texteCredits) return;
 
   if (projet.equipe === "Projet individuel") {
@@ -88,6 +95,7 @@ function afficherCredits(projet) {
 function afficherGalerie(images, titre) {
   if (!galerie) return;
 
+  // map crée une figure HTML pour chaque chemin d'image dans le tableau.
   galerie.replaceChildren(
     ...images.map((source, index) => {
       const figure = document.createElement("figure");
@@ -111,9 +119,10 @@ function afficherCarrousel(images, titre) {
     return;
   }
 
+  // indexActuel mémorise le numéro de l'image actuellement affichée.
   let indexActuel = 0;
 
-  // Le modulo permet de revenir à la première image après la dernière.
+  // Le modulo (%) permet de revenir à la première image après la dernière.
   function afficherImage(index) {
     indexActuel = (index + images.length) % images.length;
     definirImage(
@@ -144,6 +153,7 @@ function afficherCarrousel(images, titre) {
 }
 
 function afficherProjet(projet) {
+  // || [] veut dire : utiliser un tableau vide si une liste d'images manque.
   const images = projet.galerie || [];
   const imagesPresentation = projet.presentation || [];
   const imagesCarrousel = projet.carrousel || [];
@@ -181,16 +191,19 @@ function afficherProjet(projet) {
 }
 
 async function init() {
+  // URLSearchParams lit le texte après le ? dans une adresse Web.
   // Exemple : projet.html?projet=mati-r donne l'identifiant "mati-r".
   const identifiant = new URLSearchParams(window.location.search).get("projet");
 
   try {
     const projets = await loadProjects();
+    // find retourne le premier projet dont l'id correspond à l'adresse.
     const projet = projets.find((element) => element.id === identifiant);
 
     if (!projet) throw new Error("Projet introuvable.");
     afficherProjet(projet);
   } catch (erreur) {
+    // Une erreur est aussi écrite dans la console pour faciliter le dépannage.
     message.textContent = "Ce projet est indisponible pour le moment.";
     console.error(erreur);
   }

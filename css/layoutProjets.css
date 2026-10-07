@@ -1,4 +1,10 @@
-/* RESET */
+/*
+  Page de détail d'un projet.
+  Le début remet les styles à zéro, puis chaque bloc correspond à une section
+  de projet.html. Les media queries à la fin servent aux petits et grands écrans.
+*/
+
+/* RESET : évite les marges différentes selon le navigateur. */
 
 * {
   margin: 0;

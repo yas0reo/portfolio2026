@@ -1,4 +1,8 @@
-/* Accueil : photographies, aplats gris et typographie manuscrite. */
+/*
+  Page d'accueil.
+  Les classes qui commencent par hero__, apropos__ ou projets__ sont des parties
+  d'une même section. Les règles en bas du fichier adaptent le site au mobile.
+*/
 main {
   max-width: 1440px;
   margin: auto;
@@ -20,9 +24,10 @@ main {
   object-fit: contain;
 }
 
-/* Les dessins entrent depuis le côté où ils sont placés. */
+/* Animation des dessins qui entrent du côté où ils sont placés. */
 .hero--anime .hero__personnage {
   opacity: 0;
+  will-change: transform, opacity;
   transition: opacity 5s ease, transform 5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -88,6 +93,7 @@ main {
 .hero--anime .hero__texte {
   opacity: 0;
   transform: translateX(120px);
+  will-change: transform, opacity;
   transition: opacity 5s ease, transform 5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -137,7 +143,7 @@ main {
 
 .apropos__texte {
   padding: 24px 6% 0 110px;
-  text-align: center;
+  text-align: left;
 }
 
 .apropos__details {
@@ -167,6 +173,7 @@ main {
   text-align: right;
   margin: 0 4% 20px;
 }
+
 /* Deux groupes identiques assurent une boucle sans coupure. */
 .interets__marquee {
   overflow: hidden;
@@ -273,14 +280,15 @@ main {
   position: absolute;
   display: grid;
   justify-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 12px;
 }
 
-/* L'animation est activée seulement si JavaScript est disponible. */
+/* L'animation est activée que si JavaScript est dispo. */
 .skills--anime .logiciel {
   opacity: 0;
   transform: translateY(24px) rotate(-3deg) scale(0.92);
+  will-change: transform, opacity;
   transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -290,38 +298,39 @@ main {
 }
 
 .skills--anime .logiciel:nth-child(1) {
-  transition-delay: 0.05s;
+  transition-delay: 0.05s; /* Figma */
 }
 .skills--anime .logiciel:nth-child(2) {
-  transition-delay: 0.12s;
+  transition-delay: 0.12s; /* Vscode */
 }
 .skills--anime .logiciel:nth-child(3) {
-  transition-delay: 0.19s;
+  transition-delay: 0.19s; /* Unity */
 }
 .skills--anime .logiciel:nth-child(4) {
-  transition-delay: 0.26s;
+  transition-delay: 0.26s; /* Photoshop */
 }
 .skills--anime .logiciel:nth-child(5) {
-  transition-delay: 0.33s;
+  transition-delay: 0.33s; /* After Effects */
 }
 .skills--anime .logiciel:nth-child(6) {
-  transition-delay: 0.4s;
+  transition-delay: 0.4s; /* DaVinci */
 }
 .skills--anime .logiciel:nth-child(7) {
-  transition-delay: 0.47s;
+  transition-delay: 0.47s; /* Lightroom */
 }
 .skills--anime .logiciel:nth-child(8) {
-  transition-delay: 0.54s;
+  transition-delay: 0.54s; /* Premiere Pro */
 }
 
 .logiciel__icone {
   width: 65px;
   height: 65px;
   object-fit: contain;
-  transition: scale 0.22s ease;
+  will-change: transform;
+  transition: transform 0.22s ease;
 }
 
-/* Après son arrivée, chaque icône continue à flotter doucement. */
+/* Après arrivée, icône continue à flotter . */
 .skills--anime.is-visible .logiciel__icone {
   animation: icone-flottante 2.2s ease-in-out infinite alternate;
 }
@@ -353,7 +362,7 @@ main {
     transform: translateY(-14px) rotate(-12deg);
   }
   to {
-    transform: translateY(15px) rotate(12deg);
+    transform: translateY(14px) rotate(12deg);
   }
 }
 
@@ -385,17 +394,19 @@ main {
   pointer-events: none;
   transition: opacity 0.22s ease, transform 0.22s ease;
 }
-
-.logiciel:is(:hover, :focus) {
+/* animation lorsque hover */
+.logiciel:is(:hover, :focus),
+.logiciel.est-actif {
   z-index: 5;
 }
-
-.logiciel:is(:hover, :focus) .logiciel__icone {
-  scale: 1.15;
+.logiciel:is(:hover, :focus) .logiciel__icone,
+.logiciel.est-actif .logiciel__icone {
+  transform: scale(1.15);
   animation-play-state: paused;
 }
 
-.logiciel:is(:hover, :focus) .logiciel__nom {
+.logiciel:is(:hover, :focus) .logiciel__nom,
+.logiciel.est-actif .logiciel__nom {
   opacity: 1;
   transform: translate(-50%, 0);
 }
@@ -422,8 +433,19 @@ main {
 .logiciel:nth-child(2):is(:hover, :focus) .logiciel__nom,
 .logiciel:nth-child(3):is(:hover, :focus) .logiciel__nom,
 .logiciel:nth-child(4):is(:hover, :focus) .logiciel__nom,
-.logiciel:nth-child(8):is(:hover, :focus) .logiciel__nom {
+.logiciel:nth-child(8):is(:hover, :focus) .logiciel__nom,
+.logiciel:nth-child(2).est-actif .logiciel__nom,
+.logiciel:nth-child(3).est-actif .logiciel__nom,
+.logiciel:nth-child(4).est-actif .logiciel__nom,
+.logiciel:nth-child(8).est-actif .logiciel__nom {
   transform: translateY(0);
+}
+
+/* Un toucher remplace le survol sur iPad et iPhone. */
+@media (hover: none), (pointer: coarse) {
+  .logiciel {
+    touch-action: manipulation;
+  }
 }
 
 .logiciel:nth-child(1) {

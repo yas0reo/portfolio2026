@@ -1,6 +1,3 @@
-<!-- Pour multipages / projets -->
-<!-- notes -->
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -10,13 +7,16 @@
 
     <title>Projet | Yasmine Onekeo</title>
 
+    <!-- Cette feuille contient seulement le style des pages de détail. -->
     <link rel="stylesheet" href="css/layoutProjets.css" />
+
+    <!-- data.js lit les projets; project.js remplit cette page avec le bon projet. -->
     <script src="./js/data.js" defer></script>
     <script src="./js/project.js" defer></script>
   </head>
 
   <body>
-    <!--HEADER / HERO DU PROJET -->
+    <!-- HERO : titre, image de fond et bouton vidéo sont remplis par project.js. -->
     <header class="projet-hero" id="accueil">
       <p id="projet-message" role="status">Chargement du projet…</p>
       <h1>Nom du projet</h1>
@@ -62,9 +62,7 @@
         </div>
       </section>
 
-      <!-- 
-             PALETTE DE COULEURS
-         -->
+      <!-- Palette : les cinq cercles et leurs codes sont remplis depuis le JSON. -->
       <section class="projet-palette">
         <h2>Palette de couleurs</h2>
 
@@ -96,9 +94,7 @@
         </div>
       </section>
 
-      <!-- 
-             DÉTAILS / PROCESSUS
-         -->
+      <!-- Détails : texte du processus et images de galerie sont ajoutés par JavaScript. -->
       <section class="projet-details">
         <div class="details-description">
           <h2>Processus</h2>
@@ -129,9 +125,7 @@
         </div>
       </section>
 
-      <!-- 
-             AUTRES / DIFFÉRENTS PROJETS
-         -->
+      <!-- Galerie : le carrousel permet de changer l'image principale. -->
       <section class="autres-projets">
         <h2>Galerie Photo</h2>
 
@@ -145,7 +139,7 @@
             </p>
           </div>
 
-          <!-- CARROUSEL -->
+        <!-- Les boutons déplacent l'image du carrousel vers la gauche ou la droite. -->
           <div class="carrousel-projets">
             <button
               class="carrousel-precedent"
@@ -169,7 +163,7 @@
           </div>
         </div>
 
-        <!-- MINIATURES -->
+        <!-- Les trois miniatures sont créées par JavaScript. -->
         <div class="carrousel-miniatures">
           <button type="button">
             <img alt="Voir l'image 1" />
@@ -192,9 +186,7 @@
       </section>
     </main>
 
-    <!-- 
-         FOOTER
-     -->
+    <!-- Pied de page commun à toutes les pages de projet. -->
     <footer class="footer">
       <p>© 2026 Yasmine Onekeo · Création multimédia</p>
       <a href="#accueil">Retour en haut ↑</a>

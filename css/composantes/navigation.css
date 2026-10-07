@@ -1,3 +1,4 @@
+/* La barre de navigation est en haut sur petit écran. */
 .header {
   max-width: 1440px;
   margin: auto;
@@ -33,7 +34,7 @@
   text-decoration: underline;
 }
 
-/* Navigation latérale sur ordinateur. */
+/* Navigation à gauche sur ordi */
 @media (min-width: 761px) and (min-height: 481px) {
   body {
     padding-left: 80px;
@@ -69,6 +70,7 @@
   }
 }
 
+/* Sur téléphone, les liens passent sous le nom pour garder de l'espace. */
 @media (max-width: 420px) {
   .navigation {
     flex-wrap: wrap;
@@ -87,6 +89,7 @@
   }
 }
 
+/* Agrandit la nav pour les grands écrans */
 @media (min-width: 1800px) {
   .header {
     max-width: 2000px;
