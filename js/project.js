@@ -152,6 +152,34 @@ function afficherCarrousel(images, titre) {
   afficherImage(0);
 }
 
+// Lance une animation douce quand une section arrive dans la fenêtre.
+function preparerAnimationsPage() {
+  const sections = document.querySelectorAll(
+    ".projet-presentation, .projet-palette, .projet-details, .autres-projets, .credits",
+  );
+  const preferePeuDeMouvement = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  // Si les animations sont réduites ou non prises en charge, le contenu apparaît tout de suite.
+  if (preferePeuDeMouvement || !window.IntersectionObserver) {
+    sections.forEach((section) => section.classList.add("est-visible"));
+    return;
+  }
+
+  const observateur = new IntersectionObserver(([entree], observer) => {
+    if (!entree.isIntersecting) return;
+
+    entree.target.classList.add("est-visible");
+    observer.unobserve(entree.target);
+  }, { threshold: 0.12 });
+
+  sections.forEach((section) => {
+    section.classList.add("section-projet--anime");
+    observateur.observe(section);
+  });
+}
+
 function afficherProjet(projet) {
   // || [] veut dire : utiliser un tableau vide si une liste d'images manque.
   const images = projet.galerie || [];
@@ -194,6 +222,7 @@ async function init() {
   // URLSearchParams lit le texte après le ? dans une adresse Web.
   // Exemple : projet.html?projet=mati-r donne l'identifiant "mati-r".
   const identifiant = new URLSearchParams(window.location.search).get("projet");
+  preparerAnimationsPage();
 
   try {
     const projets = await loadProjects();

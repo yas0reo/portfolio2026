@@ -102,6 +102,18 @@ main {
   transform: translateX(0);
 }
 
+/* Ces sections apparaissent doucement lorsqu'elles entrent dans l'écran. */
+.accueil-section--anime {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.accueil-section--anime.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* À propos */
 .apropos {
   display: grid;
@@ -123,6 +135,7 @@ main {
 }
 
 .apropos__header {
+  /* Le gris reste seulement derrière le titre et le nom. */
   background: var(--gris-collage);
   padding: 24px 28px 12px;
 }
@@ -161,6 +174,55 @@ main {
 .apropos__details a {
   overflow-wrap: anywhere;
   font-size: 14px;
+}
+
+/* Dans « À propos », chaque partie arrive après la précédente. */
+.apropos.accueil-section--anime {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.apropos.accueil-section--anime .apropos__image,
+.apropos.accueil-section--anime .apropos__header,
+.apropos.accueil-section--anime .apropos__texte > p,
+.apropos.accueil-section--anime .apropos__details > div {
+  opacity: 0;
+  transition: opacity 1.4s ease, transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.apropos.accueil-section--anime .apropos__image {
+  transform: translateX(-55px);
+}
+
+.apropos.accueil-section--anime .apropos__header,
+.apropos.accueil-section--anime .apropos__texte > p,
+.apropos.accueil-section--anime .apropos__details > div {
+  transform: translateX(45px);
+}
+
+.apropos.accueil-section--anime.is-visible .apropos__image,
+.apropos.accueil-section--anime.is-visible .apropos__header,
+.apropos.accueil-section--anime.is-visible .apropos__texte > p,
+.apropos.accueil-section--anime.is-visible .apropos__details > div {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.apropos.accueil-section--anime .apropos__header {
+  transition-delay: 0.5s;
+}
+
+.apropos.accueil-section--anime .apropos__texte > p {
+  transition-delay: 0.9s;
+}
+
+.apropos.accueil-section--anime .apropos__details > div:first-child {
+  transition-delay: 1.3s;
+}
+
+.apropos.accueil-section--anime .apropos__details > div:last-child {
+  transition-delay: 1.7s;
 }
 
 /* Intérêts et défilement */
@@ -233,6 +295,12 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .accueil-section--anime {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   .interets__ligne {
     animation: none;
   }
@@ -241,6 +309,10 @@ main {
   }
   .interets__groupe[aria-hidden="true"] {
     display: none;
+  }
+
+  .projets__lien {
+    animation: none;
   }
 }
 
@@ -610,6 +682,24 @@ main {
   width: fit-content;
   padding: 12px;
   transition: transform 0.2s, color 0.2s, text-shadow 0.2s;
+  animation: projet-flotte 2.8s ease-in-out infinite alternate;
+}
+
+/* Chaque nom a un délai différent pour éviter qu'ils bougent tous ensemble. */
+.projets__lien:nth-child(2) {
+  animation-delay: -0.56s;
+}
+
+.projets__lien:nth-child(3) {
+  animation-delay: -1.12s;
+}
+
+.projets__lien:nth-child(4) {
+  animation-delay: -1.68s;
+}
+
+.projets__lien:nth-child(5) {
+  animation-delay: -2.24s;
 }
 
 .projets__lien:nth-child(even) {
@@ -654,7 +744,16 @@ main {
 .projets__lien:is(:hover, :focus-visible) {
   color: var(--glow);
   text-shadow: 0 0 2px var(--glow), 0 0 1px var(--glow);
-  transform: rotate(-4deg);
+  animation-play-state: paused;
+}
+
+@keyframes projet-flotte {
+  from {
+    transform: translateY(-7px) rotate(-2deg);
+  }
+  to {
+    transform: translateY(7px) rotate(2deg);
+  }
 }
 
 /* Contact */
@@ -674,7 +773,7 @@ main {
   left: 10%;
   right: 0;
   bottom: 0;
-  height: 55%;
+  height: 75%;
   background: var(--gris-collage);
 }
 
@@ -698,8 +797,48 @@ main {
 
 .contact__contenu {
   position: relative;
-  padding: 0 20px 35px 0;
+  z-index: 1;
+  padding: 45px 50px 45px 35px;
   /* Rapproche le titre et les liens du portrait. */
+  transform: translateX(-80px);
+  margin-top: 200px; /* Ajout pour descendre le texte */
+}
+
+.contact__texte {
+  max-width: 420px;
+  margin: 0 0 22px;
+  font-size: 15px;
+}
+
+/* Dans Contact, les photos arrivent de gauche et les écrits de droite. */
+.contact.accueil-section--anime {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.contact.accueil-section--anime .contact__images,
+.contact.accueil-section--anime .contact__contenu {
+  opacity: 0;
+  transition: opacity 1.4s ease, transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact.accueil-section--anime .contact__images {
+  transform: translateX(-55px);
+}
+
+.contact.accueil-section--anime .contact__contenu {
+  transform: translateX(25px);
+  transition-delay: 0.5s;
+}
+
+.contact.accueil-section--anime.is-visible .contact__images {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact.accueil-section--anime.is-visible .contact__contenu {
+  opacity: 1;
   transform: translateX(-80px);
 }
 
@@ -919,8 +1058,14 @@ main {
   }
   .contact__contenu {
     margin: 30px 0 0 20%;
-    padding: 0 15px;
+    padding: 35px 28px;
     transform: none;
+  }
+  .contact.accueil-section--anime .contact__contenu {
+    transform: translateX(45px);
+  }
+  .contact.accueil-section--anime.is-visible .contact__contenu {
+    transform: translateX(0);
   }
   .contact h2 {
     margin-bottom: 14px;

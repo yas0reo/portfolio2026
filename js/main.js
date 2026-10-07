@@ -99,6 +99,10 @@ async function init() {
   // init est le point de départ : elle prépare les animations et les projets.
   lancerAnimation(document.querySelector(".hero"), "hero--anime", 0.15);
   lancerAnimation(document.querySelector(".skills"), "skills--anime", 0.25);
+  lancerAnimation(document.querySelector(".apropos"), "accueil-section--anime", 0.12);
+  lancerAnimation(document.querySelector(".interets"), "accueil-section--anime", 0.12);
+  lancerAnimation(document.querySelector(".projets"), "accueil-section--anime", 0.12);
+  lancerAnimation(document.querySelector(".contact"), "accueil-section--anime", 0.12);
   preparerImageApercu();
   preparerIconesLogiciels();
 
