@@ -846,8 +846,9 @@ main {
     width: 45%;
   }
   .hero__personnage--haut-gauche {
-    top: 16%;
-    left: 11%;
+    /* Évite que le dessin touche la phrase du hero sur mobile. */
+    top: 11%;
+    left: 4%;
     width: 35%;
   }
   .hero__personnage--haut-droite {
@@ -933,10 +934,10 @@ main {
   }
   .logiciel:nth-child(1) {
     left: 17%;
-    top: 80px;
+    top: 45px;
   }
   .logiciel:nth-child(2) {
-    left: 25%;
+    left: 75%;
     top: 400px;
   }
   .logiciel:nth-child(3) {
@@ -950,7 +951,7 @@ main {
   .logiciel:nth-child(5) {
     right: auto;
     left: 5%;
-    top: 0;
+    top: -30px;
   }
   .logiciel:nth-child(6) {
     right: 2%;
@@ -984,6 +985,13 @@ main {
   .projets__composition {
     margin-top: 90px;
     height: 570px;
+  }
+  /* Le tracé reste derrière les noms au lieu de les recouvrir. */
+  .projets__fil {
+    width: 82%;
+    height: 82%;
+    top: 9%;
+    left: 9%;
   }
   .projets__liste {
     column-gap: 12%;
