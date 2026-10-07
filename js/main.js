@@ -13,7 +13,7 @@ function lancerAnimation(section, classe, seuil) {
 
   // Certaines personnes demandent moins de mouvements dans les réglages du téléphone.
   const preferePeuDeMouvement = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
+    "(prefers-reduced-motion: reduce)"
   ).matches;
 
   if (preferePeuDeMouvement || !window.IntersectionObserver) {
@@ -24,12 +24,15 @@ function lancerAnimation(section, classe, seuil) {
   section.classList.add(classe);
 
   // IntersectionObserver surveille une section sans vérifier en permanence le défilement.
-  const observateur = new IntersectionObserver(([entree]) => {
-    if (!entree.isIntersecting) return;
+  const observateur = new IntersectionObserver(
+    ([entree]) => {
+      if (!entree.isIntersecting) return;
 
-    section.classList.add("is-visible");
-    observateur.unobserve(section);
-  }, { threshold: seuil });
+      section.classList.add("is-visible");
+      observateur.unobserve(section);
+    },
+    { threshold: seuil }
+  );
 
   observateur.observe(section);
 }
@@ -99,10 +102,26 @@ async function init() {
   // init est le point de départ : elle prépare les animations et les projets.
   lancerAnimation(document.querySelector(".hero"), "hero--anime", 0.15);
   lancerAnimation(document.querySelector(".skills"), "skills--anime", 0.25);
-  lancerAnimation(document.querySelector(".apropos"), "accueil-section--anime", 0.12);
-  lancerAnimation(document.querySelector(".interets"), "accueil-section--anime", 0.12);
-  lancerAnimation(document.querySelector(".projets"), "accueil-section--anime", 0.12);
-  lancerAnimation(document.querySelector(".contact"), "accueil-section--anime", 0.12);
+  lancerAnimation(
+    document.querySelector(".apropos"),
+    "accueil-section--anime",
+    0.12
+  );
+  lancerAnimation(
+    document.querySelector(".interets"),
+    "accueil-section--anime",
+    0.12
+  );
+  lancerAnimation(
+    document.querySelector(".projets"),
+    "accueil-section--anime",
+    0.12
+  );
+  lancerAnimation(
+    document.querySelector(".contact"),
+    "accueil-section--anime",
+    0.12
+  );
   preparerImageApercu();
   preparerIconesLogiciels();
 
