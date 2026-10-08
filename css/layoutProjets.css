@@ -290,6 +290,8 @@ body[data-couleur="jaune"] {
 .projet-hero h1 {
   /* Le nom du projet reste blanc sur son image de fond. */
   color: var(--blanc);
+  /* La police manuscrite garde le même style que la page d'accueil. */
+  font-family: "Just Another Hand", cursive;
   font-size: clamp(3.5rem, 9vw, 8rem);
   font-weight: 500;
   line-height: 0.9;
