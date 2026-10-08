@@ -6,6 +6,14 @@
 
 /* RESET : évite les marges différentes selon le navigateur. */
 
+/* La page projet charge ce fichier seule : on déclare donc ta police manuscrite ici. */
+@font-face {
+  font-family: "Just Another Hand";
+  src: url("../assets/fonts/Just_Another_Hand/JustAnotherHand-Regular.ttf")
+    format("truetype");
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -290,7 +298,6 @@ body[data-couleur="jaune"] {
 .projet-hero h1 {
   /* Le nom du projet reste blanc sur son image de fond. */
   color: var(--blanc);
-  /* La police manuscrite garde le même style que la page d'accueil. */
   font-family: "Just Another Hand", cursive;
   font-size: clamp(3.5rem, 9vw, 8rem);
   font-weight: 500;
