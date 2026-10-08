@@ -10,10 +10,10 @@ const titrePage = document.querySelector(".projet-hero h1");
 const lienVideo = document.querySelector("#projet-video");
 const titrePresentation = document.querySelector(".projet-presentation > h2");
 const titreImagePresentation = document.querySelector(
-  ".presentation-image__texte h3",
+  ".presentation-image__texte h3"
 );
 const texteImagePresentation = document.querySelector(
-  ".presentation-image__texte p",
+  ".presentation-image__texte p"
 );
 const texteRole = document.querySelector("#projet-role");
 const texteLogiciels = document.querySelector("#projet-logiciels");
@@ -23,7 +23,9 @@ const titreGalerie = document.querySelector(".autres-projets-description h3");
 const texteGalerie = document.querySelector(".autres-projets-description p");
 const texteCredits = document.querySelector("#projet-credits");
 const imagePresentation = document.querySelector(".presentation-image img");
-const imageDescription = document.querySelector(".presentation-description > img");
+const imageDescription = document.querySelector(
+  ".presentation-description > img"
+);
 const galerie = document.querySelector(".details-galerie");
 const imageCarrousel = document.querySelector(".carrousel-image img");
 const miniatures = document.querySelector(".carrousel-miniatures");
@@ -66,7 +68,7 @@ function definirLienVideo(video, titre) {
   lienVideo.hidden = false;
 }
 
-// Affiche le code hexadécimal sous chaque cercle de la palette.
+// Affiche le code hexadécimal (#0000) sous chaque cercle de la palette.
 function afficherPalette(palette) {
   couleursPalette.forEach((couleur, index) => {
     const hex = palette[index];
@@ -81,7 +83,7 @@ function afficherPalette(palette) {
 }
 
 function afficherCredits(projet) {
-  // Le texte change légèrement lorsqu'il s'agit d'un projet individuel.
+  // Le texte change lorsque c'est d'un projet individuel.
   if (!texteCredits) return;
 
   if (projet.equipe === "Projet individuel") {
@@ -95,7 +97,7 @@ function afficherCredits(projet) {
 function afficherGalerie(images, titre) {
   if (!galerie) return;
 
-  // map crée une figure HTML pour chaque chemin d'image dans le tableau.
+  // les images sont dan JSON galerie donc Map() va aller les chercer et les afficher dans la galerie.
   galerie.replaceChildren(
     ...images.map((source, index) => {
       const figure = document.createElement("figure");
@@ -105,7 +107,7 @@ function afficherGalerie(images, titre) {
       definirImage(image, source, `${titre} — image ${index + 1}`);
       figure.append(image);
       return figure;
-    }),
+    })
   );
 }
 
@@ -128,7 +130,7 @@ function afficherCarrousel(images, titre) {
     definirImage(
       imageCarrousel,
       images[indexActuel],
-      `${titre} — image ${indexActuel + 1}`,
+      `${titre} — image ${indexActuel + 1}`
     );
   }
 
@@ -143,7 +145,7 @@ function afficherCarrousel(images, titre) {
       bouton.addEventListener("click", () => afficherImage(index));
       bouton.append(image);
       return bouton;
-    }),
+    })
   );
 
   precedent.disabled = suivant.disabled = images.length < 2;
@@ -155,7 +157,7 @@ function afficherCarrousel(images, titre) {
 // Lance une animation douce quand une section arrive dans la fenêtre.
 function preparerAnimationsPage() {
   const sections = document.querySelectorAll(
-    ".projet-presentation, .projet-palette, .projet-details, .autres-projets, .credits",
+    ".projet-presentation, .projet-palette, .projet-details, .autres-projets, .credits"
   );
   // Si cette fonction n'est pas prise en charge, le contenu apparaît tout de suite.
   if (!window.IntersectionObserver) {
@@ -163,12 +165,15 @@ function preparerAnimationsPage() {
     return;
   }
 
-  const observateur = new IntersectionObserver(([entree], observer) => {
-    if (!entree.isIntersecting) return;
+  const observateur = new IntersectionObserver(
+    ([entree], observer) => {
+      if (!entree.isIntersecting) return;
 
-    entree.target.classList.add("est-visible");
-    observer.unobserve(entree.target);
-  }, { threshold: 0.12 });
+      entree.target.classList.add("est-visible");
+      observer.unobserve(entree.target);
+    },
+    { threshold: 0.12 }
+  );
 
   sections.forEach((section) => {
     section.classList.add("section-projet--anime");
@@ -202,12 +207,12 @@ function afficherProjet(projet) {
   definirImage(
     imagePresentation,
     imagesPresentation[0],
-    `${projet.title} — aperçu`,
+    `${projet.title} — aperçu`
   );
   definirImage(
     imageDescription,
     imagesPresentation[1],
-    `${projet.title} — détail`,
+    `${projet.title} — détail`
   );
   afficherGalerie(images, projet.title);
   afficherCarrousel(imagesCarrousel, projet.title);
@@ -215,7 +220,7 @@ function afficherProjet(projet) {
 }
 
 async function init() {
-  // URLSearchParams lit le texte après le ? dans une adresse Web.
+  // URLSearchParams lit le texte après le ? dans une adresse Web. -- il va chercher le id de la page et chercher le projet correspondant dans le fichier JSON.
   // Exemple : projet.html?projet=mati-r donne l'identifiant "mati-r".
   const identifiant = new URLSearchParams(window.location.search).get("projet");
   preparerAnimationsPage();
@@ -228,7 +233,6 @@ async function init() {
     if (!projet) throw new Error("Projet introuvable.");
     afficherProjet(projet);
   } catch (erreur) {
-    // Une erreur est aussi écrite dans la console pour faciliter le dépannage.
     message.textContent = "Ce projet est indisponible pour le moment.";
     console.error(erreur);
   }

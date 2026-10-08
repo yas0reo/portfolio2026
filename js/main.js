@@ -1,7 +1,7 @@
 /*
   JavaScript de la page d'accueil.
   querySelector cherche le premier élément HTML qui possède cette classe.
-  Ces variables permettent ensuite de modifier cet élément facilement.
+  = modifier élément facilement.
 */
 const listeProjets = document.querySelector(".projets__liste");
 const imageApercu = document.querySelector(".projets__apercu-image");
@@ -127,7 +127,7 @@ async function init() {
     // await attend la réponse de loadProjects avant de créer les liens.
     const projets = await loadProjects();
 
-    // Vérification demandée pour le cours : le premier titre arrive bien du JSON.
+
     console.log(projets[0].title);
     listeProjets.innerHTML = projets.map(createProjectCard).join("");
     preparerLiensProjets();
