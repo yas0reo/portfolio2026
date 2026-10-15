@@ -101,7 +101,9 @@ button {
   background: rgb(0 0 0 / 35%);
   font-size: 0.9rem;
   text-decoration: none;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .retour-accueil:hover,
@@ -125,7 +127,9 @@ button {
 .section-projet--anime {
   opacity: 0;
   transform: translateY(35px);
-  transition: opacity 1.1s ease, transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 1.1s ease,
+    transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .section-projet--anime.est-visible {
@@ -138,7 +142,9 @@ button {
 .section-projet--anime .carrousel-miniatures button {
   opacity: 0;
   transform: scale(0.94);
-  transition: opacity 0.75s ease, transform 0.75s ease;
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
 }
 
 .section-projet--anime.est-visible .details-galerie figure,
@@ -166,14 +172,18 @@ button {
 .section-projet--anime .details-description {
   opacity: 0;
   transform: translateX(-45px);
-  transition: opacity 1s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .section-projet--anime .presentation-description,
 .section-projet--anime .autres-projets-description {
   opacity: 0;
   transform: translateX(45px);
-  transition: opacity 1s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .section-projet--anime.est-visible .presentation-image,
@@ -188,7 +198,9 @@ button {
 .section-projet--anime .couleur {
   opacity: 0;
   transform: translateY(22px) rotate(-8deg) scale(0.85);
-  transition: opacity 0.75s ease, transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 0.75s ease,
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .section-projet--anime.est-visible .couleur {
@@ -319,7 +331,9 @@ body[data-couleur="jaune"] {
   background: rgb(0 0 0 / 45%);
   font-size: 28px;
   text-decoration: none;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
 /* Le bouton reste caché si projects.json ne contient aucun lien vidéo. */
@@ -710,7 +724,9 @@ main strong,
 
   cursor: pointer;
 
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
 }
 
 .carrousel-projets button:hover {
@@ -758,7 +774,9 @@ main strong,
 
   object-fit: cover;
 
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .carrousel-miniatures button:hover img {

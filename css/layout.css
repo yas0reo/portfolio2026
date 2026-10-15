@@ -28,7 +28,9 @@ main {
 .hero--anime .hero__personnage {
   opacity: 0;
   will-change: transform, opacity;
-  transition: opacity 5s ease, transform 5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 5s ease,
+    transform 5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero--anime .hero__personnage--haut-gauche,
@@ -86,7 +88,9 @@ main {
   right: 4%;
   width: min(58%, 760px);
   margin: 0;
-  font: clamp(52px, 7vw, 110px) / 0.95 "Just Another Hand", cursive;
+  font:
+    clamp(52px, 7vw, 110px) / 0.95 "Just Another Hand",
+    cursive;
   text-align: center;
 }
 
@@ -94,7 +98,9 @@ main {
   opacity: 0;
   transform: translateX(120px);
   will-change: transform, opacity;
-  transition: opacity 5s ease, transform 5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 5s ease,
+    transform 5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero--anime.is-visible .hero__texte {
@@ -106,7 +112,9 @@ main {
 .accueil-section--anime {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .accueil-section--anime.is-visible {
@@ -150,7 +158,9 @@ main {
 }
 
 .apropos__header h1 {
-  font: 48px/1 "Just Another Hand", cursive;
+  font:
+    48px/1 "Just Another Hand",
+    cursive;
   margin: 0;
 }
 
@@ -167,7 +177,9 @@ main {
 }
 
 .apropos h3 {
-  font: 30px "Just Another Hand", cursive;
+  font:
+    30px "Just Another Hand",
+    cursive;
   margin-bottom: 12px;
 }
 
@@ -188,7 +200,9 @@ main {
 .apropos.accueil-section--anime .apropos__texte > p,
 .apropos.accueil-section--anime .apropos__details > div {
   opacity: 0;
-  transition: opacity 1.4s ease, transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 1.4s ease,
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .apropos.accueil-section--anime .apropos__image {
@@ -264,7 +278,9 @@ main {
 
 .interets__mot {
   display: inline-block;
-  transition: color 0.2s, text-shadow 0.2s;
+  transition:
+    color 0.2s,
+    text-shadow 0.2s;
 }
 
 .interets__mot::after {
@@ -279,13 +295,17 @@ main {
 
 .interets__marquee strong {
   color: #222;
-  font: 1.3em/1 "Just Another Hand", cursive;
+  font:
+    1.3em/1 "Just Another Hand",
+    cursive;
   font-weight: 400;
 }
 
 .interets__mot:hover {
   color: var(--glow);
-  text-shadow: 0 0 6px var(--glow), 0 0 18px var(--glow);
+  text-shadow:
+    0 0 6px var(--glow),
+    0 0 18px var(--glow);
 }
 
 @keyframes interets-defilement {
@@ -339,7 +359,9 @@ main {
   opacity: 0;
   transform: translateY(24px) rotate(-3deg) scale(0.92);
   will-change: transform, opacity;
-  transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 0.45s ease,
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .skills--anime.is-visible .logiciel {
@@ -429,7 +451,9 @@ main {
   opacity: 0;
   transform: translate(-50%, 4px);
   pointer-events: none;
-  transition: opacity 0.22s ease, transform 0.22s ease;
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
 }
 /* animation lorsque hover */
 .logiciel:is(:hover, :focus),
@@ -552,7 +576,9 @@ main {
   padding: 35px 7%;
   width: 48%;
   text-align: center;
-  font: 38px/1 "Just Another Hand", cursive;
+  font:
+    38px/1 "Just Another Hand",
+    cursive;
   margin: 0;
 }
 
@@ -589,7 +615,9 @@ main {
   inset: 50% 12px auto;
   margin: 0;
   color: var(--couleur-fond);
-  font: 32px / 1 "Just Another Hand", cursive;
+  font:
+    32px / 1 "Just Another Hand",
+    cursive;
   text-align: center;
   transform: translateY(-50%);
   transition: opacity 0.25s ease;
@@ -619,7 +647,9 @@ main {
 .projets__message {
   grid-column: 1 / -1;
   margin: 0;
-  font: 36px / 1 "Just Another Hand", cursive;
+  font:
+    36px / 1 "Just Another Hand",
+    cursive;
   text-align: center;
 }
 
@@ -630,23 +660,32 @@ main {
   bottom: 10%;
   margin: 0;
   padding: 12px;
-  font: clamp(30px, 3.3vw, 48px) / 1 "Just Another Hand", cursive;
+  font:
+    clamp(30px, 3.3vw, 48px) / 1 "Just Another Hand",
+    cursive;
   text-align: center;
 }
 
 .projets__avenir span {
   display: block;
   margin-top: 6px;
-  font: 12px / 1.2 Liberation, sans-serif;
+  font:
+    12px / 1.2 Liberation,
+    sans-serif;
   text-transform: uppercase;
 }
 
 .projets__lien {
-  font: clamp(30px, 3.3vw, 48px) / 1 "Just Another Hand", cursive;
+  font:
+    clamp(30px, 3.3vw, 48px) / 1 "Just Another Hand",
+    cursive;
   text-decoration: none;
   width: fit-content;
   padding: 12px;
-  transition: transform 0.2s, color 0.2s, text-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    color 0.2s,
+    text-shadow 0.2s;
   animation: projet-flotte 2.8s ease-in-out infinite alternate;
 }
 
@@ -708,7 +747,9 @@ main {
 
 .projets__lien:is(:hover, :focus-visible) {
   color: var(--glow);
-  text-shadow: 0 0 2px var(--glow), 0 0 1px var(--glow);
+  text-shadow:
+    0 0 2px var(--glow),
+    0 0 1px var(--glow);
   animation-play-state: paused;
 }
 
@@ -785,7 +826,9 @@ main {
 .contact.accueil-section--anime .contact__images,
 .contact.accueil-section--anime .contact__contenu {
   opacity: 0;
-  transition: opacity 1.4s ease, transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 1.4s ease,
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .contact.accueil-section--anime .contact__images {
@@ -832,7 +875,9 @@ main {
 }
 
 .footer a {
-  font: 26px "Just Another Hand", cursive;
+  font:
+    26px "Just Another Hand",
+    cursive;
 }
 /* Adaptation mobile */
 @media (max-width: 760px) {
