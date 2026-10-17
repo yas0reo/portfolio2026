@@ -336,6 +336,51 @@ body[data-couleur="jaune"] {
     background-color 0.2s ease;
 }
 
+/* Fenêtre qui affiche YouTube sans quitter la page projet. */
+.video-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(92vw, 1000px);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  transform: translate(-50%, -50%);
+}
+
+.video-modal::backdrop {
+  background: rgb(0 0 0 / 78%);
+}
+
+.video-modal__contenu {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--noir);
+}
+
+.video-modal iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-modal__fermer {
+  position: absolute;
+  z-index: 1;
+  top: -14px;
+  right: -14px;
+  width: 38px;
+  height: 38px;
+  border: 2px solid var(--blanc);
+  border-radius: 50%;
+  color: var(--blanc);
+  background: var(--noir);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
 /* Le bouton reste caché si projects.json ne contient aucun lien vidéo. */
 .projet-hero__video[hidden] {
   display: none;
@@ -354,10 +399,19 @@ body[data-couleur="jaune"] {
 .projet-presentation > h2,
 .projet-palette > h2,
 .autres-projets > h2 {
+  /* Garde un espace sur les côtés, même dans une fenêtre très étroite. */
+  padding-inline: clamp(20px, 5vw, 70px);
   text-align: center;
   text-transform: uppercase;
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+/* Un mot ou une adresse très longue peut aller à la ligne au lieu de déborder. */
+main p,
+main h2,
+main h3 {
+  overflow-wrap: anywhere;
 }
 
 /* Le texte courant est blanc; les titres gardent leur couleur noire héritée. */
@@ -509,18 +563,21 @@ main strong,
 }
 
 .palette-couleurs {
+  --palette-gap: 30px;
   width: min(1100px, 100%);
   margin: 0 auto;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
 
-  gap: 30px;
+  gap: var(--palette-gap);
 }
 
 .couleur {
-  flex: 1;
+  /* 20% - (gap × 4 / 5) : cinq colonnes et quatre espaces de 30px. */
+  flex: 0 0 calc(20% - 24px);
+  min-width: 0;
 
   display: flex;
   flex-direction: column;
@@ -528,8 +585,9 @@ main strong,
 }
 
 .couleur-apercu {
-  width: 150px;
-  height: 150px;
+  width: min(150px, 100%);
+  aspect-ratio: 1;
+  height: auto;
 
   border-radius: 50%;
 
@@ -707,10 +765,14 @@ main strong,
 
 .carrousel-image {
   height: 390px;
-
-  background-color: var(--gris-clair);
-
   overflow: hidden;
+}
+
+/* La grande image doit être visible au complet, même si son format est différent. */
+.carrousel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* Flèches */

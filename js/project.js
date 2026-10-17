@@ -8,6 +8,9 @@ const message = document.querySelector("#projet-message");
 const hero = document.querySelector(".projet-hero");
 const titrePage = document.querySelector(".projet-hero h1");
 const lienVideo = document.querySelector("#projet-video");
+const modaleVideo = document.querySelector("#video-modal");
+const lecteurVideo = document.querySelector("#video-modal-lecteur");
+const fermerVideo = document.querySelector("#video-modal-fermer");
 const titrePresentation = document.querySelector(".projet-presentation > h2");
 const titreImagePresentation = document.querySelector(
   ".presentation-image__texte h3"
@@ -54,18 +57,49 @@ function definirFondHero(source) {
   hero.style.backgroundImage = source ? `url("${source}")` : "none";
 }
 
+// Transforme une adresse YouTube en adresse lisible dans un lecteur intégré.
+function creerLienIntegreYouTube(video) {
+  const url = new URL(video);
+  const identifiant =
+    url.hostname === "youtu.be"
+      ? url.pathname.slice(1)
+      : url.searchParams.get("v");
+
+  return identifiant
+    ? `https://www.youtube-nocookie.com/embed/${identifiant}?autoplay=1&rel=0`
+    : "";
+}
+
 // Le bouton Play est visible seulement quand un lien YouTube existe.
 function definirLienVideo(video, titre) {
   if (!lienVideo) return;
 
   if (!video) {
     lienVideo.hidden = true;
+    delete lienVideo.dataset.video;
     return;
   }
 
-  lienVideo.href = video;
-  lienVideo.setAttribute("aria-label", `Voir la vidéo du projet ${titre}`);
+  lienVideo.dataset.video = creerLienIntegreYouTube(video);
+  lienVideo.setAttribute("aria-label", `Lire la vidéo du projet ${titre}`);
   lienVideo.hidden = false;
+}
+
+// Ouvre le lecteur dans la page au clic et recharge une source vide à la fermeture.
+function preparerLecteurVideo() {
+  if (!lienVideo || !modaleVideo || !lecteurVideo || !fermerVideo) return;
+
+  lienVideo.addEventListener("click", () => {
+    if (!lienVideo.dataset.video) return;
+    lecteurVideo.src = lienVideo.dataset.video;
+    modaleVideo.showModal();
+  });
+
+  fermerVideo.addEventListener("click", () => modaleVideo.close());
+
+  modaleVideo.addEventListener("close", () => {
+    lecteurVideo.removeAttribute("src");
+  });
 }
 
 // Affiche le code hexadécimal (#0000) sous chaque cercle de la palette.
@@ -224,6 +258,7 @@ async function init() {
   // Exemple : projet.html?projet=mati-r donne l'identifiant "mati-r".
   const identifiant = new URLSearchParams(window.location.search).get("projet");
   preparerAnimationsPage();
+  preparerLecteurVideo();
 
   try {
     const projets = await loadProjects();

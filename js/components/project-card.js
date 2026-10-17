@@ -17,3 +17,13 @@ function createProjectCard(project) {
     </a>
   `;
 }
+
+// La carte mobile montre directement l'image et le titre : il n'y a pas de survol.
+function createMobileProjectCard(project) {
+  return `
+    <a class="projets__carte-mobile" href="${project.lien}">
+      <img src="${project.apercu}" alt="Aperçu du projet ${project.title}" />
+      <span class="projets__carte-mobile-titre">${project.title}</span>
+    </a>
+  `;
+}

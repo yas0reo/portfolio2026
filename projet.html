@@ -21,19 +21,37 @@
       <p id="projet-message" role="status">Chargement du projet…</p>
       <h1>Nom du projet</h1>
 
-      <!-- Le lien est rempli par JavaScript si le projet a une vidéo. -->
-      <a
+      <!-- Le bouton est visible seulement si le projet possède une vidéo. -->
+      <button
+        type="button"
         class="projet-hero__video"
         id="projet-video"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
         aria-label="Voir la vidéo du projet"
         hidden
       >
         <span aria-hidden="true">▶</span>
-      </a>
+      </button>
     </header>
+
+    <!-- La vidéo reste sur le site dans cette fenêtre, puis s'arrête à la fermeture. -->
+    <dialog class="video-modal" id="video-modal" aria-label="Vidéo du projet">
+      <div class="video-modal__contenu">
+        <button
+          class="video-modal__fermer"
+          id="video-modal-fermer"
+          type="button"
+          aria-label="Fermer la vidéo"
+        >
+          ×
+        </button>
+        <iframe
+          id="video-modal-lecteur"
+          title="Vidéo du projet"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </dialog>
 
     <main>
       <!-- PRÉSENTATION DU PROJET -->

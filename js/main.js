@@ -4,6 +4,7 @@
   = modifier élément facilement.
 */
 const listeProjets = document.querySelector(".projets__liste");
+const listeProjetsMobile = document.querySelector(".projets__liste-mobile");
 const imageApercu = document.querySelector(".projets__apercu-image");
 const texteApercu = document.querySelector(".projets__apercu-texte");
 
@@ -121,7 +122,7 @@ async function init() {
   preparerImageApercu();
   preparerIconesLogiciels();
 
-  if (!listeProjets) return;
+  if (!listeProjets || !listeProjetsMobile) return;
 
   try {
     // await attend la réponse de loadProjects avant de créer les liens.
@@ -130,10 +131,15 @@ async function init() {
 
     console.log(projets[0].title);
     listeProjets.innerHTML = projets.map(createProjectCard).join("");
+    listeProjetsMobile.innerHTML = projets
+      .map(createMobileProjectCard)
+      .join("");
     preparerLiensProjets();
   } catch (erreur) {
     // Si le JSON ne peut pas être lu, la page reste compréhensible pour le visiteur.
     listeProjets.innerHTML =
+      '<p class="projets__message">Les projets sont indisponibles pour le moment.</p>';
+    listeProjetsMobile.innerHTML =
       '<p class="projets__message">Les projets sont indisponibles pour le moment.</p>';
     console.error(erreur);
   }
