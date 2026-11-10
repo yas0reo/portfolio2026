@@ -1,4 +1,12 @@
 {
+  "liveServer.settings.ignoreFiles": [
+    ".vscode/**",
+    "**/.git/**",
+    "**/.DS_Store",
+    "**/node_modules/**",
+    "**/*.log",
+    "**/*.xlsx"
+  ],
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {
     "*": true,

@@ -135,6 +135,7 @@ async function init() {
       .map(createMobileProjectCard)
       .join("");
     preparerLiensProjets();
+    document.dispatchEvent(new Event("projets-charges"));
   } catch (erreur) {
     // Si le JSON ne peut pas être lu, la page reste compréhensible pour le visiteur.
     listeProjets.innerHTML =

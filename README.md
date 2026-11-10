@@ -20,6 +20,7 @@ note to self ;
 
 ADD FRENCH/ENGLISH THTINGY !!!
 ADD LINKEDIN
+
 projet media sociaux ? instagram cafe.1025 videos et animorency pour publications d'activitées
 
 for concordia - up to 10 creative works

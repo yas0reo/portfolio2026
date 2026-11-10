@@ -644,7 +644,7 @@ main {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   column-gap: 35%;
   align-items: center;
 }
@@ -1290,3 +1290,6 @@ main {
     margin-bottom: 180px;
   }
 }
+
+.projets__lien--beige { --glow: #94734f; color: #000; }
+.projets__lien--wee { --glow: #ad78ee; }

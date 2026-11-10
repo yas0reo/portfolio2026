@@ -6,7 +6,13 @@
     "couleur": "vert",
     "lien": "./projet.html?projet=mati-r",
     "video": "https://www.youtube.com/watch?v=0S4uqWcMz7Y",
-    "palette": ["#002B5C", "#008E2A", "#C96C00", "#760014", "#050505"],
+    "palette": [
+      "#002B5C",
+      "#008E2A",
+      "#C96C00",
+      "#760014",
+      "#050505"
+    ],
     "cours": "Vidéo 2",
     "equipe": "Jade Hébert, Marie-Lili Laprise, Emmanuel Ricard et Emmanuelle Mimeault-Dumont",
     "role": "Actrice, coloriste et monteuse vidéo",
@@ -19,7 +25,11 @@
     "etapes": {
       "titre": "Étapes de création et logiciels",
       "description": "Pour cette installation immersive, notre équipe a créé des séquences originales et une bande sonore en studio. J’ai participé comme actrice, coloriste et monteuse vidéo afin de construire une cohérence entre les images, les couleurs et le rythme.",
-      "logiciels": ["DaVinci Resolve", "Runway", "Midjourney"],
+      "logiciels": [
+        "DaVinci Resolve",
+        "Runway",
+        "Midjourney"
+      ],
       "images": [
         {
           "source": "./assets/images/projets/matir-x/g3Yas.jpg",
@@ -52,7 +62,13 @@
     "etiquette": "Vidéo & Animation 3d",
     "couleur": "mauve",
     "lien": "./projet.html?projet=paysage",
-    "palette": ["#595B74", "#3C3A61", "#450667", "#61356E", "#7F2B87"],
+    "palette": [
+      "#595B74",
+      "#3C3A61",
+      "#450667",
+      "#61356E",
+      "#7F2B87"
+    ],
     "cours": "Traitement audiovisuel, Audio 2 et Animation 3D",
     "equipe": "Projet individuel",
     "role": "Conception artistique, programmation visuelle, intégration 3D, création des interactions et performance en temps réel",
@@ -65,12 +81,17 @@
     "etapes": {
       "titre": "Étapes de création et logiciels",
       "description": "J’ai conçu un univers audiovisuel interactif réunissant une proposition sonore, des scènes visuelles et un élément 3D animé. Dans TouchDesigner, l’expérience évolue en temps réel avec le son et les interactions gestuelles.",
-      "logiciels": ["TouchDesigner", "Maya", "Max", "Reaper"],
+      "logiciels": [
+        "TouchDesigner",
+        "Maya",
+        "Max",
+        "Reaper"
+      ],
       "images": [
         {
-          "source": "./assets/images/projets/paysage/sparkle.png",
-          "alt": "Image du projet Paysage",
-          "legende": "Aperçu de l’univers visuel de Paysage."
+          "source": "./assets/images/projets/logiciels/paysage-touchdesigner.png",
+          "alt": "Capture du projet Paysage dans TouchDesigner.",
+          "legende": "Capture du projet Paysage dans TouchDesigner."
         }
       ]
     },
@@ -99,7 +120,13 @@
     "couleur": "rouge",
     "lien": "./projet.html?projet=montage-rouge",
     "video": "https://www.youtube.com/watch?v=CjSIbw-BYNs",
-    "palette": ["#870000", "#C90007", "#C94718", "#D86A00", "#FFFFFF"],
+    "palette": [
+      "#870000",
+      "#C90007",
+      "#C94718",
+      "#D86A00",
+      "#FFFFFF"
+    ],
     "cours": "Vidéo 1",
     "equipe": "Patricia Nassif et Thomas Roussel",
     "role": "Actrice, coloriste et animatrice 2D",
@@ -112,12 +139,16 @@
     "etapes": {
       "titre": "Étapes de création et logiciels",
       "description": "Notre équipe a créé une vidéo monochrome en combinant des photographies en stop motion, des prises de vue en macro, de l’animation 2D et du micromontage sonore. J’ai participé comme actrice, coloriste et animatrice 2D.",
-      "logiciels": ["Illustrator", "After Effects", "DaVinci Resolve"],
+      "logiciels": [
+        "Illustrator",
+        "After Effects",
+        "DaVinci Resolve"
+      ],
       "images": [
         {
-          "source": "./assets/images/projets/echoes/anim.jpg",
-          "alt": "Image du projet Echoes",
-          "legende": "Aperçu visuel du projet Echoes."
+          "source": "./assets/images/projets/logiciels/echoes-davinci.png",
+          "alt": "Capture du travail sur Echoes dans DaVinci Resolve.",
+          "legende": "Capture du travail sur Echoes dans DaVinci Resolve."
         }
       ]
     },
@@ -145,7 +176,13 @@
     "etiquette": "Jeux d'exploration VR",
     "couleur": "bleu",
     "lien": "./projet.html?projet=space-in-betweenn",
-    "palette": ["#198E98", "#323586", "#7D365E", "#B92B2B", "#AA7831"],
+    "palette": [
+      "#198E98",
+      "#323586",
+      "#7D365E",
+      "#B92B2B",
+      "#AA7831"
+    ],
     "cours": "Réalité mixte",
     "equipe": "Jessica Théoret et Emmanuel Ricard",
     "role": "Conception et intégration de l’environnement 3D du niveau Cherche et trouve, objets interactifs et portails entre les mondes",
@@ -158,7 +195,11 @@
     "etapes": {
       "titre": "Étapes de création et logiciels",
       "description": "Après l’idéation des trois mondes, nous avons créé une carte de l’environnement afin de planifier le lobby, les portails et les niveaux. Dans Unity, j’ai ensuite intégré le niveau Cherche et trouve, les objets à récupérer et les interactions. Des essais avec le casque Oculus ont permis d’ajuster la navigation, les distances et les interactions du joueur.",
-      "logiciels": ["Unity", "XR Interaction Toolkit", "Casque VR Oculus"],
+      "logiciels": [
+        "Unity",
+        "XR Interaction Toolkit",
+        "Casque VR Oculus"
+      ],
       "images": [
         {
           "source": "./assets/images/projets/EntreLesPortaux/CARTEENVIRONEMENTALE.png",
@@ -197,7 +238,13 @@
     "couleur": "jaune",
     "lien": "./projet.html?projet=corps",
     "video": "https://www.youtube.com/watch?v=FCtaXPrgD2U",
-    "palette": ["#DFB7A7", "#D3A16F", "#7C2849", "#24242D", "#BDBDCC"],
+    "palette": [
+      "#DFB7A7",
+      "#D3A16F",
+      "#7C2849",
+      "#24242D",
+      "#BDBDCC"
+    ],
     "cours": "Vidéo 2",
     "equipe": "Marie-Lili Laprise et Emmanuel Ricard",
     "role": "Éditrice vidéo, coloriste et actrice pour les plans des yeux",
@@ -210,12 +257,14 @@
     "etapes": {
       "titre": "Étapes de création et logiciels",
       "description": "Pour cette vidéo sensorielle, notre équipe a utilisé des gros plans du corps, une séquence en mosaïque et un micromontage sonore. J’ai participé au montage, à la coloration et aux prises de vue des yeux.",
-      "logiciels": ["DaVinci Resolve"],
+      "logiciels": [
+        "DaVinci Resolve"
+      ],
       "images": [
         {
-          "source": "./assets/images/projets/mauvaisChemain/eyeYas.jpg",
-          "alt": "Image du projet Mauvais Chemin",
-          "legende": "Aperçu d’un gros plan du projet Mauvais Chemin."
+          "source": "./assets/images/projets/logiciels/mauvaisChemain-davinci.png",
+          "alt": "Capture du travail sur Mauvais Chemin dans DaVinci Resolve.",
+          "legende": "Capture du travail sur Mauvais Chemin dans DaVinci Resolve."
         }
       ]
     },
@@ -240,9 +289,172 @@
   {
     "id": "ouii-wee",
     "title": "ouii (wee)",
-    "couleur": "rose",
+    "couleur": "wee",
     "lien": "./projet.html?projet=ouii-wee",
-    "enCours": true,
-    "description": "Un projet réalisé en équipe autour de la modélisation d’un jeu de cartes."
+    "description": "Ouii (Wee) est un jeu de cartes conçu en équipe avec Nurlika, Sarah et Jessica. Inspiré des personnages Mii et de Tomodachi, le jeu reprend leur esthétique expressive et personnalisable. Chaque famille représente une créatrice à travers un personnage personnalisé. Les formes arrondies, les couleurs vives et les figures expressives donnent au jeu une ambiance joyeuse, conviviale et facilement reconnaissable.",
+    "etiquette": "Design de cartes",
+    "cours": "un projet de design de cartes",
+    "equipe": "Nurlika, Sarah et Jessica. Direction graphique et jeu réalisés avec Yasmine. Référence visuelle : les personnages Mii de Nintendo",
+    "role": "Participation à la conception graphique du jeu et création de la famille de cartes Yasmine",
+    "logiciels": "Figma et Affinity",
+    "categorie": "Illustration et design de cartes",
+    "descriptionCourte": "Un jeu de cartes personnalisé, coloré et inspiré des personnages Mii et de Tomodachi.",
+    "demande": "Notre intention était de créer un univers commun tout en conservant la personnalité de chaque créatrice. Le guide de normes rassemble les références, les choix typographiques, les couleurs, les dispositions et les croquis. Darumadrop One apporte un caractère ludique aux indices et aux titres; Arial Nova assure la clarté des textes secondaires. Les figures reprennent une même logique de composition et d’expressions, adaptée à chaque famille.",
+    "realisation": "Le jeu comprend quatre familles de treize cartes, deux jokers et un dos commun. Les enseignes et les personnages permettent de distinguer les familles tout en gardant une identité visuelle cohérente. Le guide prévoit un format Poker de 63 × 88 mm, une résolution minimale de 300 dpi et des fonds perdus ainsi que des marges de sécurité de 1/8 po.",
+    "palette": [
+      "#FAE68A",
+      "#AD78EE",
+      "#00D6E3",
+      "#FF2DB3",
+      "#FFFFFF"
+    ],
+    "apercu": "./assets/images/projets/ouii(wee)/Frame 5.png",
+    "hero": "./assets/images/projets/ouii(wee)/Frame 6.png",
+    "presentation": [
+      "./assets/images/projets/ouii(wee)/Frame 5.png",
+      "./assets/images/projets/ouii(wee)/Frame 1.png"
+    ],
+    "galerie": [
+      "./assets/images/projets/ouii(wee)/guide-typographies.png",
+      "./assets/images/projets/ouii(wee)/guide-dos-cartes.png",
+      "./assets/images/projets/ouii(wee)/guide-joker.png"
+    ],
+    "carrousel": [
+      "./assets/images/projets/ouii(wee)/Frame 2.png",
+      "./assets/images/projets/ouii(wee)/Frame 3.png",
+      "./assets/images/projets/ouii(wee)/Frame 4.png"
+    ],
+    "etapes": {
+      "titre": "Des références aux cartes finales",
+      "description": "Nous avons commencé par définir un univers inspiré des Mii, puis exploré les typographies et les dispositions. Les croquis ont servi à organiser les figures et les jokers. Les cartes ont ensuite été déclinées dans une même grille, avec des indices lisibles et une palette commune. Le guide documente aussi les contraintes de préparation à l’impression.",
+      "logiciels": [
+        "Figma",
+        "Affinity"
+      ],
+      "images": [
+        {
+          "source": "./assets/images/projets/logiciels/weeouii-figma.png",
+          "alt": "Espace de travail du projet ouii (wee) dans Figma.",
+          "legende": "Espace de travail du projet ouii (wee) dans Figma."
+        },
+        {
+          "source": "./assets/images/projets/logiciels/weeouii-afinity.png",
+          "alt": "Travail graphique du projet ouii (wee) dans Affinity.",
+          "legende": "Travail graphique du projet ouii (wee) dans Affinity."
+        }
+      ]
+    }
+  },
+  {
+    "id": "medias-sociaux",
+    "title": "Médias sociaux",
+    "etiquette": "Contenu",
+    "couleur": "beige",
+    "lien": "./projet.html?projet=medias-sociaux",
+    "social": true,
+    "description": "Création de vidéos pour le compte Instagram @cafe.1025 et de publications d’activités pour @animorency.",
+    "comptes": [
+      {
+        "nom": "@cafe.1025",
+        "url": "https://www.instagram.com/cafe.1025/",
+        "description": "Création de vidéos",
+        "id": "cafe1025",
+        "titre": "Café étudiant 1025",
+        "statistiques": {
+          "posts": 57,
+          "followers": 231,
+          "following": 45
+        },
+        "bio": "Bienvenue au Café étudiant du collège Montmorency !"
+      },
+      {
+        "nom": "@animorency",
+        "url": "https://www.instagram.com/animorency/",
+        "description": "Publications d’activités",
+        "id": "animorency",
+        "titre": "Animorency",
+        "avatar": "./assets/images/projets/mediaSociaux/animorency/LOGO.png",
+        "statistiques": {
+          "posts": 20,
+          "followers": 98,
+          "following": 11
+        },
+        "bio": "Club de culture est-asiatique du cégep Montmorency!"
+      }
+    ],
+    "medias": [
+      {
+        "type": "image",
+        "source": "./assets/images/projets/mediaSociaux/cafe1025/cafe1025-gif-01.gif",
+        "titre": "Café 1025 — Le café avant le cours de 8 h",
+        "description": "Quand le cours commence à 8 h, mais que le café reste une priorité à 7 h 59 : une situation étudiante racontée avec humour.",
+        "compte": "cafe1025"
+      },
+      {
+        "type": "image",
+        "source": "./assets/images/projets/mediaSociaux/cafe1025/cafe1025-gif-02.gif",
+        "titre": "Café 1025 — Un quart de travail entre amis",
+        "description": "Quand deux amis travaillent enfin ensemble : une vidéo qui met en valeur la complicité de l’équipe et l’ambiance du café étudiant.",
+        "compte": "cafe1025"
+      },
+      {
+        "type": "image",
+        "source": "./assets/images/projets/mediaSociaux/cafe1025/cafe1025-gif-03.gif",
+        "titre": "Café 1025 — Les potins attendront, les boissons non",
+        "description": "Raconter les derniers potins à une amie pendant qu’elle prépare les commandes : une scène humoristique du quotidien derrière le comptoir.",
+        "compte": "cafe1025"
+      },
+      {
+        "type": "image",
+        "source": "./assets/images/projets/mediaSociaux/cafe1025/cafe1025-gif-05.gif",
+        "titre": "Café 1025 — Un matcha servi avec personnalité",
+        "description": "La remise d’un matcha devient une petite mise en scène : une façon légère et expressive de présenter une boisson du café.",
+        "compte": "cafe1025"
+      },
+      {
+        "type": "image",
+        "source": "./assets/images/projets/mediaSociaux/cafe1025/cafe1025-gif-08.gif",
+        "titre": "Café 1025 — De bonnes ondes pour les examens",
+        "description": "L’équipe du Café 1025 envoie de l’énergie positive aux étudiants pour la saison des examens, dans une vidéo chaleureuse et spontanée.",
+        "compte": "cafe1025"
+      },
+      {
+        "type": "image",
+        "source": "./assets/images/projets/mediaSociaux/cafe1025/cafe1025-gif-11.gif",
+        "titre": "Café 1025 — Le paiement un peu trop pressé",
+        "description": "Quand le client veut déjà payer alors que la commande n’est pas encore entrée : une situation de service à la clientèle transformée en contenu humoristique.",
+        "compte": "cafe1025"
+      },
+      {
+        "type": "image",
+        "source": "./assets/images/projets/mediaSociaux/animorency/animorency-karaoke.png",
+        "titre": "Animorency — Karaoké",
+        "description": "Une publication qui annonce une activité karaoké et invite la communauté à participer.",
+        "compte": "animorency"
+      },
+      {
+        "type": "image",
+        "source": "./assets/images/projets/mediaSociaux/animorency/animorency-volleyball.png",
+        "titre": "Animorency — Volleyball",
+        "description": "Un visuel destiné à promouvoir une activité de volleyball sur le compte @animorency.",
+        "compte": "animorency"
+      },
+      {
+        "type": "image",
+        "source": "./assets/images/projets/mediaSociaux/animorency/animorency-maid-cafe.png",
+        "titre": "Animorency — Maid café",
+        "description": "Une publication pour faire connaître l’activité maid café auprès de la communauté.",
+        "compte": "animorency"
+      },
+      {
+        "type": "image",
+        "source": "./assets/images/projets/mediaSociaux/animorency/animorency-activite-fin-session.png",
+        "titre": "Animorency — Fin de session",
+        "description": "Un visuel pour annoncer une activité de fin de session et encourager la participation.",
+        "compte": "animorency"
+      }
+    ],
+    "hero": "./assets/images/projets/mediaSociaux/appleStore.jpeg",
+    "apercu": "./assets/images/projets/mediaSociaux/appleStore.jpeg"
   }
 ]

@@ -1,5 +1,18 @@
 // Retient la langue choisie et traduit les textes sans modifier les animations.
 const traductions = {
+  "Présentation du projet": "Project overview",
+  "Chargement du projet…": "Loading project…",
+  "Processus": "Process",
+  "Palette de couleurs": "Colour palette",
+  "Palette de couleur": "Colour palette",
+  "Étapes de création et logiciels": "Creation process and software",
+  "Crédits et remerciements": "Credits and acknowledgements",
+  "Retour à l’accueil": "Back to home",
+  "Retour à l'accueil": "Back to home",
+  "Voir la publication ↗": "View post ↗",
+  "Vidéos et publications d’activités": "Videos and activity posts",
+  "Création de contenu · Instagram": "Content creation · Instagram",
+  "Ce projet est indisponible pour le moment.": "This project is currently unavailable.",
   "Aller au contenu": "Skip to content",
   "À propos": "About",
   "Projets": "Projects",
@@ -58,8 +71,6 @@ selecteur.addEventListener("click", e => {
   try { localStorage.setItem("portfolio-language", langue); } catch {}
   traduire();
 });
-// Les cartes arrivent après le chargement du JSON : elles sont traduites aussi.
-const observation = new MutationObserver(() => { observation.disconnect(); traduire(); observer(); });
-function observer() { observation.observe(document.body, {childList: true, subtree: true}); }
+// Traduit les cartes une fois chargées, sans surveiller tous les changements de la page.
+document.addEventListener("projets-charges", traduire);
 traduire();
-observer();

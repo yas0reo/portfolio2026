@@ -266,12 +266,166 @@ function afficherProjet(projet) {
   titrePage.textContent = projet.title;
 
   // Un projet en cours peut être présenté même si ses images ne sont pas prêtes.
-  if (projet.enCours) {
+  if (projet.enCours || projet.social) {
     document.body.classList.add("projet-en-preparation");
     const section = document.querySelector("#projet-en-cours");
     const description = document.querySelector("#projet-en-cours-description");
     section.hidden = false;
     description.textContent = projet.description || "";
+    // Les comptes sont des liens directs vers les contenus de médias sociaux.
+    if (projet.social) {
+      section.classList.add("projet-en-cours--social");
+      section.querySelector("h2").textContent = "Vidéos et publications d’activités";
+      section.querySelector(".projet-en-cours__statut").textContent = "Création de contenu · Instagram";
+      description.nextElementSibling.hidden = true;
+      const visuel = section.querySelector(".projet-en-cours__visuel");
+      visuel.replaceChildren();
+      visuel.removeAttribute("aria-label");
+      visuel.hidden = true;
+      // Les médias et leurs descriptions viennent du même JSON que les projets.
+      const galerieSociale = document.createElement("section");
+      galerieSociale.className = "reseaux-sociaux";
+      galerieSociale.setAttribute("aria-label", "Vidéos et publications réalisées");
+      // Un compte = une section. Ajouter un compte dans le JSON permet d’en créer une autre.
+      projet.comptes.forEach((compte) => {
+        const groupe = document.createElement("section");
+        groupe.className = "reseaux-sociaux__groupe";
+        const entete = document.createElement("header");
+        const nom = document.createElement("h2");
+        nom.textContent = compte.titre || compte.nom;
+        const identite = document.createElement("div");
+        identite.className = "reseaux-sociaux__identite";
+        const avatar = document.createElement(compte.avatar ? "img" : "span");
+        avatar.className = "reseaux-sociaux__avatar";
+        avatar.setAttribute("aria-hidden", "true");
+        if (compte.avatar) {
+          avatar.src = compte.avatar;
+          avatar.alt = "";
+        } else {
+          avatar.textContent = compte.id === "cafe1025" ? "☕" : "A";
+        }
+        identite.append(avatar, nom);
+        const lien = document.createElement("a");
+        lien.href = compte.url;
+        lien.target = "_blank";
+        lien.rel = "noopener noreferrer";
+        lien.textContent = `Instagram · ${compte.nom} ↗`;
+        const introduction = document.createElement("p");
+        introduction.textContent = compte.description;
+        const profil = document.createElement("div");
+        profil.append(identite, lien, introduction);
+        const detailsCompte = document.createElement("div");
+        detailsCompte.className = "reseaux-sociaux__details";
+        if (compte.statistiques) {
+          const statistiques = document.createElement("dl");
+          statistiques.className = "reseaux-sociaux__stats";
+          Object.entries(compte.statistiques).forEach(([libelle, nombre]) => {
+            const item = document.createElement("div");
+            const terme = document.createElement("dt");
+            terme.textContent = libelle;
+            const valeur = document.createElement("dd");
+            valeur.textContent = nombre;
+            item.append(terme, valeur);
+            statistiques.append(item);
+          });
+          detailsCompte.append(statistiques);
+        }
+        const bio = document.createElement("p");
+        bio.className = "reseaux-sociaux__bio";
+        bio.textContent = compte.bio || "";
+        detailsCompte.append(bio);
+        entete.append(profil, detailsCompte);
+        const grille = document.createElement("div");
+        grille.className = "medias-sociaux";
+        groupe.append(entete, grille);
+        galerieSociale.append(groupe);
+        (projet.medias || []).filter(media => media.compte === compte.id).forEach((media, indexMedia) => {
+        const carte = document.createElement("article");
+        carte.style.setProperty("--delai-carte", `${(indexMedia % 4) * 110}ms`);
+        const titre = document.createElement("h3");
+        titre.textContent = media.titre;
+        const contenu = document.createElement(media.type === "video" ? "video" : "img");
+        contenu.src = media.source;
+        if (media.type === "video") {
+          contenu.controls = true;
+          contenu.loop = true;
+          contenu.playsInline = true;
+          contenu.preload = "none";
+          contenu.setAttribute("aria-label", media.titre);
+        } else {
+          contenu.alt = media.titre;
+          contenu.loading = "lazy";
+        }
+        const figure = document.createElement("figure");
+        const texte = document.createElement("figcaption");
+        texte.textContent = media.description;
+        figure.append(contenu, texte);
+        carte.append(titre, figure);
+        // Le lien du post est prioritaire; sans ce lien, on indique clairement le profil.
+        const publication = document.createElement("a");
+        publication.className = "reseaux-sociaux__publication";
+        publication.href = media.url || compte.url;
+        publication.target = "_blank";
+        publication.rel = "noopener noreferrer";
+        publication.textContent = media.url ? "Voir la publication ↗" : `Voir ${compte.nom} ↗`;
+        carte.append(publication);
+        grille.append(carte);
+        });
+        if (compte.id === "cafe1025") {
+          // Regroupe les cartes par quatre; seule la page courante reste visible.
+          const cartes = [...grille.children];
+          const diapositives = [];
+          grille.classList.add("cafe-carrousel");
+          for (let index = 0; index < cartes.length; index += 4) {
+            const diapositive = document.createElement("div");
+            diapositive.className = "cafe-carrousel__slide";
+            diapositive.append(...cartes.slice(index, index + 4));
+            grille.append(diapositive);
+            diapositives.push(diapositive);
+          }
+          let page = 0;
+          const commandes = document.createElement("div");
+          commandes.className = "cafe-carrousel__commandes";
+          const precedent = document.createElement("button");
+          precedent.type = "button";
+          precedent.textContent = "←";
+          precedent.setAttribute("aria-label", "Publications précédentes");
+          const suivant = document.createElement("button");
+          suivant.type = "button";
+          suivant.textContent = "→";
+          suivant.setAttribute("aria-label", "Publications suivantes");
+          const compteur = document.createElement("span");
+          compteur.setAttribute("aria-live", "polite");
+          function afficherSlide() {
+            diapositives.forEach((slide, index) => { slide.hidden = index !== page; });
+            compteur.textContent = `${page + 1} / ${diapositives.length}`;
+            precedent.disabled = page === 0;
+            suivant.disabled = page === diapositives.length - 1;
+          }
+          precedent.addEventListener("click", () => { page--; afficherSlide(); });
+          suivant.addEventListener("click", () => { page++; afficherSlide(); });
+          commandes.append(precedent, compteur, suivant);
+          groupe.append(commandes);
+          if (diapositives.length) afficherSlide();
+        }
+      });
+      section.after(galerieSociale);
+      // Chaque groupe entre une seule fois lorsqu’il arrive dans l’écran.
+      const groupes = galerieSociale.querySelectorAll(".reseaux-sociaux__groupe");
+      if ("IntersectionObserver" in window) {
+        const apparition = new IntersectionObserver((entrees) => {
+          entrees.forEach((entree) => {
+            if (!entree.isIntersecting) return;
+            entree.target.classList.add("social-visible");
+            apparition.unobserve(entree.target);
+          });
+        }, { threshold: 0.06 });
+        groupes.forEach((groupe) => {
+          groupe.classList.add("social-animation");
+          apparition.observe(groupe);
+        });
+      }
+    }
     definirFondHero(projet.hero || projet.apercu);
     definirLienVideo(projet.video, projet.title);
     message.textContent = "";
@@ -289,6 +443,15 @@ function afficherProjet(projet) {
   titreGalerie.textContent = projet.categorie;
   texteGalerie.textContent = projet.realisation;
   afficherCredits(projet);
+  if (projet.document) {
+    const guide = document.createElement("a");
+    guide.href = projet.document;
+    guide.textContent = "Consulter le guide des normes graphiques (PDF) ↗";
+    guide.className = "reseaux-sociaux__publication";
+    guide.target = "_blank";
+    guide.rel = "noopener noreferrer";
+    texteCredits.after(guide);
+  }
 
   definirFondHero(projet.hero || projet.apercu);
   definirLienVideo(projet.video, projet.title);
@@ -321,6 +484,7 @@ async function init() {
 
     if (!projet) throw new Error("Projet introuvable.");
     afficherProjet(projet);
+    document.dispatchEvent(new Event("projets-charges"));
     preparerAnimationsPage();
   } catch (erreur) {
     message.textContent = "Ce projet est indisponible pour le moment.";
