@@ -13,6 +13,7 @@ les mots utilisés dans chaque projet :
 - `presentation`, `galerie` et `carrousel` : listes de chemins vers les images.
 - `description`, `demande` et `realisation` : textes affichés dans la page.
 - `palette` : cinq couleurs en code hexadécimal, par exemple `#ffffff`.
+- `etapes` : section facultative avec un titre, une description, une liste de logiciels et des images accompagnées de légendes.
 
 Pour ajouter un projet, copier un objet existant, changer son `id`, puis ajouter
 ses textes et les chemins de ses images.

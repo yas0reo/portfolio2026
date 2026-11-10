@@ -22,6 +22,11 @@ const texteRole = document.querySelector("#projet-role");
 const texteLogiciels = document.querySelector("#projet-logiciels");
 const titreProcessus = document.querySelector(".details-description h2");
 const texteProcessus = document.querySelector(".details-description p");
+const sectionProcessusLogiciels = document.querySelector("#processus-logiciels");
+const titreProcessusLogiciels = document.querySelector("#processus-logiciels-titre");
+const descriptionProcessusLogiciels = document.querySelector("#processus-logiciels-description");
+const listeProcessusLogiciels = document.querySelector("#processus-logiciels-liste");
+const imagesProcessusLogiciels = document.querySelector("#processus-logiciels-images");
 const titreGalerie = document.querySelector(".autres-projets-description h3");
 const texteGalerie = document.querySelector(".autres-projets-description p");
 const texteCredits = document.querySelector("#projet-credits");
@@ -128,6 +133,38 @@ function afficherCredits(projet) {
   texteCredits.textContent = `Projet réalisé dans le cadre du cours ${projet.cours}. Merci à ${projet.equipe}.`;
 }
 
+// Affiche les étapes du projet si elles sont présentes dans le JSON.
+function afficherProcessusLogiciels(projet) {
+  const etapes = projet.etapes;
+  if (!sectionProcessusLogiciels || !titreProcessusLogiciels || !descriptionProcessusLogiciels || !listeProcessusLogiciels || !imagesProcessusLogiciels) return;
+  if (!etapes) {
+    sectionProcessusLogiciels.hidden = true;
+    return;
+  }
+
+  sectionProcessusLogiciels.hidden = false;
+  titreProcessusLogiciels.textContent = etapes.titre || "Étapes et logiciels";
+  descriptionProcessusLogiciels.textContent = etapes.description || "";
+  listeProcessusLogiciels.replaceChildren(
+    ...(etapes.logiciels || []).map((logiciel) => {
+      const item = document.createElement("li");
+      item.textContent = logiciel;
+      return item;
+    })
+  );
+  imagesProcessusLogiciels.replaceChildren(
+    ...(etapes.images || []).map((image) => {
+      const figure = document.createElement("figure");
+      const elementImage = document.createElement("img");
+      const legende = document.createElement("figcaption");
+      definirImage(elementImage, image.source, image.alt || "Étape de création");
+      legende.textContent = image.legende || "";
+      figure.append(elementImage, legende);
+      return figure;
+    })
+  );
+}
+
 function afficherGalerie(images, titre) {
   if (!galerie) return;
 
@@ -200,11 +237,14 @@ function preparerAnimationsPage() {
   }
 
   const observateur = new IntersectionObserver(
-    ([entree], observer) => {
-      if (!entree.isIntersecting) return;
+    (entrees, observer) => {
+      // Plusieurs sections peuvent arriver en même temps : on les vérifie toutes.
+      entrees.forEach((entree) => {
+        if (!entree.isIntersecting) return;
 
-      entree.target.classList.add("est-visible");
-      observer.unobserve(entree.target);
+        entree.target.classList.add("est-visible");
+        observer.unobserve(entree.target);
+      });
     },
     { threshold: 0.12 }
   );
@@ -224,6 +264,20 @@ function afficherProjet(projet) {
   document.title = `${projet.title} | Portfolio`;
   document.body.dataset.couleur = projet.couleur;
   titrePage.textContent = projet.title;
+
+  // Un projet en cours peut être présenté même si ses images ne sont pas prêtes.
+  if (projet.enCours) {
+    document.body.classList.add("projet-en-preparation");
+    const section = document.querySelector("#projet-en-cours");
+    const description = document.querySelector("#projet-en-cours-description");
+    section.hidden = false;
+    description.textContent = projet.description || "";
+    definirFondHero(projet.hero || projet.apercu);
+    definirLienVideo(projet.video, projet.title);
+    message.textContent = "";
+    return;
+  }
+
   titrePresentation.textContent = projet.descriptionCourte || projet.title;
   titreImagePresentation.textContent = "Description";
   texteImagePresentation.textContent = projet.description;
@@ -231,6 +285,7 @@ function afficherProjet(projet) {
   texteLogiciels.textContent = projet.logiciels;
   titreProcessus.textContent = "Processus";
   texteProcessus.textContent = projet.demande;
+  afficherProcessusLogiciels(projet);
   titreGalerie.textContent = projet.categorie;
   texteGalerie.textContent = projet.realisation;
   afficherCredits(projet);
@@ -257,7 +312,6 @@ async function init() {
   // URLSearchParams lit le texte après le ? dans une adresse Web. -- il va chercher le id de la page et chercher le projet correspondant dans le fichier JSON.
   // Exemple : projet.html?projet=mati-r donne l'identifiant "mati-r".
   const identifiant = new URLSearchParams(window.location.search).get("projet");
-  preparerAnimationsPage();
   preparerLecteurVideo();
 
   try {
@@ -267,6 +321,7 @@ async function init() {
 
     if (!projet) throw new Error("Projet introuvable.");
     afficherProjet(projet);
+    preparerAnimationsPage();
   } catch (erreur) {
     message.textContent = "Ce projet est indisponible pour le moment.";
     console.error(erreur);

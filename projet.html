@@ -54,6 +54,20 @@
     </dialog>
 
     <main>
+      <!-- Présentation provisoire pour un projet qui n'a pas encore tous ses contenus. -->
+      <section class="projet-en-cours" id="projet-en-cours" hidden>
+        <div class="projet-en-cours__texte">
+          <p class="projet-en-cours__statut">Projet en cours · Travail d'équipe</p>
+          <h2>Un jeu de cartes à découvrir</h2>
+          <p id="projet-en-cours-description"></p>
+          <p>Les images et les détails du projet seront ajoutés au fil de sa création.</p>
+        </div>
+        <div class="projet-en-cours__visuel" aria-label="Visuel du projet à venir">
+          <span aria-hidden="true">✳</span>
+          <p>Visuel à venir</p>
+        </div>
+      </section>
+
       <!-- PRÉSENTATION DU PROJET -->
       <section class="projet-presentation">
         <h2>Présentation du projet</h2>
@@ -141,6 +155,16 @@
             <img alt="Détail du projet" />
           </figure>
         </div>
+      </section>
+
+      <!-- Les étapes et logiciels sont ajoutés depuis projects.json. -->
+      <section class="processus-logiciels" id="processus-logiciels" hidden>
+        <div class="processus-logiciels__texte">
+          <h2 id="processus-logiciels-titre">Étapes et logiciels</h2>
+          <p id="processus-logiciels-description"></p>
+          <ul class="processus-logiciels__liste" id="processus-logiciels-liste"></ul>
+        </div>
+        <div class="processus-logiciels__images" id="processus-logiciels-images"></div>
       </section>
 
       <!-- Galerie : le carrousel permet de changer l'image principale. -->

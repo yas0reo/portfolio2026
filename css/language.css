@@ -1,0 +1,6 @@
+/* Sélecteur de langue accessible au clavier et au toucher. */
+.langues { position: fixed; top: 16px; right: 16px; z-index: 1000; display: flex; align-items: center; justify-content: center; width: fit-content; margin: 0; padding: 4px 8px; background: var(--couleur-fond, white); color: var(--couleur-texte, #111); border-radius: 6px; font: 13px sans-serif; }
+.langues button { font: inherit; color: inherit; background: transparent; border: 0; padding: 8px; cursor: pointer; }
+.langues button[aria-pressed="true"] { font-weight: bold; text-decoration: underline; text-underline-offset: 4px; }
+.langues button:focus-visible { outline: 2px solid #111; }
+

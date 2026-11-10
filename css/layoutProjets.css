@@ -307,6 +307,85 @@ body[data-couleur="jaune"] {
   --palette-5: #bdbdcc;
 }
 
+/* Couleurs provisoires pour le projet ouii (wee). */
+body[data-couleur="rose"] {
+  background-color: #f5ddea;
+  --gris-clair: #dba7c1;
+  --gris-moyen: #bd7ca2;
+  --gris-fonce: #823c67;
+}
+
+/* Une page en préparation affiche seulement les contenus déjà disponibles. */
+.projet-en-preparation .projet-presentation,
+.projet-en-preparation .projet-palette,
+.projet-en-preparation .projet-details,
+.projet-en-preparation .autres-projets {
+  display: none;
+}
+
+.projet-en-preparation .projet-hero {
+  justify-content: center;
+  background-color: #b55d8f;
+}
+
+.projet-en-preparation .projet-hero h1 {
+  margin-bottom: 0;
+}
+
+.projet-en-cours {
+  width: min(92%, var(--largeur-contenu));
+  margin: clamp(50px, 8vw, 110px) auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  gap: clamp(24px, 5vw, 60px);
+  align-items: stretch;
+}
+
+.projet-en-cours[hidden] {
+  display: none;
+}
+
+.projet-en-cours__texte {
+  padding: clamp(28px, 5vw, 65px);
+  background: var(--gris-fonce);
+}
+
+.projet-en-cours__texte h2 {
+  margin: 14px 0 24px;
+  color: var(--blanc);
+  font: clamp(42px, 5vw, 64px) / 1 "Just Another Hand", cursive;
+}
+
+.projet-en-cours__texte p + p {
+  margin-top: 16px;
+}
+
+.projet-en-cours__statut {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.projet-en-cours__visuel {
+  min-height: 320px;
+  display: grid;
+  place-content: center;
+  padding: 28px;
+  border: 2px dashed #aa7394;
+  color: #823c67;
+  text-align: center;
+}
+
+.projet-en-cours__visuel span {
+  font-size: 5rem;
+  line-height: 1;
+}
+
+.projet-en-cours__visuel p {
+  margin-top: 18px;
+  color: #823c67;
+}
+
 .projet-hero h1 {
   /* Le nom du projet reste blanc sur son image de fond. */
   color: var(--blanc);
@@ -695,6 +774,26 @@ main strong,
   z-index: 2;
 }
 
+/* Étapes de création et logiciels, remplis depuis projects.json. */
+.processus-logiciels {
+  width: min(92%, var(--largeur-contenu));
+  margin: 0 auto 120px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(28px, 5vw, 70px);
+  align-items: center;
+}
+
+.processus-logiciels[hidden] { display: none; }
+.processus-logiciels__texte { padding: clamp(28px, 5vw, 60px); background-color: var(--gris-fonce); }
+.processus-logiciels__texte h2 { margin-bottom: 20px; font-size: clamp(1.5rem, 3vw, 2.2rem); text-transform: uppercase; }
+.processus-logiciels__liste { display: flex; flex-wrap: wrap; gap: 10px; margin: 25px 0 0; padding: 0; list-style: none; }
+.processus-logiciels__liste li { padding: 7px 10px; border: 1px solid var(--blanc); border-radius: 999px; color: var(--blanc); font-size: 0.85rem; }
+.processus-logiciels__images { display: grid; gap: 18px; }
+.processus-logiciels__images figure { margin: 0; }
+.processus-logiciels__images img { width: 100%; height: auto; object-fit: contain; }
+.processus-logiciels__images figcaption { margin-top: 8px; color: var(--blanc); font-size: 0.85rem; }
+
 /*
    AUTRES / DIFFÉRENTS PROJETS */
 
@@ -896,6 +995,14 @@ main strong,
 }
 
 @media (max-width: 768px) {
+  .projet-en-cours {
+    grid-template-columns: 1fr;
+  }
+
+  .projet-en-cours__visuel {
+    min-height: 220px;
+  }
+
   .projet-hero {
     min-height: 480px;
     padding: 45px 20px 60px;
@@ -909,6 +1016,11 @@ main strong,
   .presentation-contenu::after {
     left: 0;
     right: 0;
+  }
+
+  .processus-logiciels {
+    grid-template-columns: 1fr;
+    margin-bottom: 80px;
   }
 
   .palette-couleurs {

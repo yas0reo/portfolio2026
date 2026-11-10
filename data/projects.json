@@ -2,6 +2,7 @@
   {
     "id": "mati-r",
     "title": "Matir-x",
+    "etiquette": "Vidéo Immersion",
     "couleur": "vert",
     "lien": "./projet.html?projet=mati-r",
     "video": "https://www.youtube.com/watch?v=0S4uqWcMz7Y",
@@ -15,6 +16,18 @@
     "demande": "Créer une installation immersive à partir d’au moins 20 séquences originales réalisées par l’équipe. L’ensemble devait intégrer une bande sonore entièrement créée en studio et assurer une cohérence narrative, visuelle, sonore et rythmique.",
     "description": "Inspiré de The Matrix, le récit met en scène deux personnes interrogées par une femme qui contrôle la matrice. Elles doivent choisir entre retourner dans un monde sombre ou rester dans un univers de joie et de plaisir; après leur retour, elles décident finalement de revenir dans la matrice.",
     "realisation": "Une installation vidéo immersive composée d’images, de sons et de lumière pour construire une narration multisensorielle.",
+    "etapes": {
+      "titre": "Étapes de création et logiciels",
+      "description": "Pour cette installation immersive, notre équipe a créé des séquences originales et une bande sonore en studio. J’ai participé comme actrice, coloriste et monteuse vidéo afin de construire une cohérence entre les images, les couleurs et le rythme.",
+      "logiciels": ["DaVinci Resolve", "Runway", "Midjourney"],
+      "images": [
+        {
+          "source": "./assets/images/projets/matir-x/g3Yas.jpg",
+          "alt": "Image du projet Matir-x",
+          "legende": "Aperçu visuel du projet Matir-x."
+        }
+      ]
+    },
     "apercu": "./assets/images/projets/matir-x/gBackground.jpg",
     "hero": "./assets/images/projets/matir-x/gBackground.jpg",
     "presentation": [
@@ -36,6 +49,7 @@
   {
     "id": "paysage",
     "title": "Paysage",
+    "etiquette": "Vidéo & Animation 3d",
     "couleur": "mauve",
     "lien": "./projet.html?projet=paysage",
     "palette": ["#595B74", "#3C3A61", "#450667", "#61356E", "#7F2B87"],
@@ -48,6 +62,18 @@
     "demande": "Concevoir un concept visuel lié à une proposition audio et l’opérer en temps réel dans TouchDesigner. L’expérience devait comporter une introduction, au moins cinq scènes, des effets abstraits, du hand tracking, un élément 3D animé et une conclusion.",
     "description": "Une immersion visuelle et sonore où des animations 3D évoluent au rythme de la musique et de ses sonorités abstraites.",
     "realisation": "Un univers mauve qui se transforme en temps réel selon le son et les interactions du public.",
+    "etapes": {
+      "titre": "Étapes de création et logiciels",
+      "description": "J’ai conçu un univers audiovisuel interactif réunissant une proposition sonore, des scènes visuelles et un élément 3D animé. Dans TouchDesigner, l’expérience évolue en temps réel avec le son et les interactions gestuelles.",
+      "logiciels": ["TouchDesigner", "Maya", "Max", "Reaper"],
+      "images": [
+        {
+          "source": "./assets/images/projets/paysage/sparkle.png",
+          "alt": "Image du projet Paysage",
+          "legende": "Aperçu de l’univers visuel de Paysage."
+        }
+      ]
+    },
     "apercu": "./assets/images/projets/paysage/sparkle.png",
     "hero": "./assets/images/projets/paysage/3Dtout.jpg",
     "presentation": [
@@ -69,6 +95,7 @@
   {
     "id": "montage-rouge",
     "title": "Echoes",
+    "etiquette": "Vidéo narrative",
     "couleur": "rouge",
     "lien": "./projet.html?projet=montage-rouge",
     "video": "https://www.youtube.com/watch?v=CjSIbw-BYNs",
@@ -82,6 +109,18 @@
     "demande": "Faire un montage monochrome rouge de 60 à 120 secondes en équipe. Faire à partir d’objets imposés, avec environ 1 600 photographies, des prises de vue en macro, des animations 2D et une bande sonore créée à partir d’une banque de 40 sons.",
     "description": "L’histoire suit Elisabeth, une poupée qui exprime sa peine à travers des lettres destinées à son ancien amour. Ses lettres et son ballon rouge deviennent les symboles d’un chagrin qui la fait basculer dans la folie.",
     "realisation": "Une vidéo rouge où stop motion, animation 2D et micromontage sonore racontent une histoire de douleur et de perte.",
+    "etapes": {
+      "titre": "Étapes de création et logiciels",
+      "description": "Notre équipe a créé une vidéo monochrome en combinant des photographies en stop motion, des prises de vue en macro, de l’animation 2D et du micromontage sonore. J’ai participé comme actrice, coloriste et animatrice 2D.",
+      "logiciels": ["Illustrator", "After Effects", "DaVinci Resolve"],
+      "images": [
+        {
+          "source": "./assets/images/projets/echoes/anim.jpg",
+          "alt": "Image du projet Echoes",
+          "legende": "Aperçu visuel du projet Echoes."
+        }
+      ]
+    },
     "apercu": "./assets/images/projets/echoes/hands.PNG",
     "hero": "./assets/images/projets/echoes/hands.PNG",
     "presentation": [
@@ -103,6 +142,7 @@
   {
     "id": "space-in-betweenn",
     "title": "Entre les Portaux",
+    "etiquette": "Jeux d'exploration VR",
     "couleur": "bleu",
     "lien": "./projet.html?projet=space-in-betweenn",
     "palette": ["#198E98", "#323586", "#7D365E", "#B92B2B", "#AA7831"],
@@ -115,6 +155,23 @@
     "demande": "Le mandat était de créer une expérience jouable avec un casque VR. Notre équipe a imaginé un lobby qui mène vers trois niveaux : un Parcours de plateformes flottantes, un Cherche et trouve où le joueur rapporte des objets cachés dans un panier, puis une Course contre la montre qui demande rapidité et précision.",
     "description": "Entre les Portaux propose une exploration en réalité virtuelle où le joueur choisit un portail pour découvrir un nouveau monde. Chaque monde a son propre objectif, son ambiance et sa façon d’interagir avec l’environnement.",
     "realisation": "J’ai travaillé sur le niveau Cherche et trouve : la conception de son environnement 3D, l’intégration des objets à récupérer et les portails qui relient les mondes. Les scripts Unity permettent notamment de détecter les objets trouvés, de mettre à jour le pointage et de charger les scènes à travers les portails.",
+    "etapes": {
+      "titre": "Étapes de création et logiciels",
+      "description": "Après l’idéation des trois mondes, nous avons créé une carte de l’environnement afin de planifier le lobby, les portails et les niveaux. Dans Unity, j’ai ensuite intégré le niveau Cherche et trouve, les objets à récupérer et les interactions. Des essais avec le casque Oculus ont permis d’ajuster la navigation, les distances et les interactions du joueur.",
+      "logiciels": ["Unity", "XR Interaction Toolkit", "Casque VR Oculus"],
+      "images": [
+        {
+          "source": "./assets/images/projets/EntreLesPortaux/CARTEENVIRONEMENTALE.png",
+          "alt": "Carte de l’environnement du projet Entre les Portaux",
+          "legende": "Carte de l’environnement : elle a servi à planifier les scènes et les portails dans Unity."
+        },
+        {
+          "source": "./assets/images/projets/EntreLesPortaux/LOBBY-CHERCHEETTROUVE.png",
+          "alt": "Aperçu du lobby et du niveau Cherche et trouve dans Entre les Portaux",
+          "legende": "Aperçu de l’expérience conçue et intégrée dans Unity."
+        }
+      ]
+    },
     "apercu": "./assets/images/projets/EntreLesPortaux/IMG_0456.jpg",
     "hero": "./assets/images/projets/EntreLesPortaux/IMG_0456.jpg",
     "presentation": [
@@ -136,6 +193,7 @@
   {
     "id": "corps",
     "title": "Mauvais Chemin",
+    "etiquette": "Vidéo macro",
     "couleur": "jaune",
     "lien": "./projet.html?projet=corps",
     "video": "https://www.youtube.com/watch?v=FCtaXPrgD2U",
@@ -149,6 +207,18 @@
     "demande": "Créer une vidéo d’une minute trente sur le corps humain avec au moins 20 plans, principalement en très gros plan, une séquence en mosaïque et un micromontage sonore original.",
     "description": "L’évolution d’une relation amoureuse commence dans le bonheur, puis se détériore à travers les conflits et la détresse émotionnelle. Après la rupture, la protagoniste traverse son chagrin et finit par se libérer de cette relation.",
     "realisation": "Une création sensorielle qui utilise les gros plans, l’accumulation d’images et le son pour raconter une relation qui se défait.",
+    "etapes": {
+      "titre": "Étapes de création et logiciels",
+      "description": "Pour cette vidéo sensorielle, notre équipe a utilisé des gros plans du corps, une séquence en mosaïque et un micromontage sonore. J’ai participé au montage, à la coloration et aux prises de vue des yeux.",
+      "logiciels": ["DaVinci Resolve"],
+      "images": [
+        {
+          "source": "./assets/images/projets/mauvaisChemain/eyeYas.jpg",
+          "alt": "Image du projet Mauvais Chemin",
+          "legende": "Aperçu d’un gros plan du projet Mauvais Chemin."
+        }
+      ]
+    },
     "apercu": "./assets/images/projets/mauvaisChemain/fingers2.jpg",
     "hero": "./assets/images/projets/mauvaisChemain/eyemanu.jpg",
     "presentation": [
@@ -166,5 +236,13 @@
       "./assets/images/projets/mauvaisChemain/bLarme.jpg",
       "./assets/images/projets/mauvaisChemain/bLips.jpg"
     ]
+  },
+  {
+    "id": "ouii-wee",
+    "title": "ouii (wee)",
+    "couleur": "rose",
+    "lien": "./projet.html?projet=ouii-wee",
+    "enCours": true,
+    "description": "Un projet réalisé en équipe autour de la modélisation d’un jeu de cartes."
   }
 ]
