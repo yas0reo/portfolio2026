@@ -5,9 +5,6 @@
 */
 const listeProjets = document.querySelector(".projets__liste");
 const listeProjetsMobile = document.querySelector(".projets__liste-mobile");
-const imageApercu = document.querySelector(".projets__apercu-image");
-const texteApercu = document.querySelector(".projets__apercu-texte");
-
 // Ajoute une classe CSS quand une section arrive à l'écran pour lancer son animation.
 function lancerAnimation(section, classe, seuil) {
   if (!section) return;
@@ -34,48 +31,31 @@ function lancerAnimation(section, classe, seuil) {
   observateur.observe(section);
 }
 
-// Affiche le nom et l'image du projet survolé ou sélectionné au clavier.
-function montrerApercu(lien) {
-  if (!imageApercu || !texteApercu) return;
-
-  // dataset lit les attributs HTML data-preview et data-preview-alt.
-  const image = lien.dataset.preview;
-  const texteImage = lien.dataset.previewAlt;
-
-  texteApercu.textContent = lien.textContent.trim();
-  texteApercu.classList.remove("is-hidden");
-  imageApercu.classList.remove("is-visible");
-
-  if (!image) {
-    imageApercu.removeAttribute("src");
-    imageApercu.alt = "";
-    return;
-  }
-
-  imageApercu.src = image;
-  imageApercu.alt = texteImage;
-}
-
-// Attend que l'image soit prête avant de l'afficher, pour éviter un cadre vide.
-function preparerImageApercu() {
-  if (!imageApercu || !texteApercu) return;
-
-  imageApercu.addEventListener("load", () => {
-    imageApercu.classList.add("is-visible");
-    texteApercu.classList.add("is-hidden");
-  });
-
-  imageApercu.addEventListener("error", () => {
-    imageApercu.removeAttribute("src");
-    imageApercu.alt = "";
-  });
-}
-
-// Ajoute le même comportement pour la souris et le clavier.
+// Chaque groupe possède son propre panneau d’aperçu.
 function preparerLiensProjets() {
-  document.querySelectorAll(".projets__lien").forEach((lien) => {
-    lien.addEventListener("mouseenter", () => montrerApercu(lien));
-    lien.addEventListener("focus", () => montrerApercu(lien));
+  document.querySelectorAll(".projets__groupe").forEach((groupe) => {
+    const image = groupe.querySelector(".projets__apercu-image");
+    const texte = groupe.querySelector(".projets__apercu-texte");
+    let actif;
+    function actualiser() {
+      const lien = groupe.querySelector(".projets__lien:hover") ||
+        groupe.querySelector(".projets__lien:focus");
+      if (lien === actif) return;
+      actif = lien;
+      texte.textContent = lien?.querySelector(".projets__statut")?.textContent || "";
+      image.classList.remove("is-visible");
+      if (lien?.dataset.preview) {
+        image.src = lien.dataset.preview;
+        if (image.complete && image.naturalWidth) image.classList.add("is-visible");
+      } else {
+        image.removeAttribute("src");
+      }
+    }
+    image.addEventListener("load", () => image.classList.add("is-visible"));
+    groupe.addEventListener("pointerover", actualiser);
+    groupe.addEventListener("pointerout", () => requestAnimationFrame(actualiser));
+    groupe.addEventListener("focusin", actualiser);
+    groupe.addEventListener("focusout", () => requestAnimationFrame(actualiser));
   });
 }
 
@@ -119,7 +99,6 @@ async function init() {
     "accueil-section--anime",
     0.12
   );
-  preparerImageApercu();
   preparerIconesLogiciels();
 
   if (!listeProjets || !listeProjetsMobile) return;
@@ -130,7 +109,23 @@ async function init() {
 
 
     console.log(projets[0].title);
-    listeProjets.innerHTML = projets.map(createProjectCard).join("");
+    const groupes = [
+      ["mati-r", "montage-rouge", "corps"],
+      ["paysage", "space-in-betweenn", "ouii-wee"],
+      ["medias-sociaux"],
+    ];
+    listeProjets.innerHTML = groupes.map((ids, index) => `
+      <div class="projets__groupe">
+        <div class="projets__noms">
+          ${ids.map(id => projets.find(projet => projet.id === id)).filter(Boolean).map(createProjectCard).join("")}
+          ${index === 2 ? '<span class="projets__a-venir">À venir</span>' : ""}
+        </div>
+        <div class="projets__apercu">
+          <img class="projets__apercu-image" alt="" />
+          <p class="projets__apercu-texte"></p>
+        </div>
+      </div>
+    `).join("");
     listeProjetsMobile.innerHTML = projets
       .map(createMobileProjectCard)
       .join("");

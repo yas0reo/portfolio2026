@@ -13,6 +13,7 @@ function createProjectCard(project) {
     <a
       class="projets__lien projets__lien--${project.couleur}"
       href="${project.lien}"
+      data-projet="${project.id}"
       data-preview-alt="Aperçu du projet ${project.title}"${preview}
     >
       ${project.title}

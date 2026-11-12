@@ -1,14 +1,15 @@
 <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1000 780"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMid meet"
           >
             <!-- Une ligne continue relie les projets dans leur ordre de lecture. -->
-            <path
+            <defs><path id="trace-projets"
               d="M110 130 C300 55 690 205 890 130 C830 155 760 175 700 195 C650 215 640 170 675 165 C715 160 720 210 690 215 C500 270 280 330 110 390 C320 315 630 445 790 375 C740 420 470 540 340 580 C290 605 265 555 300 550 C340 545 350 595 315 605 C260 625 220 635 200 640 C400 590 680 705 790 640"
-              fill="none"
-              stroke="#555"
-              stroke-width="1.6"
               vector-effect="non-scaling-stroke"
-            />
+            /></defs>
+            <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <use href="#trace-projets" stroke="white" stroke-width="5" />
+              <use href="#trace-projets" stroke="#555" stroke-width="1.6" />
+            </g>
           </svg>
